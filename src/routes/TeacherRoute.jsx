@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import TeacherLayout from "../components/layout/teacher/TeacherLayout";
 
 import Dashboard from "../pages/teacher/Dashboard";
+import TeacherLogin from "../pages/auth/teacher/TeacherLogin";
+import Register from "../pages/auth/teacher/Register";
 // import Profile from "../pages/teacher/Profile";
 // import Courses from "../pages/teacher/Courses";
 // import Students from "../pages/teacher/Students";
@@ -10,6 +12,8 @@ import Dashboard from "../pages/teacher/Dashboard";
 const TeacherRoutes = () => {
   return (
     <Routes>
+        <Route path="/" element={<TeacherLogin />} />
+        <Route path="sign-up" element={<Register />} />
       <Route element={<TeacherLayout />}>
         <Route path="dashboard" element={<Dashboard />} />
         {/* <Route path="profile" element={<Profile />} />
