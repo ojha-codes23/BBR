@@ -3,8 +3,8 @@ import { Outlet } from "react-router-dom";
 const UserLayout = () => {
   return (
     <>
-      <UserHeader />
-      <UserSidebar />
+      {/* <UserHeader />
+      <UserSidebar /> */}
 
       <main>
         <Outlet />
