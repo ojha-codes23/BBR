@@ -1,0 +1,1782 @@
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .otp-input-box {
+    width: 70px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .otp-inputs-row {
+    justify-content: center;
+  }
+  .gl-welcome-filter-group {
+    flex-wrap: wrap;
+  }
+  .login-page-section {
+    height: auto;
+  }
+  .login-form-container {
+    padding: 0;
+  }
+  .forgot-page-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .otp-input-box {
+    width: 70px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .gl-modal-feedback-title {
+    font-size: 28px;
+  }
+  .login-right-content {
+    width: 100%;
+    height: auto;
+  }
+  .login-form-group-wrp .d-flex {
+    flex-wrap: wrap;
+    gap: 0px !important;
+  }
+  .org-item-row {
+    padding: 10px 0;
+  }
+  .org-name-text {
+    font-size: 13px;
+  }
+  .gl-content-body {
+    padding: 20px;
+  }
+  .usr-dash-wrapper {
+    padding: 0px;
+  }
+  .gl-welcome-filter-group {
+    align-items: stretch;
+  }
+  .custom-action-btn {
+    font-size: 13px;
+    padding: 10px;
+    justify-content: center;
+  }
+  .gl-header {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .gl-header-right {
+    width: 75%;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-end;
+  }
+
+  .gl-header-icon {
+    margin-right: 0;
+  }
+  .gl-header-panel-title {
+    font-size: 13px;
+  }
+  .gl-header-left {
+    gap: 6px;
+  }
+  .gl-header-search-box {
+    display: block !important;
+    width: 49%;
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .profile-dropdown {
+    right: 0;
+  }
+  .gl-notification-dropdown {
+    width: 280px;
+  }
+  .u-prof-ban-card {
+    padding: 15px;
+    gap: 10px;
+  }
+  .u-prof-ban-info-group {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .u-prof-ban-bottom {
+    gap: 8px;
+    flex-wrap: wrap;
+    flex-direction: unset;
+    align-items: center;
+  }
+  .u-prof-ban-percentage {
+    width: auto;
+    text-align: center;
+  }
+  .usr-dash-split-col {
+    padding: 15px;
+    gap: 10px;
+  }
+  .usr-dash-list-row {
+    padding: 15px;
+  }
+  .view-det-pending {
+    align-items: flex-start;
+  }
+  .usr-dash-list-row {
+    padding: 15px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .usr-dash-status-badge.warning {
+    margin-left: 0;
+  }
+  .usr-dash-event-card {
+    padding: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .usr-dash-col-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .gl-filter-actions-right-group {
+    flex-direction: unset;
+    align-items: stretch;
+  }
+  .gl-dropdown-filter-box {
+    justify-content: center;
+  }
+  .gl-btn-add-request {
+    justify-content: center;
+  }
+  .gl-card-main-body-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .gl-card-action-triggers-row {
+    display: flex;
+    width: 100%;
+    margin-top: 4px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .gl-btn-solid-blue-action {
+    justify-content: center;
+  }
+  .gl-card-top-headline-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+  .gl-card-progress-tracking-engine .gl-progress-footer-stats {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .gl-pagination-navigation-tray {
+    flex-wrap: wrap;
+  }
+  .gl-pagination-left-info {
+    flex-wrap: wrap;
+  }
+  .gl-header-meta-titles {
+    width: 80%;
+  }
+  .gl-dashboard-main-title,
+  .gl-view-primary-title {
+    font-size: 20px;
+  }
+  .gl-dashboard-toolbar-strip.sp-bt {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .gl-header-utility-actions {
+    align-items: stretch;
+    flex-direction: unset;
+    width: auto;
+  }
+  .gl-modular-request-card {
+    padding: 15px;
+  }
+  .gl-request-card-flex-node {
+    flex-direction: column;
+  }
+  .gl-card-title-header-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+  .gl-request-card-main-data-block .gl-card-action-triggers-row {
+    flex-wrap: wrap !important;
+    flex-direction: unset;
+  }
+  .gl-tooltip-floating-bubble-panel::after {
+    right: 10px;
+  }
+  .my-certificate-wrp {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 60%;
+  }
+  .my-crs-module-status {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .gl-pagination-show-selector-block {
+    flex-wrap: wrap;
+  }
+  .gl-pagination-numeric-pills-flex {
+    flex-wrap: wrap;
+  }
+  .my-certificates-filter {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .filter-btn-grp {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  .filter-btn-grp .filter-dropdown-btn {
+    justify-content: center;
+  }
+  .custom-pagination {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .related-resources-wrp .related-resources-head {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+  .card-body-content {
+    padding: 15px;
+  }
+  .career-planning-head-right-in h1 {
+    font-size: 20px;
+    margin-left: 0 !important;
+  }
+  .career-planning-head-right small.text-muted.ms-4 {
+    margin-left: 0 !important;
+  }
+  .career-planning-head-right {
+    width: 85%;
+    padding-left: 10px;
+  }
+  .career-planning-wrp .d-flex.align-items-center.mb-4 {
+    gap: 15px;
+  }
+  .lesson-row {
+    border-radius: 30px;
+    padding: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .gl-quiz-action-footer-flex {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .gl-checkbox-text-string {
+    width: 80%;
+  }
+  .my-notes-wrp .col-md-3.col-12.text-end {
+    text-align: left !important;
+    margin-bottom: 15px;
+  }
+  .notes-card {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .srv-req-title-block {
+    width: 80%;
+  }
+  .srv-req-main-title {
+    font-size: 20px;
+  }
+  .srv-req-card {
+    padding: 10px;
+  }
+  .srv-req-tick-icon {
+    top: 10px;
+    right: 10px;
+  }
+  .gl-popup-header-row {
+    padding: 0;
+  }
+  .gl-popup-footer-action-row {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .gl-st-heading-text-box h2 {
+    font-size: 20px;
+  }
+  .gl-st-flex-switch-row {
+    flex-wrap: wrap;
+  }
+  .gl-popup-presets-bar {
+    flex-wrap: wrap;
+  }
+  .tm-time-widget-btn {
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+  .table-responsive {
+    overflow: auto !important;
+  }
+  .sow-header-title-block {
+    width: 80%;
+  }
+  .sow-header-title {
+    font-size: 20px;
+  }
+  .sow-confirm-btn {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .sow-wait-title {
+    font-size: 20px;
+  }
+  .sow-wait-details-box {
+    padding: 20px;
+  }
+  .gl-header-titles-block {
+    width: 80%;
+  }
+  .gl-sow-main-title {
+    font-size: 20px;
+  }
+  .sow-heading-wrp {
+    flex-wrap: wrap;
+  }
+  .lsc-price-summary-row {
+    padding: 10px 0px;
+    flex-wrap: wrap;
+  }
+  .gl-sow-card-box {
+    padding: 15px;
+  }
+  .gl-chip-inner-text-label {
+    width: 90%;
+  }
+  .lorem-text-box {
+    width: 100%;
+  }
+  .sow-pay-title {
+    font-size: 20px;
+  }
+  .sow-pay-step-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sow-comp-title {
+    font-size: 20px;
+  }
+  .sow-comp-tracker-card {
+    padding: 20px;
+  }
+  .sow-comp-step-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sow-fin-step-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sow-fin-strip-row {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .header-title {
+    font-size: 20px;
+  }
+  .video-controls-bottom {
+    padding: 10px;
+  }
+  .mcq-overlay-btn {
+    top: 40px;
+    left: 40px;
+    padding: 4px;
+    font-size: 10px;
+  }
+  .video-controls-bottom .d-flex.justify-content-between.align-items-center {
+    flex-wrap: wrap;
+  }
+  .directional-nav-btns {
+    gap: 10px;
+  }
+  .directional-nav-btns button {
+    width: 100%;
+  }
+  .content-card-section {
+    padding: 15px;
+  }
+  .content-card-section.mb-4 .d-flex.gap-2.mb-3.align-items-center {
+    flex-wrap: wrap;
+  }
+  .bottom-info-alert-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .main-wrapper {
+    padding: 0;
+  }
+  .gl-events-master-container {
+    padding: 0px;
+  }
+  .gl-events-btn-registered-action {
+    width: auto;
+  }
+  .gl-event-card-body-content {
+    padding: 15px;
+  }
+  .gl-event-action-buttons-wrapper {
+    flex-wrap: wrap;
+  }
+  .gl-space-card-footer-action-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .gl-analytics-metric-cell {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .lsc-filter-tabs-row {
+    border-radius: 22px;
+  }
+  .lsc-filter-tabs-row button {
+    width: 49%;
+    justify-content: center;
+  }
+  .lsc-card-content-body {
+    padding: 15px;
+  }
+  .lsc-btn-reserve,
+  .lsc-btn-live,
+  .lsc-btn-confirmed,
+  .lsc-btn-cancel,
+  .lsc-btn-upgrade {
+    padding: 0.5rem 0.6rem;
+  }
+  .calendar-board-card {
+    padding: 15px;
+  }
+  .current-month-label {
+    font-size: 14px;
+    min-width: auto;
+  }
+  .nav-circle-arrow-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .title-block h1 {
+    font-size: 20px;
+  }
+  .modal-content {
+    padding: 15px;
+  }
+  .controls-filter-group button.custom-filter-dropdown {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .sat-modal-header-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .sat-inner-details-card {
+    padding: 15px;
+  }
+  .sat-meta-metrics-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .lsc-pagination-list {
+    flex-wrap: wrap;
+  }
+  .gl-page-primary-title {
+    font-size: 20px;
+  }
+  .gl-actions-buttons-cluster {
+    align-items: stretch;
+    flex-direction: unset;
+  }
+  .gl-mentorship-pagination-footer-bar {
+    margin-bottom: 15px;
+  }
+  #joinGroupNetworkModal .modal-content {
+    padding: 15px !important;
+  }
+  .gl-network-main-title-bold {
+    font-size: 24px;
+  }
+  .gl-rgc-dropdowns-cluster {
+    align-items: flex-start;
+  }
+  .gl-rgc-dropdown-select {
+    width: auto;
+    flex: auto;
+  }
+  .gl-card-body-content {
+    padding: 15px;
+  }
+  .gl-toolkit-master-wrapper-view {
+    padding: 0;
+  }
+  .gl-toolkit-primary-title {
+    font-size: 20px;
+  }
+  .gl-toolkit-headline-group {
+    width: 80%;
+  }
+  .gl-toolkit-section-title-strip-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .gl-card-body-details-content {
+    padding: 15px;
+  }
+  .gl-toolkit-sidebar-body-padding {
+    padding: 15px;
+  }
+  .gl-toolkit-cta-horizontal-split-row {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .gl-toolkit-btn-cta-square-icon-only {
+    width: 100%;
+    font-size: 16px;
+  }
+  .gl-fund-primary-page-title {
+    font-size: 20px;
+  }
+  .gl-fund-heading-text-group {
+    width: 80%;
+  }
+  .gl-fund-sidebar-content-padding {
+    padding: 15px;
+  }
+  main.gl-fund-two-column-split-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .gl-fund-description-right-panel {
+    width: 100%;
+  }
+  .gl-fund-attachment-download-pill {
+    word-break: break-word;
+  }
+  .page-header {
+    flex-wrap: wrap;
+  }
+  .content-card-panel {
+    padding: 10px;
+  }
+  .accordion-custom .accordion-button {
+    padding: 12px;
+  }
+  .support-channel-card {
+    padding: 10px;
+  }
+  .ps-header-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .ps-header-right {
+    width: auto;
+  }
+  .ps-action-btn {
+    width: auto;
+    justify-content: center;
+  }
+  .gl-custom-nav-pills {
+    padding: 10px;
+  }
+  .gl-custom-nav-pills li button {
+    margin: 0px;
+  }
+  .gl-section-main-heading,
+  .gl-section-main-title,
+  .gl-panel-main-heading {
+    font-size: 16px;
+  }
+  .gl-item-details-metadata {
+    padding-right: 0;
+  }
+  .gl-section-main-title {
+    font-size: 16px;
+  }
+  #addQualificationModal .modal-content,
+  #addCertificationModal .modal-content {
+    padding: 12px !important;
+  }
+  .gl-form-action-footer-row {
+    flex-wrap: wrap;
+  }
+  #deactivateAccountModal {
+    align-items: flex-start;
+  }
+  #deactivateAccountModal .modal-content {
+    padding: 12px !important;
+  }
+  #deactivateAccountModal .modal-dialog.modal-dialog-centered {
+    transform: scale(0.9) !important;
+  }
+  .gl-workshop-header-title {
+    font-size: 18px;
+  }
+  .btn-close.sucfull-close {
+    top: -70px;
+    right: -15px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+  }
+  #careerWorkshopDetailsModal .modal-body {
+    padding: 15px;
+  }
+  #registrationSuccessModal .modal-content {
+    padding: 15px !important;
+  }
+  .gl-success-main-title-bold {
+    font-size: 26px;
+  }
+  .gl-success-event-details-panel {
+    padding: 20px;
+  }
+  .gl-success-action-footer {
+    flex-wrap: wrap;
+  }
+  .gl-premium-alert-banner-box {
+    flex-wrap: wrap;
+  }
+  button.gl-btn-solid-amber-action {
+    padding: 10px 25px;
+  }
+  #confirmLogoutModal .modal-content {
+    padding: 15px !important;
+  }
+  #confirmLogoutModal .modal-dialog {
+    margin: 0 auto;
+  }
+  .usr-dash-text-muted img {
+    width: 20px;
+  }
+  .my-certificates-filter .d-flex.filter-btn-grp {
+    width: auto;
+    flex-direction: unset;
+    justify-content: flex-start;
+  }
+  .d-flex.justify-content-between.align-items-center.flex-wrap.gap-3.border-top.pt-4
+    .d-flex.align-items-center.gap-2.small.text-muted {
+    flex-wrap: wrap;
+  }
+  .my-crs-card-body {
+    padding: 20px;
+  }
+  .ps-supp-title-main {
+    font-size: 20px;
+  }
+  .ps-supp-capsule-tabs-row {
+    width: auto;
+    border-radius: 22px;
+  }
+  .ps-supp-capsule-tabs-row li button {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .ps-card-section-wrapper {
+    padding: 10px;
+  }
+  .ps-card-container {
+    padding: 20px;
+  }
+  .gl-workshop-banner-hero-container {
+    height: auto;
+  }
+  .gl-sidebar-meta-list-items {
+    gap: 5px;
+  }
+  .page-header p {
+    margin-bottom: 10px;
+  }
+  table.table.gl-popup-table {
+    min-width: max-content;
+  }
+  .usr-dash-event-card .usr-dash-event-info {
+    width: auto;
+    flex: auto;
+  }
+
+  .gl-dashboard-layout.mini-sidebar .usr-dash-quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .gl-dashboard-layout.mini-sidebar .my-crs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gl-dashboard-layout .my-crs-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .my-certificate-wrp a,
+  .my-certificate-wrp button {
+    width: auto;
+  }
+  .gl-sidebar {
+    width: 220px;
+  }
+  .gl-main-content-wrapper {
+    width: calc(100% - 220px) !important;
+    margin-left: 220px !important;
+  }
+  .certificate-card {
+    padding: 15px;
+  }
+  .btn-download-cert {
+    padding: 10px 12px;
+  }
+  .gl-dashboard-layout .related-resources-wrp .row.g-4 .col-lg-4.col-md-6 {
+    width: 100%;
+  }
+  .gl-dashboard-layout.mini-sidebar .row.g-4 .col-lg-4.col-md-6 {
+    width: 50%;
+  }
+  .my-notes-wrp .row.g-3.mb-5 .col-lg-3.col-md-6:first-child {
+    width: 100%;
+  }
+  .my-notes-wrp .row.g-3.mb-5 .col-lg-3.col-md-6 {
+    width: 33.3%;
+  }
+  .gl-events-pagination-footer-row-bar {
+    flex-wrap: wrap;
+    gap: 15px 0px;
+  }
+  .gl-services-header-row {
+    flex-direction: unset;
+    align-items: center;
+    gap: 10px;
+  }
+  .gl-services-cards-stack {
+    flex-direction: unset;
+    flex-wrap: wrap;
+  }
+  .gl-dashboard-layout.mini-sidebar .gl-service-status-card {
+    width: 48%;
+  }
+  /* .gl-dashboard-layout .gl-card-action-triggers-row {
+    flex-direction: unset;
+  }
+  .gl-dashboard-layout.mini-sidebar .gl-card-action-triggers-row {
+    flex-direction: column;
+  } */
+  .gl-service-status-card {
+    padding: 15px;
+  }
+  .gl-search-bar-modular-input {
+    max-width: 40%;
+  }
+  .gl-dashboard-layout.mini-sidebar .gl-modular-request-card {
+    width: 48.4%;
+  }
+  .gl-dashboard-layout.mini-sidebar .gl-cards-feed-stream-wrapper {
+    flex-direction: unset;
+    flex-wrap: wrap;
+  }
+  .sow-bottom-actions {
+    flex-direction: unset;
+  }
+  .sow-confirm-btn {
+    width: auto;
+  }
+  .sow-details-box {
+    padding: 22px;
+  }
+  .gl-sow-form-action-footer-row {
+    flex-direction: unset;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .gl-sow-form-action-footer-row button {
+    width: auto;
+  }
+  .sow-pay-footer-actions {
+    flex-direction: unset;
+    width: auto;
+  }
+  .sow-pay-submit-btn {
+    width: auto;
+  }
+  .sow-comp-footer-actions {
+    flex-direction: unset;
+    width: auto;
+    gap: 16px;
+  }
+  .sow-comp-next-btn {
+    width: auto;
+  }
+  .sow-fin-download-btn {
+    width: auto;
+  }
+  .ps-supp-course-card {
+    padding: 15px;
+  }
+  .ps-supp-main-wrapper
+    #pills-upcoming
+    .row.row-cols-1.row-cols-md-3.row-cols-lg-3.g-4
+    .col {
+    width: 50%;
+  }
+  .gl-community-toolbar-strip {
+    flex-direction: unset;
+    align-items: center;
+  }
+  .lsc-card-main-title {
+    font-size: 18px;
+  }
+  .lsc-card-img-wrapper {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+  .gl-rgc-main-header-row {
+    flex-direction: column;
+  }
+  .gl-rgc-filter-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gl-rgc-cards-grid-row {
+    grid-template-columns: 1fr;
+  }
+  .gl-dashboard-layout.mini-sidebar .gl-rgc-cards-grid-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gl-fund-top-navbar-strip {
+    flex-wrap: wrap;
+  }
+  .gl-fund-left-sidebar-card {
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .gl-fund-cards-three-column-grid-matrix {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .gl-dashboard-layout.mini-sidebar .gl-fund-cards-three-column-grid-matrix {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gl-form-fields-grid-matrix {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
+  .gl-address-form-card-container {
+    margin-bottom: 20px;
+  }
+  .gl-social-fields-grid-matrix {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
+  .gl-address-fields-grid-engine {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
+  .upc-profile-section {
+    flex-direction: unset;
+    align-items: center;
+    text-align: start;
+  }
+  .upc-info-wrapper {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .gl-brand-block button.gl-sidebar-mobile {
+    display: block;
+  }
+  .login-page-section {
+    height: auto;
+  }
+  .login-form-container {
+    padding: 0;
+  }
+  .forgot-page-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .otp-input-box {
+    width: 100%;
+    height: 48.41px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .gl-modal-feedback-title {
+    font-size: 28px;
+  }
+  .login-right-content {
+    width: 100%;
+    height: auto;
+  }
+  .login-form-group-wrp .d-flex {
+    flex-wrap: wrap;
+    gap: 0px !important;
+  }
+  .org-item-row {
+    padding: 10px 0;
+  }
+  .org-name-text {
+    font-size: 13px;
+  }
+  .gl-content-body {
+    padding: 20px;
+  }
+  .usr-dash-wrapper {
+    padding: 0px;
+  }
+  .gl-welcome-filter-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .custom-action-btn {
+    font-size: 13px;
+    padding: 10px;
+    justify-content: center;
+  }
+  .gl-header {
+    height: auto;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .gl-header-right {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .gl-header-icon {
+    margin-right: 0;
+  }
+  .gl-header-panel-title {
+    font-size: 13px;
+  }
+  .gl-header-left {
+    gap: 6px;
+  }
+  .gl-header-search-box {
+    display: block !important;
+    width: 38%;
+  }
+  button.gl-action-item {
+    order: 3;
+  }
+  button.gl-action-item.gl-notification-trigger {
+    order: 4;
+  }
+  #profileContainer {
+    margin-right: auto;
+    order: 2;
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .profile-dropdown {
+    left: 0;
+  }
+  .gl-notification-dropdown {
+    width: 280px;
+  }
+  .u-prof-ban-card {
+    padding: 15px;
+    gap: 10px;
+  }
+  .u-prof-ban-info-group {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .u-prof-ban-bottom {
+    gap: 8px;
+    flex-wrap: wrap;
+    flex-direction: unset;
+  }
+  .u-prof-ban-percentage {
+    width: 100%;
+    text-align: center;
+  }
+  .usr-dash-split-col {
+    padding: 15px;
+    gap: 10px;
+  }
+  .usr-dash-list-row {
+    padding: 15px;
+  }
+  .view-det-pending {
+    align-items: flex-start;
+  }
+  .usr-dash-list-row {
+    padding: 15px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .usr-dash-status-badge.warning {
+    margin-left: 0;
+  }
+  .usr-dash-event-card {
+    padding: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .usr-dash-col-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .gl-filter-actions-right-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .gl-dropdown-filter-box {
+    justify-content: center;
+  }
+  .gl-btn-add-request {
+    justify-content: center;
+  }
+  .gl-card-main-body-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .gl-card-action-triggers-row {
+    display: flex;
+    width: 100%;
+    margin-top: 4px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .gl-btn-solid-blue-action {
+    justify-content: center;
+  }
+  .gl-card-top-headline-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+  .gl-card-progress-tracking-engine .gl-progress-footer-stats {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .gl-pagination-navigation-tray {
+    flex-wrap: wrap;
+  }
+  .gl-pagination-left-info {
+    flex-wrap: wrap;
+  }
+  .gl-header-meta-titles {
+    width: 80%;
+  }
+  .gl-dashboard-main-title,
+  .gl-view-primary-title {
+    font-size: 20px;
+  }
+  .gl-dashboard-toolbar-strip.sp-bt {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .gl-header-utility-actions {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+  .gl-modular-request-card {
+    padding: 15px;
+  }
+  .gl-request-card-flex-node {
+    flex-direction: column;
+  }
+  .gl-card-title-header-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+  .gl-request-card-main-data-block .gl-card-action-triggers-row {
+    flex-wrap: wrap !important;
+    flex-direction: unset;
+  }
+  .gl-tooltip-floating-bubble-panel::after {
+    right: 50px;
+  }
+  .my-certificate-wrp {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .my-crs-module-status {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .gl-pagination-show-selector-block {
+    flex-wrap: wrap;
+  }
+  .gl-pagination-numeric-pills-flex {
+    flex-wrap: wrap;
+  }
+  .my-certificates-filter {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .filter-btn-grp {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  .filter-btn-grp .filter-dropdown-btn {
+    justify-content: center;
+  }
+  .custom-pagination {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .related-resources-wrp .related-resources-head {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+  .card-body-content {
+    padding: 15px;
+  }
+  .career-planning-head-right-in h1 {
+    font-size: 20px;
+    margin-left: 0 !important;
+  }
+  .career-planning-head-right small.text-muted.ms-4 {
+    margin-left: 0 !important;
+  }
+  .career-planning-head-right {
+    width: 85%;
+    padding-left: 10px;
+  }
+  .career-planning-wrp .d-flex.align-items-center.mb-4 {
+    justify-content: space-between;
+  }
+  .lesson-row {
+    border-radius: 30px;
+    padding: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .gl-quiz-action-footer-flex {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .gl-checkbox-text-string {
+    width: 80%;
+  }
+  .my-notes-wrp .col-md-3.col-12.text-end {
+    text-align: left !important;
+    margin-bottom: 15px;
+  }
+  .notes-card {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .srv-req-title-block {
+    width: 80%;
+  }
+  .srv-req-main-title {
+    font-size: 20px;
+  }
+  .srv-req-card {
+    padding: 10px;
+  }
+  .srv-req-tick-icon {
+    top: 10px;
+    right: 10px;
+  }
+  .gl-popup-header-row {
+    padding: 0;
+  }
+  .gl-popup-footer-action-row {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .gl-st-heading-text-box h2 {
+    font-size: 20px;
+  }
+  .gl-st-flex-switch-row {
+    flex-wrap: wrap;
+  }
+  .gl-popup-presets-bar {
+    flex-wrap: wrap;
+  }
+  .tm-time-widget-btn {
+    padding: 15px;
+    flex-wrap: wrap;
+  }
+  .table-responsive {
+    overflow: auto !important;
+  }
+  .sow-header-title-block {
+    width: 80%;
+  }
+  .sow-header-title {
+    font-size: 20px;
+  }
+  .sow-confirm-btn {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .sow-wait-title {
+    font-size: 20px;
+  }
+  .sow-wait-details-box {
+    padding: 20px;
+  }
+  .gl-header-titles-block {
+    width: 80%;
+  }
+  .gl-sow-main-title {
+    font-size: 20px;
+  }
+  .sow-heading-wrp {
+    flex-wrap: wrap;
+  }
+  .lsc-price-summary-row {
+    padding: 10px 0px;
+    flex-wrap: wrap;
+  }
+  .gl-sow-card-box {
+    padding: 15px;
+  }
+  .gl-chip-inner-text-label {
+    width: 90%;
+  }
+  .lorem-text-box {
+    width: 100%;
+  }
+  .sow-pay-title {
+    font-size: 20px;
+  }
+  .sow-pay-step-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sow-comp-title {
+    font-size: 20px;
+  }
+  .sow-comp-tracker-card {
+    padding: 20px;
+  }
+  .sow-comp-step-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sow-fin-step-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sow-fin-strip-row {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .header-title {
+    font-size: 20px;
+  }
+  .video-controls-bottom {
+    padding: 10px;
+  }
+  .mcq-overlay-btn {
+    top: 10px;
+    left: 10px;
+    padding: 4px;
+    font-size: 10px;
+  }
+  .video-controls-bottom .d-flex.justify-content-between.align-items-center {
+    flex-wrap: wrap;
+  }
+  .video-controls-bottom
+    .d-flex.justify-content-between.align-items-center
+    > * {
+    width: 100%;
+  }
+  .directional-nav-btns {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .directional-nav-btns button {
+    width: 100%;
+  }
+  .content-card-section {
+    padding: 15px;
+  }
+  .content-card-section.mb-4 .d-flex.gap-2.mb-3.align-items-center {
+    flex-wrap: wrap;
+  }
+  .bottom-info-alert-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .main-wrapper {
+    padding: 0;
+  }
+  .gl-events-master-container {
+    padding: 0px;
+  }
+  .gl-events-btn-registered-action {
+    width: auto;
+  }
+  .gl-event-card-body-content {
+    padding: 15px;
+  }
+  .gl-event-action-buttons-wrapper {
+    flex-wrap: wrap;
+  }
+  .gl-space-card-footer-action-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .gl-analytics-metric-cell {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .lsc-filter-tabs-row {
+    border-radius: 22px;
+  }
+  .lsc-filter-tabs-row button {
+    width: 100%;
+    justify-content: center;
+  }
+  .lsc-card-content-body {
+    padding: 15px;
+  }
+  .lsc-btn-reserve,
+  .lsc-btn-live,
+  .lsc-btn-confirmed,
+  .lsc-btn-cancel,
+  .lsc-btn-upgrade {
+    padding: 0.5rem 0.6rem;
+  }
+  .calendar-board-card {
+    padding: 15px;
+  }
+  .current-month-label {
+    font-size: 14px;
+    min-width: auto;
+  }
+  .nav-circle-arrow-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .title-block h1 {
+    font-size: 20px;
+  }
+  .modal-content {
+    padding: 15px;
+  }
+  .controls-filter-group button.custom-filter-dropdown {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .sat-modal-header-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .sat-inner-details-card {
+    padding: 15px;
+  }
+  .sat-meta-metrics-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .lsc-pagination-list {
+    flex-wrap: wrap;
+  }
+  .gl-page-primary-title {
+    font-size: 20px;
+  }
+  .gl-actions-buttons-cluster {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .gl-mentorship-pagination-footer-bar {
+    margin-bottom: 15px;
+  }
+  #joinGroupNetworkModal .modal-content {
+    padding: 15px !important;
+  }
+  .gl-network-main-title-bold {
+    font-size: 24px;
+  }
+  .gl-rgc-dropdowns-cluster {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .gl-rgc-dropdown-select {
+    width: 100%;
+  }
+  .gl-card-body-content {
+    padding: 15px;
+  }
+  .gl-toolkit-master-wrapper-view {
+    padding: 0;
+  }
+  .gl-toolkit-primary-title {
+    font-size: 20px;
+  }
+  .gl-toolkit-headline-group {
+    width: 80%;
+  }
+  .gl-toolkit-section-title-strip-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .gl-card-body-details-content {
+    padding: 15px;
+  }
+  .gl-toolkit-sidebar-body-padding {
+    padding: 15px;
+  }
+  .gl-toolkit-cta-horizontal-split-row {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .gl-toolkit-btn-cta-square-icon-only {
+    width: 100%;
+    font-size: 16px;
+  }
+  .gl-fund-primary-page-title {
+    font-size: 20px;
+  }
+  .gl-fund-heading-text-group {
+    width: 80%;
+  }
+  .gl-fund-sidebar-content-padding {
+    padding: 15px;
+  }
+  main.gl-fund-two-column-split-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .gl-fund-description-right-panel {
+    width: 100%;
+  }
+  .gl-fund-attachment-download-pill {
+    word-break: break-word;
+  }
+  .page-header {
+    flex-wrap: wrap;
+  }
+  .content-card-panel {
+    padding: 10px;
+  }
+  .accordion-custom .accordion-button {
+    padding: 12px;
+  }
+  .support-channel-card {
+    padding: 10px;
+  }
+  .ps-header-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .ps-header-right {
+    width: 100%;
+  }
+  .ps-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .gl-custom-nav-pills {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .gl-custom-nav-pills li button {
+    margin: 0px;
+  }
+  .gl-section-main-heading,
+  .gl-section-main-title,
+  .gl-panel-main-heading {
+    font-size: 16px;
+  }
+  .gl-item-details-metadata {
+    padding-right: 0;
+  }
+  .gl-section-main-title {
+    font-size: 16px;
+  }
+  #addQualificationModal .modal-content,
+  #addCertificationModal .modal-content {
+    padding: 12px !important;
+  }
+  .gl-form-action-footer-row {
+    flex-wrap: wrap;
+  }
+  #deactivateAccountModal {
+    align-items: flex-start;
+  }
+  #deactivateAccountModal .modal-content {
+    padding: 12px !important;
+  }
+  #deactivateAccountModal .modal-dialog.modal-dialog-centered {
+    transform: scale(0.9) !important;
+  }
+  .gl-workshop-header-title {
+    font-size: 18px;
+  }
+  .btn-close.sucfull-close {
+    top: -70px;
+    right: -15px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+  }
+  #careerWorkshopDetailsModal .modal-body {
+    padding: 15px;
+  }
+  #registrationSuccessModal .modal-content {
+    padding: 15px !important;
+  }
+  .gl-success-main-title-bold {
+    font-size: 26px;
+  }
+  .gl-success-event-details-panel {
+    padding: 20px;
+  }
+  .gl-success-action-footer {
+    flex-wrap: wrap;
+  }
+  .gl-premium-alert-banner-box {
+    flex-wrap: wrap;
+  }
+  button.gl-btn-solid-amber-action {
+    padding: 10px 25px;
+  }
+  #confirmLogoutModal .modal-content {
+    padding: 15px !important;
+  }
+  #confirmLogoutModal .modal-dialog {
+    margin: 0 auto;
+  }
+  .usr-dash-text-muted img {
+    width: 20px;
+  }
+  .my-certificates-filter .d-flex.filter-btn-grp {
+    width: 100%;
+  }
+  .d-flex.justify-content-between.align-items-center.flex-wrap.gap-3.border-top.pt-4
+    .d-flex.align-items-center.gap-2.small.text-muted {
+    flex-wrap: wrap;
+  }
+  .my-crs-card-body {
+    padding: 20px;
+  }
+  .ps-supp-title-main {
+    font-size: 20px;
+  }
+  .ps-supp-capsule-tabs-row {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 22px;
+  }
+  .ps-supp-capsule-tabs-row li button {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .ps-card-section-wrapper {
+    padding: 10px;
+  }
+  .ps-card-container {
+    padding: 20px;
+  }
+  .gl-workshop-banner-hero-container {
+    height: auto;
+  }
+  .gl-sidebar-meta-list-items {
+    gap: 5px;
+  }
+  .page-header p {
+    margin-bottom: 10px;
+  }
+  table.table.gl-popup-table {
+    min-width: max-content;
+  }
+  .usr-dash-event-card .usr-dash-event-info {
+    width: 70%;
+    flex: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .login-page-section {
+    height: 100vh;
+  }
+  .login-right-content {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+  }
+  .login-left-banner-overlay {
+    padding: 30px;
+  }
+  .login-overlay-title {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+  .login-form-title {
+    font-size: 38px;
+  }
+  .login-header-wrapper {
+    margin-bottom: 100px;
+  }
+  .otp-input-box {
+    width: 55px;
+    height: 55px;
+  }
+  .gl-welcome-banner {
+    flex-wrap: wrap;
+  }
+  .gl-dashboard-layout .usr-dash-quick-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gl-dashboard-layout .usr-dash-split-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .usr-dash-courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .usr-dash-course-body {
+    padding: 15px;
+  }
+  .gl-dashboard-layout .my-crs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gl-search-input-wrapper {
+    max-width: 250px;
+  }
+  .gl-card-main-body-layout {
+    flex-direction: unset;
+  }
+  .gl-card-action-triggers-row {
+    flex-direction: unset;
+  }
+  .gl-rgc-main-header-row {
+    flex-direction: unset;
+  }
+  .gl-rgc-title-block {
+    width: 70%;
+  }
+  .gl-rgc-filter-toolbar {
+    flex-direction: unset;
+    align-items: flex-start;
+  }
+  .gl-rgc-search-wrapper {
+    max-width: 250px;
+  }
+  .gl-dashboard-layout.mini-sidebar .gl-rgc-cards-grid-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gl-dashboard-layout .gl-rgc-cards-grid-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gl-dashboard-layout .related-resources-wrp .row.g-4 .col-lg-4.col-md-6 {
+    width: 50%;
+  }
+  .related-resources-wrp .related-resources-head {
+    flex-direction: unset;
+  }
+  .gl-dashboard-layout .my-crs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gl-dashboard-layout.mini-sidebar .my-crs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .career-planning-wrp .d-flex.align-items-center.mb-4 {
+    justify-content: space-between;
+  }
+  .career-planning-head-right {
+    width: 100%;
+  }
+  .my-notes-wrp .row.g-3.mb-5 .col-lg-3.col-md-6:first-child {
+    width: auto;
+    margin-right: auto;
+  }
+  .my-notes-wrp .row.g-3.mb-5 .col-lg-3.col-md-6 {
+    width: 22.9%;
+  }
+  .directional-nav-btns button {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .gl-header-search-box {
+    width: 60%;
+  }
+  .usr-dash-event-card .usr-dash-event-info {
+    width: auto;
+  }
+  .my-certificate-wrp a,
+  .my-certificate-wrp button {
+    width: 48.8%;
+  }
+  .custom-progress-container {
+    width: 100%;
+    margin: 0 !important;
+  }
+  .video-controls-bottom .d-flex.justify-content-between.align-items-center {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+  .directional-nav-btns {
+    flex-wrap: nowrap;
+  }
+  .gl-header-utility-actions {
+    flex-direction: unset;
+  }
+  .gl-chip-selection-label-item {
+    width: 100%;
+  }
+  .ps-supp-capsule-tabs-row {
+    flex-direction: unset;
+  }
+  .ps-supp-capsule-tabs-row li.nav-item {
+    width: 50%;
+  }
+  .controls-filter-group .search-input-wrapper {
+    width: 100%;
+  }
+  .controls-filter-group button.custom-filter-dropdown {
+    width: 48%;
+  }
+  .controls-filter-group button.blue-square-icon-btn {
+    width: 42px;
+  }
+  .lsc-filter-tabs-row button {
+    width: 49%;
+  }
+  .gl-rgc-dropdown-select {
+    width: 40%;
+    flex: auto;
+  }
+  .gl-rgc-dropdowns-cluster {
+    align-items: flex-start;
+    flex-direction: unset;
+  }
+  .gl-custom-nav-pills {
+    flex-direction: unset;
+    flex-wrap: wrap;
+    li {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 479px) {
+  .gl-header-search-box {
+    width: 46%;
+  }
+}
