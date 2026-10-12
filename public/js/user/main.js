@@ -743,19 +743,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         // header drop down uaser profile
-        const profileContainer = document.getElementById('profileContainer');
-        const profileTrigger = document.getElementById('profileTrigger');
+        // const profileContainer = document.getElementById('profileContainer');
+        // const profileTrigger = document.getElementById('profileTrigger');
 
-        // Click karne par open/close toggle hoga
-        profileTrigger.addEventListener('click', (e) => {
-            profileContainer.classList.toggle('active');
-            e.stopPropagation(); // Window click event ko trigger hone se rokne ke liye
-        });
+        // // Click karne par open/close toggle hoga
+        // profileTrigger.addEventListener('click', (e) => {
+        //     profileContainer.classList.toggle('active');
+        //     e.stopPropagation(); // Window click event ko trigger hone se rokne ke liye
+        // });
 
-        // Agar dropdown ke bahar kahi bhi click ho, to menu close ho jaye
-        window.addEventListener('click', () => {
-            if (profileContainer.classList.contains('active')) {
-                profileContainer.classList.remove('active');
-            }
-        });
+        // // Agar dropdown ke bahar kahi bhi click ho, to menu close ho jaye
+        // window.addEventListener('click', () => {
+        //     if (profileContainer.classList.contains('active')) {
+        //         profileContainer.classList.remove('active');
+        //     }
+        // });
+
+        // Profile Dropdown
+
+          // document.addEventListener("click", function (event) {
+          //   const profileTrigger = event.target.closest("#profileTrigger");
+          //   const profileContainer = document.getElementById("profileContainer");
+
+          //   if (!profileContainer) return;
+
+          //   // Profile button click
+          //   if (profileTrigger) {
+          //     event.stopPropagation();
+          //     profileContainer.classList.toggle("active");
+          //     return;
+          //   }
+
+          //   // Dropdown ke andar click
+          //   if (event.target.closest(".profile-dropdown")) {
+          //     event.stopPropagation();
+          //     return;
+          //   }
+
+          //   // Dropdown ke bahar click
+          //   profileContainer.classList.remove("active");
+          // });
+
+// Profile Dropdown
         // header drop down uaser profile
