@@ -1,0 +1,9692 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+/* ==========================================================================
+   GRANTLINK CUSTOM WELCOME BANNER COMPONENT STYLES
+   ========================================================================== */
+.gl-welcome-banner {
+  background-color: var(--gl-primary-blue, #007cb0);
+  border-radius: 14px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 12px rgba(0, 124, 176, 0.15);
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+/* --- Left Side Typography Customizations --- */
+.gl-welcome-message-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gl-welcome-user-heading {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gl-waving-emoji {
+  font-style: normal;
+  display: inline-block;
+}
+
+.gl-welcome-subtext {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13.5px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* --- Right Side Dropdown Architecture --- */
+.gl-welcome-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gl-banner-dropdown-btn {
+  background-color: #ffffff !important;
+  color: #1a202c !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding: 9px 18px !important;
+  border-radius: 10px !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 135px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+.gl-banner-dropdown-btn:hover {
+  background-color: #f8fafc !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+.gl-banner-dropdown-btn:focus,
+.gl-banner-dropdown-btn:active {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Custom alignment for bootstrap triangle arrow icon */
+.gl-banner-dropdown-btn::after {
+  margin-left: 10px;
+  border-top: 0.3em solid #007cb0;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES FOR BANNER COMPONENT
+   ========================================================================== */
+@media (max-width: 991px) {
+  .gl-welcome-banner {
+    padding: 20px;
+  }
+
+  .gl-welcome-user-heading {
+    font-size: 19px;
+  }
+
+  .gl-welcome-subtext {
+    font-size: 12.5px;
+  }
+
+  .gl-banner-dropdown-btn {
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  .gl-welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .gl-welcome-filter-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .gl-banner-dropdown-btn {
+    width: 100% !important;
+    min-width: unset;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   GRANTLINK CUSTOM WELCOME BANNER COMPONENT STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   GRANTLINK FULL DASHBOARD PANELS SCALING STYLES
+   ========================================================================== */
+
+/* --- 1. Welcome Banner Styles (image_a5d06b.png) --- */
+.gl-welcome-banner {
+  background-color: #007cb0;
+  border-radius: 14px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.gl-welcome-user-heading {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.gl-welcome-subtext {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13.5px;
+  margin: 0;
+}
+
+.gl-welcome-filter-group {
+  display: flex;
+  gap: 12px;
+}
+
+.gl-banner-dropdown-btn {
+  background-color: #ffffff !important;
+  color: #2d3748 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  min-width: 135px;
+}
+
+.gl-banner-dropdown-btn::after {
+  border-top-color: #007cb0;
+  margin-left: 10px;
+}
+
+/* --- 2. Top Nav Custom Pills Strip --- */
+.gl-custom-nav-pills {
+  /* background-color: #0076a5; */
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+  padding: 6px;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.gl-custom-nav-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.gl-custom-nav-pills .nav-item {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.gl-custom-nav-pills .nav-link {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13.5px;
+  padding: 10px 14px;
+  margin: 0;
+  white-space: nowrap;
+  border-radius: 30px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.gl-custom-nav-pills .nav-link:hover {
+  background: none;
+  color: #fff;
+}
+
+.gl-custom-nav-pills .nav-link.active {
+  background-color: #ffffff !important;
+  color: #007cb0 !important;
+  font-weight: 600 !important;
+}
+
+.gl-custom-tab-content-wrapper {
+  margin-top: 24px;
+}
+
+/* --- 3. Metric Value Grid Cards --- */
+.gl-metric-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #eef2f6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.gl-metric-card.primary-accent-border.active {
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+}
+
+.gl-metric-card.primary-accent-border.active .gl-card-meta span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.gl-metric-card.primary-accent-border.active .gl-metric-number {
+  font-size: 34px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px 0;
+}
+
+.gl-metric-card.primary-accent-border.active span.gl-metric-trend.trend-up {
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.gl-metric-card.primary-accent-border.active .gl-icon-badge.blue-bg {
+  background-color: #ffffff;
+}
+
+.gl-card-meta span {
+  font-size: 16px;
+  font-weight: 500;
+  /* color: #0000003; */
+}
+
+.gl-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #000003;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.gl-icon-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.gl-icon-badge.blue-bg {
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+}
+
+.gl-icon-badge.blue-bg.active {
+  background: #fff;
+}
+
+.gl-icon-badge.light-blue-bg {
+  background-color: #f0fdf4;
+  color: #15803d;
+}
+
+.super-user-dash-head .col {
+  padding: 0;
+}
+
+.super-user-dash-head .col + .col {
+  /* position: relative;
+  left: -15px; */
+  margin-left: -15px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.gl-metric-number {
+  font-size: 34px;
+  font-weight: 500;
+  color: #000000;
+  margin: 0 0 4px 0;
+}
+
+.gl-metric-trend {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+}
+
+/* --- 4. Lens Multi-Category Blocks --- */
+.gl-lens-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #eef2f6;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.gl-lens-header {
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 15px;
+}
+
+.sl-tint {
+  background-color: #e6f4fa;
+  color: #3b82f6;
+}
+
+.cl-tint {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.cml-tint {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+}
+
+.gl-lens-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gl-lens-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1px solid #f8fafc;
+  font-size: 13px;
+  color: #4a5568;
+}
+
+.gl-lens-list li:last-child {
+  border-bottom: 0;
+}
+
+.gl-lens-list li strong {
+  color: #1a202c;
+  font-weight: 600;
+}
+
+/* --- 5. Custom Panel Core Structs --- */
+.gl-data-panel {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #eef2f6;
+  padding: 20px;
+  width: 100%;
+}
+
+.gl-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.gl-panel-header h5 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.gl-panel-link {
+  font-size: 12.5px;
+  color: #007cb0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gl-panel-link i {
+  font-size: 11px;
+  margin-left: 2px;
+}
+
+/* --- 6. User List Item Metrics --- */
+.gl-user-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #f7fafc;
+}
+
+.gl-avatar-sq img {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.gl-user-list-item h6 {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 2px 0;
+}
+
+.fs-small {
+  font-size: 12px !important;
+}
+
+.block-item {
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Status Badges Styling */
+.gl-status-badge {
+  padding: 6px 12px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  border-radius: 20px !important;
+}
+
+.gl-data-panel .badge-active {
+  background-color: #e6f4fa;
+  color: #16a34a;
+  border: 1px solid #16a34a;
+  background-color: #dcf1e4;
+}
+
+.badge-pending {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.badge-progress {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.badge-inactive {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* --- 7. Table Framework Structures --- */
+.gl-custom-data-table thead th {
+  background-color: #004b6e;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 12px;
+  border: 0;
+}
+
+.gl-custom-data-table tbody td {
+  padding: 12px;
+  font-size: 13px;
+  color: #4a5568;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.gl-btn-view {
+  background-color: #007cb0 !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  padding: 5px 12px !important;
+  border-radius: 6px !important;
+}
+
+/* --- 8. ROI Outcomes Elements --- */
+.gl-roi-subcard {
+  background-color: #f8fafc;
+  padding: 14px 18px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.gl-roi-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+
+  border-radius: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 991px) {
+  .gl-welcome-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .gl-welcome-filter-group {
+    width: 100%;
+  }
+
+  .gl-welcome-filter-group .dropdown,
+  .gl-banner-dropdown-btn {
+    width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   GRANTLINK FULL DASHBOARD PANELS SCALING STYLES
+   ========================================================================== */
+
+/* ==========================================================================
+   GRANTLINK COMPLETELY CUSTOM MATRIX ARCHITECTURE (ZERO FRAMEWORK CONFLICT)
+   ========================================================================== */
+
+.gl-services-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gl-services-container *,
+.gl-services-container *::before,
+.gl-services-container *::after {
+  box-sizing: border-box;
+}
+
+/* --- Custom Grid System (5 Columns Fluid Layout) --- */
+.gl-grid-row-5 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.gl-grid-row-5 .gl-custom-card {
+  flex: 1;
+  min-width: 200px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  transition: transform 0.2s ease;
+  margin-left: -20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.gl-custom-card.gl-theme-bg-active .gl-circle-badge.gl-badge-white-op {
+  background: #fff;
+}
+
+.gl-circle-badge.gl-badge-blue-tint {
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+}
+
+/* Selected Active Primary State For Card 1 */
+.gl-theme-bg-active {
+  background-color: #007cb0 !important;
+  border-color: #007cb0 !important;
+}
+
+.gl-card-meta-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.gl-circle-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.gl-badge-blue-tint {
+  background-color: #e6f4fa;
+  color: #007cb0;
+}
+
+.gl-badge-white-op {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.gl-meta-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.gl-theme-bg-active .gl-meta-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.gl-card-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 4px 0;
+}
+
+.gl-theme-bg-active .gl-card-number {
+  color: #ffffff;
+}
+
+.gl-card-status-label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.gl-color-muted {
+  color: #718096;
+}
+
+.gl-text-op {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.gl-custom-filter-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.gl-filter-pill-btn {
+  background-color: #e2e8f0;
+  border: none;
+  color: #4a5568;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gl-filter-pill-btn.gl-pill-active,
+.gl-filter-pill-btn:hover {
+  background-color: #007cb0;
+  color: #ffffff;
+}
+
+.gl-has-arrow::after {
+  content: "▼";
+  font-size: 9px;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.gl-custom-panel-box {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.gl-panel-flex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #edf2f7;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-panel-flex-header.no-border {
+  border-bottom: 0;
+  margin-bottom: 8px;
+}
+
+.gl-panel-heading-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.gl-panel-heading-title i {
+  color: #007cb0;
+  margin-right: 6px;
+}
+
+.gl-panel-action-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gl-custom-search-field {
+  position: relative;
+}
+
+.gl-custom-search-field img {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 13px;
+}
+
+.gl-custom-search-field input {
+  height: 36px;
+  width: 220px;
+  padding: 0 12px 0 36px;
+  font-size: 13px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  outline: none;
+}
+
+.gl-ctrl-dropdown-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #4a5568;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+select.md-native-select {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #4a5568;
+  border-radius: 6px;
+}
+
+.gl-table-responsive-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.gl-vanilla-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.gl-vanilla-table thead th {
+  background-color: #004b6e;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 14px 16px;
+}
+
+.gl-vanilla-table tbody td {
+  padding: 14px 16px;
+  font-size: 13.5px;
+  color: #4a5568;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.gl-text-bold {
+  font-weight: 500;
+  color: #1a202c;
+}
+
+.gl-text-dark {
+  color: #1a202c;
+}
+
+.gl-table-user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-table-user-cell img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.gl-table-link {
+  color: #007cb0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gl-table-link:hover {
+  text-decoration: underline;
+}
+
+.gl-action-btn-primary {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+}
+
+.gl-action-btn-disabled {
+  background-color: #f7fafc;
+  color: #a0aec0;
+  border: 1px solid #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  width: 100%;
+  cursor: not-allowed;
+}
+
+.gl-pill-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.gl-badge-danger {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.gl-badge-warning {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.gl-badge-info {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.gl-panel-side-link {
+  font-size: 13px;
+  color: #007cb0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gl-custom-session-strip {
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 16px;
+}
+
+.gl-custom-session-strip:last-child {
+  margin-bottom: 0;
+}
+
+.gl-strip-date-block {
+  background-color: #f0f7fa;
+  border-radius: 8px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gl-month-lbl {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #007cb0;
+  font-weight: 600;
+}
+
+.gl-day-lbl {
+  font-size: 18px;
+  font-weight: 700;
+  color: #004b6e;
+  line-height: 1.1;
+}
+
+.gl-strip-details {
+  flex: 1;
+}
+
+.gl-session-headline {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 4px 0;
+}
+
+.gl-session-sub-meta {
+  font-size: 12.5px;
+  color: #718096;
+}
+
+.gl-spacer-left {
+  margin-left: 16px;
+}
+
+.gl-strip-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gl-view-details-lnk {
+  font-size: 13px;
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gl-join-session-btn {
+  background-color: #006b99;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT ENGINE (RESPONSIVE MATH WITHOUT FRAMEWORKS)
+   ========================================================================== */
+@media (max-width: 991px) {
+  .gl-panel-flex-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gl-panel-action-controls {
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .gl-custom-search-field {
+    flex: 1;
+  }
+
+  .gl-custom-search-field input {
+    width: 100%;
+  }
+
+  .gl-custom-session-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gl-strip-actions {
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 12px;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 575px) {
+  .gl-grid-row-5 .gl-custom-card {
+    flex: 1 1 100%;
+  }
+}
+
+.gl-grid-row-2 {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.gl-grid-row-2 .gl-custom-panel-box.no-margin {
+  flex: 1;
+  margin-bottom: 0;
+  min-width: 320px;
+}
+
+.gl-teacher-status-card {
+  border: 1px solid #edf2f7;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  background: #ffffff;
+}
+
+.gl-teacher-status-card:last-child {
+  margin-bottom: 0;
+}
+
+.gl-teacher-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.gl-teacher-details {
+  flex: 1;
+}
+
+.gl-teacher-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0 0 6px 0;
+}
+
+.gl-teacher-meta-info {
+  font-size: 13px;
+  color: #718096;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gl-teacher-meta-info i {
+  color: #007cb0;
+}
+
+.gl-status-pill {
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.gl-status-pending {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.gl-status-progress {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+@media (max-width: 768px) {
+  .gl-grid-row-2 {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   GRANTLINK CUSTOM ARCHITECTURE: COURSES PANEL EXCLUSIVE ENGINE
+   ========================================================================== */
+
+.gl-courses-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gl-courses-wrapper *,
+.gl-courses-wrapper *::before,
+.gl-courses-wrapper *::after {
+  box-sizing: border-box;
+}
+
+.gl-courses-metrics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.gl-courses-metrics-grid .gl-course-meta-card {
+  flex: 1;
+  min-width: 220px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  transition: transform 0.2s ease;
+  margin-left: -20px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.gl-course-card-active {
+  background-color: #007cb0 !important;
+  border-color: #007cb0 !important;
+}
+
+.gl-course-meta-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.gl-course-badge-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.gl-badge-blue-soft {
+  background-color: #e6f4fa;
+  color: #007cb0;
+}
+
+.gl-badge-white-trans {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.gl-course-lbl {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.gl-course-card-active .gl-course-lbl {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.gl-course-number {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+}
+
+.gl-course-card-active .gl-course-number {
+  color: #ffffff;
+}
+
+.gl-course-status-lbl {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.gl-text-muted-dark {
+  color: #718096;
+}
+
+.gl-text-transparent-white {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Section 2: Layout Action Control Bar --- */
+.gl-courses-control-action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-course-search-field-wrapper {
+  position: relative;
+}
+
+.gl-course-search-field-wrapper img {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.gl-course-search-field-wrapper input {
+  height: 42px;
+  width: 280px;
+  padding: 0 14px 0 40px;
+  font-size: 13.5px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.gl-course-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gl-course-select-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 0 16px;
+  height: 42px;
+  font-size: 13.5px;
+  color: #1a202c;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-course-square-layout-btn {
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+  color: #ffffff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.gl-course-table-panel {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.gl-course-responsive-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.gl-course-vanilla-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.gl-course-vanilla-table thead th {
+  background-color: #004b6e;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 16px;
+  text-transform: none;
+  letter-spacing: 0.3px;
+}
+
+.gl-course-vanilla-table tbody td {
+  padding: 16px;
+  font-size: 14px;
+  color: #4a5568;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.gl-course-title-bold {
+  font-weight: 500;
+  color: #1a202c;
+}
+
+/* Inline Data Items Styles */
+.gl-course-user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-course-user-cell img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.gl-course-inline-link {
+  color: #007cb0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gl-course-inline-link:hover {
+  text-decoration: underline;
+}
+
+/* Type Pill Badges System */
+.gl-course-tag-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.gl-tag-popular {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.gl-tag-recent {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+/* --- Section 4: Horizontal Progress Tracker Line --- */
+.gl-course-table-progress-container {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  position: relative;
+}
+
+.gl-course-table-progress-bar {
+  height: 100%;
+  background-color: #007cb0;
+  transition: width 0.3s ease;
+}
+
+/* --- Section 5: Pagination Controller Panel Footer --- */
+.gl-course-footer-pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-pagination-left-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  color: #4a5568;
+}
+
+.gl-pagination-select-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gl-pagination-native-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 6px 30px 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  color: #1a202c;
+}
+
+.gl-pagination-select-container img {
+  position: absolute;
+  right: 10px;
+  font-size: 10px;
+  color: #718096;
+  pointer-events: none;
+}
+
+.gl-pagination-counter-lbl {
+  margin-left: 8px;
+  color: #718096;
+}
+
+/* Pagination Lists Block */
+.gl-pagination-nav-buttons-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gl-page-num-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #4a5568;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.gl-page-num-btn.gl-page-active,
+.gl-page-num-btn:hover:not([disabled]) {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+}
+
+.gl-page-dots-break {
+  color: #a0aec0;
+  padding: 0 4px;
+  font-size: 13px;
+}
+
+.gl-page-step-btn {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0 14px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #a0aec0;
+  cursor: not-allowed;
+  font-weight: 500;
+}
+
+.gl-page-step-btn.gl-page-step-next {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   COURSES MEDIA QUERY SCREEN RESPONSIVE ENGINE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .gl-courses-control-action-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gl-course-search-field-wrapper {
+    width: 100%;
+  }
+
+  .gl-course-search-field-wrapper input {
+    width: 100%;
+  }
+
+  .gl-course-actions-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gl-course-dropdown-box {
+    flex: 1;
+  }
+
+  .gl-course-select-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gl-course-footer-pagination-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   GRANTLINK EXCLUSIVE USER MANAGEMENT ENGINE (ANTI-CONFLICT ARCHITECTURE)
+   ========================================================================== */
+
+.gl-usermgmt-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gl-usermgmt-wrapper *,
+.gl-usermgmt-wrapper *::before,
+.gl-usermgmt-wrapper *::after {
+  box-sizing: border-box;
+}
+
+/* --- 5 Columns Fluid Rows Architecture --- */
+.gl-um-metrics-grid-5 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.gl-um-metrics-grid-5 .gl-um-card {
+  flex: 1;
+  min-width: 190px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  transition: transform 0.2s ease;
+}
+
+/* Isolated Isolated Active State Specifier for Card 1 */
+.gl-um-card-active {
+  background-color: #007cb0 !important;
+  border-color: #007cb0 !important;
+}
+
+.gl-um-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.gl-um-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.gl-um-icon-blue-tint {
+  background-color: #e6f4fa;
+  color: #007cb0;
+}
+
+.gl-um-icon-white-op {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.gl-um-card-label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.gl-um-card-active .gl-um-card-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.gl-um-card-number {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+}
+
+.gl-um-card-active .gl-um-card-number {
+  color: #ffffff;
+}
+
+.gl-um-card-subtext {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.gl-um-text-muted {
+  color: #718096;
+}
+
+.gl-um-text-op-white {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Filter & Searching Custom Block --- */
+.gl-um-action-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-um-search-container {
+  position: relative;
+}
+
+.gl-um-search-container img {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.gl-um-search-container input {
+  height: 42px;
+  width: 280px;
+  padding: 0 14px 0 40px;
+  font-size: 13.5px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.gl-um-controls-group-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gl-um-select-trigger {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 0 16px;
+  height: 42px;
+  font-size: 13.5px;
+  color: #1a202c;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-um-layout-calendar-btn {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* --- Dedicated Framework-Less Data Table System --- */
+.gl-um-table-panel-box {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.gl-um-responsive-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.gl-um-custom-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.gl-um-custom-data-table thead th {
+  background-color: #004b6e;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 16px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.gl-um-custom-data-table tbody td {
+  padding: 16px;
+  font-size: 14px;
+  color: #4a5568;
+  border-bottom: 1px solid #edf2f7;
+  white-space: nowrap;
+}
+
+.gl-um-text-dark-weight {
+  font-weight: 500;
+  color: #1a202c;
+}
+
+/* In-Row Elements Setup */
+.gl-um-user-cell-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-um-user-cell-box img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.gl-um-table-profile-link {
+  color: #007cb0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gl-um-table-profile-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Horizontal Line Feed Progress Metric --- */
+.gl-um-table-bottom-indicator-track {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  position: relative;
+}
+
+.gl-um-table-indicator-fill {
+  height: 100%;
+  background-color: #007cb0;
+  transition: width 0.3s ease;
+}
+
+/* --- Scope Segregated Pagination Controls --- */
+.gl-um-footer-pagination-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-um-pag-left-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  color: #4a5568;
+}
+
+.gl-um-pag-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gl-um-pag-native-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 6px 30px 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  color: #1a202c;
+}
+
+.gl-um-pag-select-wrapper img {
+  position: absolute;
+  right: 10px;
+  font-size: 10px;
+  color: #718096;
+  pointer-events: none;
+}
+
+.gl-um-pag-counter-label {
+  margin-left: 8px;
+  color: #718096;
+}
+
+/* Row Numbers Listing Matrix */
+.gl-um-pag-right-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gl-um-num-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #4a5568;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.gl-um-num-btn.gl-um-page-active,
+.gl-um-num-btn:hover:not([disabled]) {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+}
+
+.gl-um-dots-separator {
+  color: #a0aec0;
+  padding: 0 4px;
+  font-size: 13px;
+}
+
+.gl-um-step-btn {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0 14px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #a0aec0;
+  cursor: not-allowed;
+  font-weight: 500;
+}
+
+.gl-um-step-btn.gl-um-step-btn-active {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   USER MANAGEMENT MEDIA MEDIA CONTROLS OVERRIDES
+   ========================================================================== */
+@media (max-width: 991px) {
+  .gl-um-metrics-grid-5 .gl-um-card {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .gl-um-action-filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gl-um-search-container {
+    width: 100%;
+  }
+
+  .gl-um-search-container input {
+    width: 100%;
+  }
+
+  .gl-um-controls-group-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gl-um-dropdown-box {
+    flex: 1;
+  }
+
+  .gl-um-select-trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gl-um-footer-pagination-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gl-um-metrics-grid-5 .gl-um-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ==========================================================================
+   GRANTLINK EXCLUSIVE USER MANAGEMENT ENGINE (ANTI-CONFLICT ARCHITECTURE)
+   ========================================================================== */
+
+.gl-usermgmt-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gl-usermgmt-wrapper *,
+.gl-usermgmt-wrapper *::before,
+.gl-usermgmt-wrapper *::after {
+  box-sizing: border-box;
+}
+
+/* --- 5 Columns Fluid Rows Architecture --- */
+.gl-um-metrics-grid-5 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.gl-um-metrics-grid-5 .gl-um-card {
+  flex: 1;
+  min-width: 190px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  transition: transform 0.2s ease;
+}
+
+.gl-um-card-active {
+  background-color: #007cb0 !important;
+  border-color: #007cb0 !important;
+}
+
+.gl-um-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.gl-um-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.gl-um-icon-blue-tint {
+  background-color: #e6f4fa;
+  color: #007cb0;
+}
+
+.gl-um-icon-white-op {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.gl-um-card-label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.gl-um-card-active .gl-um-card-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.gl-um-card-number {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+}
+
+.gl-um-card-active .gl-um-card-number {
+  color: #ffffff;
+}
+
+.gl-um-card-subtext {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.gl-um-text-muted {
+  color: #718096;
+}
+
+.gl-um-text-op-white {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Filter & Searching Custom Block --- */
+.gl-um-action-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-um-search-container {
+  position: relative;
+}
+
+.gl-um-search-container i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.gl-um-search-container input {
+  height: 42px;
+  width: 280px;
+  padding: 0 14px 0 40px;
+  font-size: 13.5px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.gl-um-controls-group-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gl-um-select-trigger {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 0 16px;
+  height: 42px;
+  font-size: 13.5px;
+  color: #1a202c;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-um-layout-calendar-btn {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* --- Dedicated Framework-Less Data Table System --- */
+.gl-um-table-panel-box {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.gl-um-responsive-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.gl-um-custom-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.gl-um-custom-data-table thead th {
+  background-color: #004b6e;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 16px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.gl-um-custom-data-table tbody td {
+  padding: 16px;
+  font-size: 14px;
+  color: #4a5568;
+  border-bottom: 1px solid #edf2f7;
+  white-space: nowrap;
+}
+
+.gl-um-text-dark-weight {
+  font-weight: 500;
+  color: #1a202c;
+}
+
+/* In-Row Elements Setup */
+.gl-um-user-cell-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-um-user-cell-box img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.gl-um-table-profile-link {
+  color: #007cb0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gl-um-table-profile-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Horizontal Line Feed Progress Metric --- */
+.gl-um-table-bottom-indicator-track {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  position: relative;
+}
+
+.gl-um-table-indicator-fill {
+  height: 100%;
+  background-color: #007cb0;
+  transition: width 0.3s ease;
+}
+
+/* --- Scope Segregated Pagination Controls --- */
+.gl-um-footer-pagination-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-um-pag-left-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  color: #4a5568;
+}
+
+.gl-um-pag-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gl-um-pag-native-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 6px 30px 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  color: #1a202c;
+}
+
+.gl-um-pag-select-wrapper i {
+  position: absolute;
+  right: 10px;
+  font-size: 10px;
+  color: #718096;
+  pointer-events: none;
+}
+
+.gl-um-pag-counter-label {
+  margin-left: 8px;
+  color: #718096;
+}
+
+/* Row Numbers Listing Matrix */
+.gl-um-pag-right-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gl-um-num-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #4a5568;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.gl-um-num-btn.gl-um-page-active,
+.gl-um-num-btn:hover:not([disabled]) {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+}
+
+.gl-um-dots-separator {
+  color: #a0aec0;
+  padding: 0 4px;
+  font-size: 13px;
+}
+
+.gl-um-step-btn {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0 14px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #a0aec0;
+  cursor: not-allowed;
+  font-weight: 500;
+}
+
+.gl-um-step-btn.gl-um-step-btn-active {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   USER MANAGEMENT MEDIA MEDIA CONTROLS OVERRIDES
+   ========================================================================== */
+@media (max-width: 991px) {
+  .gl-um-metrics-grid-5 .gl-um-card {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .gl-um-action-filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gl-um-search-container {
+    width: 100%;
+  }
+
+  .gl-um-search-container input {
+    width: 100%;
+  }
+
+  .gl-um-controls-group-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gl-um-dropdown-box {
+    flex: 1;
+  }
+
+  .gl-um-select-trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gl-um-footer-pagination-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gl-um-metrics-grid-5 .gl-um-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ==========================================================================
+   GRANTLINK EXCLUSIVE EVENTS & SESSIONS ENGINE (ANTI-CONFLICT ARCHITECTURE)
+   ========================================================================== */
+
+.gl-events-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gl-events-wrapper *,
+.gl-events-wrapper *::before,
+.gl-events-wrapper *::after {
+  box-sizing: border-box;
+}
+
+/* --- 6 Columns Fluid Rows Architecture --- */
+.gl-ev-metrics-grid-6 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.gl-ev-metrics-grid-6 .gl-ev-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+  transition: transform 0.2s ease;
+}
+
+/* Isolated Active State Specifier for Card 1 */
+.gl-ev-card-active {
+  background-color: #007cb0 !important;
+  border-color: #007cb0 !important;
+}
+
+.gl-ev-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.gl-ev-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.gl-ev-icon-blue-tint {
+  background-color: #e6f4fa;
+  color: #007cb0;
+}
+
+.gl-ev-icon-white-op {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.gl-ev-card-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a5568;
+  white-space: nowrap;
+}
+
+.gl-ev-card-active .gl-ev-card-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.gl-ev-card-number {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+}
+
+.gl-ev-card-active .gl-ev-card-number {
+  color: #ffffff;
+}
+
+.gl-ev-card-subtext {
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.gl-ev-text-muted {
+  color: #718096;
+}
+
+.gl-ev-text-op-white {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Action Control Bar Filter Modules --- */
+.gl-ev-action-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-ev-search-container {
+  position: relative;
+}
+
+.gl-ev-search-container img {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.gl-ev-search-container input {
+  height: 42px;
+  width: 280px;
+  padding: 0 14px 0 40px;
+  font-size: 13.5px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.gl-ev-controls-group-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gl-ev-select-trigger {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 0 16px;
+  height: 42px;
+  font-size: 13.5px;
+  color: #1a202c;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-ev-layout-calendar-btn {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* --- Event Cards Container Base Panel --- */
+.gl-ev-list-panel-container {
+  background: transparent;
+  width: 100%;
+}
+
+.gl-ev-item-card {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+}
+
+.gl-ev-item-image-area {
+  width: 285px;
+  min-width: 285px;
+  background-size: cover;
+  background-position: center;
+  background-color: #edf2f7;
+}
+
+.gl-ev-item-details-area {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gl-ev-item-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.gl-ev-item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.gl-ev-header-right-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Dynamic Sessions Badges */
+.gl-ev-session-badge {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.gl-ev-badge-group {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.gl-ev-badge-single {
+  background-color: #f0f5ff;
+  color: #4f46e5;
+}
+
+.gl-ev-action-circle-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.gl-ev-item-description {
+  font-size: 14px;
+  color: #718096;
+  margin: 8px 0 16px 0;
+}
+
+/* Mid-meta Grid */
+.gl-ev-meta-info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 16px;
+  border-left: 1px solid transparent;
+}
+
+.gl-ev-meta-unit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.gl-ev-meta-unit i {
+  color: #007cb0;
+}
+
+/* Lower Tags Panel */
+.gl-ev-tags-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.gl-ev-tag-pill {
+  background-color: #edf2f7;
+  color: #4a5568;
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+/* Control Action Buttons Bar */
+.gl-ev-item-footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  border-top: 1px solid #f7fafc;
+  padding-top: 16px;
+}
+
+.gl-ev-btn-edit {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #718096;
+  padding: 0 16px;
+  height: 38px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 13.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gl-ev-footer-buttons-right {
+  display: flex;
+  gap: 12px;
+}
+
+.gl-ev-btn-info {
+  background: #ffffff;
+  border: 1px solid #007cb0;
+  color: #007cb0;
+  padding: 0 20px;
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gl-ev-btn-primary {
+  border: none;
+  color: #ffffff;
+  padding: 0 22px;
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gl-ev-btn-success {
+  background-color: #16a34a;
+}
+
+.gl-ev-btn-danger {
+  background-color: #dc2626;
+}
+
+/* --- Progress Line Block --- */
+.gl-ev-bottom-progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  margin-top: 10px;
+}
+
+.gl-ev-progress-fill {
+  height: 100%;
+  background-color: #007cb0;
+}
+
+.gl-ev-footer-pagination-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background-color: #ffffff;
+  border: 1px solid #edf2f7;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-ev-pag-left-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  color: #4a5568;
+}
+
+.gl-ev-pag-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gl-ev-pag-native-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 6px 30px 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  color: #1a202c;
+}
+
+.gl-ev-pag-select-wrapper img {
+  position: absolute;
+  right: 10px;
+  font-size: 10px;
+  color: #718096;
+  pointer-events: none;
+}
+
+.gl-ev-pag-counter-label {
+  color: #718096;
+  margin-left: 8px;
+}
+
+.gl-ev-pag-right-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gl-ev-num-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #4a5568;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.gl-ev-num-btn.gl-ev-page-active,
+.gl-ev-num-btn:hover:not([disabled]) {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+}
+
+.gl-ev-dots-separator {
+  color: #a0aec0;
+  padding: 0 4px;
+  font-size: 13px;
+}
+
+.gl-ev-num-step-btn {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0 14px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #a0aec0;
+  cursor: not-allowed;
+  font-weight: 500;
+}
+
+.gl-ev-num-step-btn.gl-ev-num-step-btn-active {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   EVENTS LAYOUT RESPONSIVE MEDIA SYSTEM
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .gl-ev-metrics-grid-6 .gl-ev-card {
+    flex: 1 1 calc(33.33% - 16px);
+  }
+}
+
+@media (max-width: 991px) {
+  .gl-ev-item-card {
+    flex-direction: column;
+  }
+
+  .gl-ev-item-image-area {
+    width: 100%;
+    height: 200px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .gl-ev-metrics-grid-6 .gl-ev-card {
+    flex: 1 1 calc(50% - 16px);
+  }
+
+  .gl-ev-action-filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gl-ev-search-container {
+    width: 100%;
+  }
+
+  .gl-ev-search-container input {
+    width: 100%;
+  }
+
+  .gl-ev-controls-group-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gl-ev-dropdown-box {
+    flex: 1;
+  }
+
+  .gl-ev-select-trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gl-ev-footer-pagination-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gl-ev-metrics-grid-6 .gl-ev-card {
+    flex: 1 1 100%;
+  }
+
+  .gl-ev-meta-info-grid {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.community-super-user {
+  display: flex;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   GRANTLINK EXCLUSIVE ACTIVITY LOGS ENGINE (ANTI-CONFLICT ARCHITECTURE)
+   ========================================================================== */
+
+.gl-activity-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gl-activity-wrapper *,
+.gl-activity-wrapper *::before,
+.gl-activity-wrapper *::after {
+  box-sizing: border-box;
+}
+
+/* --- 4 Columns Fluid Grid Structural Engine --- */
+.gl-act-metrics-grid-4 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.gl-act-metrics-grid-4 .gl-act-card {
+  flex: 1;
+  min-width: 220px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+}
+
+.gl-act-card-active {
+  background-color: #007cb0 !important;
+  border-color: #007cb0 !important;
+}
+
+.gl-act-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.gl-act-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.gl-act-icon-blue-tint {
+  background-color: #e6f4fa;
+  color: #007cb0;
+}
+
+.gl-act-icon-white-op {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.gl-act-card-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.gl-act-card-active .gl-act-card-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.gl-act-card-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0 0 4px 0;
+  line-height: 1.1;
+}
+
+.gl-act-card-active .gl-act-card-number {
+  color: #ffffff;
+}
+
+.gl-act-card-subtext {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.gl-act-text-muted {
+  color: #718096;
+}
+
+.gl-act-text-op-white {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.gl-act-action-filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-act-section-title-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-act-section-title-box i {
+  font-size: 18px;
+  color: #007cb0;
+}
+
+.gl-act-section-title-box h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.gl-act-controls-group-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gl-act-search-container {
+  position: relative;
+}
+
+.gl-act-search-container img {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.gl-act-search-container input {
+  height: 42px;
+  width: 240px;
+  padding: 0 14px 0 40px;
+  font-size: 13.5px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffff;
+}
+
+.gl-act-select-trigger {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 0 16px;
+  height: 42px;
+  font-size: 13.5px;
+  color: #1a202c;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-act-layout-calendar-btn {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.gl-act-table-panel-box {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+  margin-bottom: 35px;
+}
+
+.gl-act-responsive-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.gl-act-custom-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.gl-act-custom-data-table thead th {
+  background-color: #004b6e;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 16px;
+  white-space: nowrap;
+}
+
+.gl-act-custom-data-table tbody td {
+  padding: 16px;
+  font-size: 14px;
+  color: #4a5568;
+  border-bottom: 1px solid #edf2f7;
+  white-space: nowrap;
+}
+
+.gl-act-table-profile-link {
+  color: #007cb0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gl-act-table-profile-link:hover {
+  text-decoration: underline;
+}
+
+.gl-act-details-text-cell {
+  white-space: normal !important;
+  max-width: 450px;
+  line-height: 1.4;
+  color: #4a5568;
+}
+
+.gl-act-text-timestamp {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.gl-act-pill-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.gl-act-pill-escalated {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.gl-act-pill-request {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.gl-act-pill-course {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.gl-act-pill-event {
+  background-color: #f3e8ff;
+  color: #7c3aed;
+}
+
+.gl-act-pill-session {
+  background-color: #fae8ff;
+  color: #c084fc;
+}
+
+.gl-act-pill-signup {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+/* --- Scope Segregated Pagination Controls --- */
+.gl-act-footer-pagination-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-act-pag-left-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  color: #4a5568;
+}
+
+.gl-act-pag-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gl-act-pag-native-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 6px 30px 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  color: #1a202c;
+}
+
+.gl-act-pag-select-wrapper img {
+  position: absolute;
+  right: 10px;
+  font-size: 10px;
+  color: #718096;
+  pointer-events: none;
+}
+
+.gl-act-pag-counter-label {
+  color: #718096;
+  margin-left: 8px;
+}
+
+.gl-act-pag-right-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gl-act-num-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #4a5568;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.gl-act-num-btn.gl-act-page-active,
+.gl-act-num-btn:hover:not([disabled]) {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+}
+
+.gl-act-dots-separator {
+  color: #a0aec0;
+  padding: 0 4px;
+  font-size: 13px;
+}
+
+.gl-act-step-btn {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0 14px;
+  height: 32px;
+  border-radius: 16px;
+  font-size: 13px;
+  color: #a0aec0;
+  cursor: not-allowed;
+  font-weight: 500;
+}
+
+.gl-act-step-btn.gl-act-step-btn-active {
+  background-color: #007cb0;
+  border-color: #007cb0;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.gl-act-recent-attempts-panel {
+  background-color: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+  width: 100%;
+}
+
+.gl-act-recent-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-act-recent-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gl-act-attempts-feed-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gl-act-feed-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f7fafc;
+}
+
+.gl-act-feed-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.gl-act-feed-left-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.gl-act-status-dot-blue {
+  width: 8px;
+  height: 8px;
+  background-color: #007cb0;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.gl-act-feed-username {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a202c;
+}
+
+.gl-act-role-pill-badge {
+  background-color: #f1f5f9;
+  color: #94a3b8;
+  border: 1px solid #e2e8f0;
+  padding: 2px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.gl-act-feed-timestamp {
+  font-size: 13.5px;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   ACTIVITY LOGS LAYOUT RESPONSIVE MEDIA SYSTEM
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .gl-act-metrics-grid-4 .gl-act-card {
+    flex: 1 1 calc(50% - 16px);
+  }
+}
+
+@media (max-width: 991px) {
+  .gl-act-action-filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gl-act-controls-group-right {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .gl-act-search-container {
+    width: 100%;
+  }
+
+  .gl-act-search-container input {
+    width: 100%;
+  }
+
+  .gl-act-dropdown-box {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .gl-act-select-trigger {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .gl-act-metrics-grid-4 .gl-act-card {
+    flex: 1 1 100%;
+  }
+
+  .gl-act-feed-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .gl-act-feed-timestamp {
+    margin-left: 22px;
+  }
+
+  .gl-act-footer-pagination-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   GRANTLINK NOTIFICATION VIEWER CORE ENGINE (ZERO OVERLAP CSS WRAPPER)
+   ========================================================================== */
+
+.gl-noti-page-container {
+  width: 100%;
+  padding: 8px 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.gl-noti-page-container *,
+.gl-noti-page-container *::before,
+.gl-noti-page-container *::after {
+  box-sizing: border-box;
+}
+
+.gl-np-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  gap: 16px;
+}
+
+.gl-np-title-block h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.gl-np-title-block p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.gl-np-settings-btn {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.gl-np-settings-btn:hover {
+  background-color: #005f87;
+}
+
+/* --- Main Vertical Stack Engine --- */
+.gl-np-feed-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.gl-np-card {
+  background-color: #eef5f8;
+  border-radius: 16px;
+  padding: 24px 28px;
+  position: relative;
+  border: 1px solid transparent;
+  overflow: hidden;
+  width: 100%;
+}
+
+.gl-np-card-main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Structural Layout Variations */
+.gl-np-border-blue {
+  border-left: 4px solid #005f87 !important;
+}
+
+/* Critical Red Alert Component Struct */
+.gl-np-alert-danger-box {
+  background-color: #fce8e6 !important;
+  border-left: 4px solid #dc2626 !important;
+}
+
+/* Default Muted/Read Variant */
+.gl-np-card-muted-flat {
+  background-color: #f4f4f5 !important;
+  border-left: 1px solid #e4e4e7 !important;
+}
+
+.gl-np-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  justify-content: space-between;
+}
+
+.gl-np-alert-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.gl-np-badge-pill-new {
+  background-color: #007cb0;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.gl-np-alert-desc {
+  font-size: 14px;
+  color: #334155;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.gl-np-action-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.gl-np-action-trigger-btn {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.gl-np-action-trigger-btn:hover {
+  background-color: #005f87;
+}
+
+.gl-np-action-trigger-btn i {
+  font-size: 12px;
+}
+
+.gl-np-action-trigger-btn-disabled {
+  background-color: #e4e4e7;
+  color: #a1a1aa;
+  border: 1px solid #e4e4e7;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+.gl-np-time-elapsed {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   MOBILE & VIEWPORT RESPONSIVITY BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .gl-np-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .gl-np-settings-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gl-np-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gl-np-action-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .gl-np-action-trigger-btn,
+  .gl-np-action-trigger-btn-disabled {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gl-np-time-elapsed {
+    align-self: flex-end;
+  }
+}
+
+/* ==========================================================================
+   GRANTLINK NOTIFICATION VIEWER CORE ENGINE (ZERO OVERLAP CSS WRAPPER)
+   ========================================================================== */
+
+/* ==========================================================================
+   GRANTLINK NOTIFICATION SETTINGS PIPELINE ENGINE
+   ========================================================================== */
+
+.gl-sett-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gl-sett-wrapper *,
+.gl-sett-wrapper *::before,
+.gl-sett-wrapper *::after {
+  box-sizing: border-box;
+}
+
+.gl-st-top-header-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.gl-st-left-navigation-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gl-st-back-arrow-trigger {
+  width: 42px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.gl-st-back-arrow-trigger:hover {
+  background-color: #005f87;
+}
+
+.gl-st-heading-text-box h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.gl-st-heading-text-box p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.gl-st-action-save-btn {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.gl-st-action-save-btn:hover {
+  background-color: #005f87;
+}
+
+/* --- High-Level Individual Panel Blocks --- */
+.gl-st-card-block-item {
+  background-color: #f8fafc;
+  /* Ultra clean flat gray tone */
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.gl-st-flex-switch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+}
+
+/* --- Inner Typography Rules --- */
+.gl-st-info-text-side {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gl-st-switch-title {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+.gl-st-switch-subtitle {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* --- Inline Action Button For Quiet Hours --- */
+.gl-st-inline-action-hours-btn {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.gl-st-inline-action-hours-btn:hover {
+  background-color: #005f87;
+}
+
+/* --- Dedicated Section Label --- */
+.gl-st-section-divider-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 32px 0 16px 0;
+}
+
+/* --- Nested List Types Group Container --- */
+.gl-st-nested-settings-card-group {
+  background-color: #f8fafc;
+  border-radius: 16px;
+  padding: 8px 24px;
+  width: 100%;
+}
+
+.gl-st-inner-switch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 24px;
+}
+
+.gl-st-nested-settings-card-group .gl-st-inner-switch-row:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   FORM COMPONENT ENGINE: PIXEL PERFECT TOGGLE SWITCH
+   ========================================================================== */
+.gl-st-custom-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.gl-st-custom-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gl-st-toggle-slider-track {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1;
+  /* Base inactive state gray */
+  transition: 0.3s ease;
+  border-radius: 24px;
+}
+
+.gl-st-toggle-slider-track::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s ease;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* System Active Toggled Rules Mapping */
+.gl-st-custom-toggle-switch input:checked + .gl-st-toggle-slider-track {
+  background-color: #007cb0;
+  /* Brand active blue color */
+}
+
+.gl-st-custom-toggle-switch input:checked + .gl-st-toggle-slider-track::before {
+  transform: translateX(22px);
+}
+
+/* ==========================================================================
+   SETTINGS LAYOUT RESPONSIVE BREAKPOINTS ENGINE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .gl-st-top-header-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .gl-st-action-save-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gl-st-card-block-item {
+    padding: 18px;
+  }
+
+  .gl-st-nested-settings-card-group {
+    padding: 4px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gl-st-flex-switch-row,
+  .gl-st-inner-switch-row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .gl-st-inline-action-hours-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+/* ==========================================================================
+   GRANTLINK AUTH SYSTEM EXTENSION: QUIET HOURS DIALOG POPUP COMPONENT
+   Reference Layout Blueprint: Quiet Hours (1).svg
+   ========================================================================== */
+
+/* --- Main Backdrop Blur Elements --- */
+.gl-custom-popup-wrapper {
+  background-color: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.gl-popup-main-box {
+  border-radius: 24px !important;
+  border: none !important;
+  padding: 16px 8px !important;
+  background-color: #ffffff !important;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* --- Modular Header Configuration Layout --- */
+.gl-popup-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 24px 12px 24px;
+}
+
+.gl-popup-header-left {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 80%;
+}
+
+.gl-popup-icon-box {
+  width: 46px;
+  height: 46px;
+  background-color: #007cb0;
+  /* Core Theme Blue */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gl-popup-title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.gl-popup-main-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 2px 0;
+}
+
+.gl-popup-subtitle {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+}
+
+.gl-popup-close-trigger {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  position: relative;
+  border-radius: 50%;
+  top: -80px;
+  right: -30px;
+  border: none;
+  font-size: 18px;
+  color: #0f172a;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+#inviteUserModal .gl-popup-close-trigger {
+  right: -175px;
+}
+
+.gl-popup-close-trigger:hover {
+  opacity: 1;
+}
+
+/* --- Core Scrollable Content Area --- */
+.gl-popup-core-body {
+  padding: 12px 24px !important;
+}
+
+/* --- Macro Action Presets Styling Layout --- */
+.gl-popup-presets-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.gl-popup-preset-btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 6px 16px;
+  font-size: 13.5px;
+  color: #0f172a;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gl-popup-preset-btn:hover {
+  border-color: #007cb0;
+  color: #007cb0;
+}
+
+/* --- Data Grid Inner Table Configuration --- */
+.gl-popup-matrix-box {
+  border: 1px solid #edf2f7;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.gl-popup-table {
+  margin: 0 !important;
+}
+
+.gl-popup-table thead th {
+  background-color: #004e70 !important;
+  /* Authentic Deep Table Header Tint */
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 13.5px;
+  padding: 12px 20px !important;
+  border: none !important;
+}
+
+.gl-popup-row-item {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.gl-popup-row-item:last-child {
+  border-bottom: none;
+}
+
+.gl-popup-day-cell {
+  font-weight: 500;
+  color: #334155;
+  font-size: 14.5px;
+  vertical-align: middle !important;
+  padding-left: 20px !important;
+}
+
+/* --- Modern Custom Time Field Inputs --- */
+.gl-popup-time-wrapper {
+  position: relative;
+  max-width: 130px;
+  width: 100%;
+}
+
+.gl-popup-time-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 6px 32px 6px 12px;
+  font-size: 13.5px;
+  color: #475569;
+  outline: none;
+}
+
+.gl-popup-time-input:focus {
+  border-color: #007cb0;
+}
+
+.gl-popup-time-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* --- Blueprint Custom Checkbox Elements --- */
+.gl-popup-checkbox-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.gl-popup-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.gl-popup-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 5px;
+}
+
+.gl-popup-checkbox-container input:checked ~ .gl-popup-checkmark {
+  background-color: #007cb0;
+  border-color: #007cb0;
+}
+
+.gl-popup-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.gl-popup-checkbox-container input:checked ~ .gl-popup-checkmark:after {
+  display: block;
+}
+
+.gl-popup-checkbox-container .gl-popup-checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* --- Action Operational Sticky Footer Bar --- */
+.gl-popup-footer-row {
+  border-top: none !important;
+  padding: 12px 24px 16px 24px !important;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.gl-popup-btn-cancel {
+  background: none;
+  border: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.gl-popup-btn-cancel:hover {
+  color: #0f172a;
+}
+
+.gl-popup-btn-save {
+  background-color: #007cb0;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.gl-popup-btn-save:hover {
+  background-color: #005f87;
+}
+
+/* ==========================================================================
+   END OF: QUIET HOURS DIALOG POPUP COMPONENT
+   ========================================================================== */
+/* ==========================================================================
+   GRANTLINK CUSTOM WORKSPACE: DISTRICT CONFIGURATION LAYOUT SYSTEM
+   Reference Target Design Blueprint: Container (5).svg
+   ========================================================================== */
+
+.gl-workspace-container {
+  width: 100%;
+  padding: 8px 4px;
+}
+
+/* --- Upper Grid Header System --- */
+.gl-workspace-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.gl-workspace-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0c111d;
+  margin: 0 0 6px 0;
+}
+
+.gl-workspace-desc {
+  font-size: 14.5px;
+  color: #475467;
+  margin: 0;
+}
+
+.gl-btn-primary-action {
+  background-color: #007cb0;
+  /* Brand Accent Blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 20px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  transition: background-color 0.15s ease;
+}
+
+.gl-btn-primary-action:hover {
+  background-color: #00628c;
+}
+
+/* --- Filter & Pipeline Control Component Bar --- */
+.gl-filter-pipeline-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.gl-pipeline-search-box {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+}
+
+.gl-pipeline-search-box input {
+  width: 100%;
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  padding: 10px 14px 10px 42px;
+  font-size: 14.5px;
+  outline: none;
+  color: #101828;
+  background-color: #ffffff;
+}
+
+.gl-pipeline-search-box img {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #667085;
+  font-size: 14px;
+}
+
+.gl-pipeline-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* --- Custom Dropdown Input Logic --- */
+.gl-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.gl-pipeline-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  padding: 10px 40px 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #344054;
+  cursor: pointer;
+  outline: none;
+  background-image: url(../images/super-user-dashboard/select-drowpdown.svg);
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.gl-dropdown-wrapper img {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: #667085;
+  pointer-events: none;
+}
+
+.gl-pipeline-utility-btn {
+  width: 42px;
+  height: 42px;
+  background-color: #007cb0;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* --- Central Card Layout Frame --- */
+.gl-matrix-display-card {
+  background: #ffffff;
+  border: 1px solid #eaecf0;
+  border-radius: 24px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.05);
+  overflow: hidden;
+}
+
+.gl-matrix-data-table {
+  margin: 0 !important;
+}
+
+.gl-matrix-data-table thead th {
+  background-color: #004e70 !important;
+  /* Dark Blue Header matching Blueprint */
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 14px 18px !important;
+  border: none !important;
+  letter-spacing: 0.2px;
+}
+
+.gl-matrix-row {
+  border-bottom: 1px solid #f2f4f7;
+  transition: background-color 0.1s ease;
+}
+
+.gl-matrix-row:hover {
+  background-color: #f9fafb;
+}
+
+.gl-row-index {
+  font-size: 14px;
+  font-weight: 600;
+  color: #101828;
+}
+
+/* --- Custom Inner Cell Components --- */
+.gl-cell-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gl-avatar-badge-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Core Blueprint Background Initial Branding Colors */
+.dark-navy-bg {
+  background-color: #0a2540;
+}
+
+.red-crest-bg {
+  background-color: #ba1a1a;
+}
+
+.blue-seal-bg {
+  background-color: #0061a4;
+}
+
+.safe-teal-bg {
+  background-color: #006a6a;
+}
+
+.gl-link-identity-bold {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #007cb0;
+  text-decoration: none;
+}
+
+.gl-link-identity-bold:hover {
+  text-decoration: underline;
+}
+
+.gl-cell-admin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gl-admin-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.gl-link-admin-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #007cb0;
+  text-decoration: none;
+}
+
+.gl-link-admin-name:hover {
+  text-decoration: underline;
+}
+
+.gl-cell-plain-text {
+  font-size: 14px;
+  color: #475467;
+}
+
+/* --- Status Badging Logic Pills --- */
+.gl-status-pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.gl-status-pill.pill-active {
+  background-color: #ecfdf3;
+  color: #027a48;
+  border: 1px solid #abedf2;
+  /* Blueprint Exact Tone matched */
+}
+
+.gl-status-pill.pill-inactive {
+  background-color: #fef3f2;
+  color: #b42318;
+  border: 1px solid #fecdca;
+}
+
+.gl-btn-row-action {
+  background: none;
+  border: none;
+  color: #667085;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 6px;
+}
+
+/* --- System Layout Pagination Footer --- */
+.gl-matrix-footer-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #ffffff;
+  border-top: 1px solid #eaecf0;
+}
+
+.gl-pagination-left-side {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gl-pagination-lbl {
+  font-size: 14px;
+  color: #344054;
+}
+
+.mini-select-box .select-mini {
+  padding: 6px 32px 6px 12px;
+  font-size: 13.5px;
+  border-radius: 8px;
+}
+
+.gl-pagination-counter-info {
+  font-size: 14px;
+  color: #475467;
+  margin-left: 8px;
+}
+
+/* --- Standard Dashboard Pager Controls --- */
+.gl-custom-pager-list {
+  margin: 0;
+  gap: 4px;
+}
+
+.gl-custom-pager-list .page-link {
+  padding: 7px 14px;
+  border-radius: 8px !important;
+  border: 1px solid #d0d5dd;
+  color: #344054;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.gl-custom-pager-list .page-item.active .page-link {
+  background-color: #007cb0 !important;
+  border-color: #007cb0 !important;
+  color: #ffffff !important;
+}
+
+.gl-custom-pager-list .pager-trigger-prev,
+.gl-custom-pager-list .pager-trigger-next {
+  background-color: #ffffff;
+}
+
+.gl-custom-pager-list .pager-ellipsis {
+  border: none;
+  background: none;
+  color: #667085;
+  padding: 7px 8px;
+}
+
+/* ==========================================================================
+   GRANTLINK ACTION DROPDOWN POSITIONING & UTILITIES (No Inline CSS)
+   ========================================================================== */
+
+/* Table Cell Helper Classes */
+.gl-table-center-cell {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.gl-layout-relative {
+  position: relative;
+}
+
+/* Dropdown Container Context */
+.gl-action-dropdown-container {
+  display: inline-block;
+}
+
+/* Base Dropdown Menu Styles (Ref: Action.svg) */
+.gl-action-popover-menu {
+  background: #ffffff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  box-shadow:
+    0px 8px 32px rgba(16, 24, 40, 0.12),
+    0px 2px 8px rgba(16, 24, 40, 0.04) !important;
+  padding: 8px 0 !important;
+  min-width: 160px !important;
+  margin-top: 4px !important;
+  z-index: 1050;
+}
+
+/* Individual Item Core Properties */
+.dropdown.gl-action-dropdown-container .gl-action-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #344054;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+a.dropdown-item.gl-action-item.approve {
+  color: #16a34a;
+}
+
+a.dropdown-item.gl-action-item.approve:hover {
+  color: #16a34a;
+}
+
+/* Hover States */
+.dropdown.gl-action-dropdown-container .gl-action-item:hover {
+  background-color: #f9fafb;
+  color: #101828;
+}
+
+/* Icons styling */
+.dropdown.gl-action-dropdown-container .gl-action-item .edit-icon {
+  font-size: 14px;
+  color: #475467;
+}
+
+/* Delete Action UI Styling */
+.dropdown.gl-action-dropdown-container .gl-action-item.text-danger {
+  color: #d92d20 !important;
+  /* Crimson Red */
+}
+
+.dropdown.gl-action-dropdown-container .gl-action-item.text-danger:hover {
+  background-color: #fef3f2 !important;
+}
+
+.dropdown.gl-action-dropdown-container .gl-action-item .delete-icon {
+  font-size: 14px;
+  color: #d92d20;
+}
+
+/* Clean Custom Divider Line */
+.gl-action-divider {
+  border-top: 1px solid #f2f4f7 !important;
+  margin: 4px 0 !important;
+  opacity: 1 !important;
+}
+
+/* Prevent responsive table clipping */
+.table-responsive {
+  overflow: auto !important;
+}
+
+/* ==========================================================================
+   GRANTLINK ACTION DROPDOWN POSITIONING & UTILITIES (No Inline CSS)
+   ========================================================================== */
+
+/* Scoped targeting inside parent to protect layout systems */
+.gl-master-tab-container .gl-workspace-header-tabs-row {
+  display: flex;
+  justify-content: space-between;
+  /* align-middle: center; */
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+.gl-master-tab-container .min-w-action-btn {
+  min-width: 180px;
+  white-space: nowrap;
+  height: 42px;
+}
+
+/* Scoped targeting inside parent to protect layout systems */
+
+/* GrantLink Custom Table Branding Styles */
+.gl-table-card-wrapper {
+  border-radius: 16px;
+}
+
+.gl-custom-data-table thead {
+  background-color: #015077;
+  color: #ffffff;
+}
+
+.gl-user-link {
+  color: #0284c7;
+}
+
+.gl-avatar-img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.gl-badge-active {
+  background-color: #e6f4ea;
+  color: #137333;
+  border: 1px solid #ceead6;
+  font-size: 0.85rem;
+}
+
+.gl-badge-inactive {
+  background-color: #fce8e6;
+  color: #c5221f;
+  border: 1px solid #fad2cf;
+  font-size: 0.85rem;
+}
+
+.gl-action-dropdown {
+  border-radius: 8px;
+}
+
+.gl-page-circle {
+  width: 32px;
+  height: 32px;
+}
+
+.gl-page-active {
+  background-color: #015077;
+  border-color: #015077;
+}
+
+/* GrantLink Custom Table Branding Styles */
+
+.um-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.um-header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.um-back-btn {
+  background-color: #0077b5;
+  color: #ffffff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50% 12px 12px 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.um-main-title {
+  font-size: 22px;
+  color: #111111;
+  font-weight: 600;
+}
+
+.um-sub-title {
+  font-size: 13px;
+  color: #888888;
+}
+
+.um-header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.um-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   2. User Profile (Prefix: up-)
+   ========================================================================== */
+.up-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.up-header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.up-back-btn {
+  background-color: #0077b5;
+  color: #ffffff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50% 12px 12px 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.up-main-title {
+  font-size: 22px;
+  color: #111111;
+  font-weight: 600;
+}
+
+.up-sub-title {
+  font-size: 13px;
+  color: #888888;
+}
+
+.up-header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.up-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   3. Personal Page (Prefix: ps-)
+   ========================================================================== */
+.ps-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.ps-header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ps-back-btn {
+  background-color: #0077b5;
+  color: #ffffff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50% 12px 12px 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ps-main-title {
+  font-size: 22px;
+  color: #111111;
+  font-weight: 600;
+}
+
+.ps-sub-title {
+  font-size: 13px;
+  color: #888888;
+  margin-bottom: 0;
+}
+
+.ps-header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.ps-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #666666;
+  background-color: transparent;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Global Hover Effects */
+.um-back-btn:hover,
+.up-back-btn:hover,
+.ps-back-btn:hover {
+  background-color: #00598a;
+}
+
+.um-action-btn:hover,
+.up-action-btn:hover,
+.ps-action-btn:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.um-back-btn,
+.up-back-btn,
+.ps-back-btn {
+  background-color: #0077b5;
+  color: #ffffff;
+  text-decoration: none;
+  width: 40px;
+  height: 55px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease;
+}
+
+/* Unique Prefix: upc- (User Profile Card) */
+
+.upc-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin: 20px auto;
+}
+
+/* Left Content Layout */
+.upc-profile-section {
+  display: flex;
+  gap: 20px;
+}
+
+/* Avatar Styles */
+.upc-avatar-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Info Elements spacing */
+.upc-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Name and Status */
+.upc-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.upc-user-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+}
+
+/* Badges (Active & User) */
+.upc-badge {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 3px 12px;
+  border-radius: 20px;
+}
+
+.upc-badge-active {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.upc-badge-blue {
+  background-color: #2979ff;
+  color: #ffffff;
+  display: inline-block;
+  padding: 4px 14px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+/* Details list with Icons */
+.upc-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.upc-details-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666666;
+  font-size: 15px;
+}
+
+.upc-details-list i {
+  color: #0077b5;
+  /* Icon color match */
+  width: 16px;
+  text-align: center;
+}
+
+.upc-inline-details {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Bottom Category Tags */
+.upc-tags-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.upc-tag {
+  background-color: #e3f2fd;
+  color: #1e88e5;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Right Side: Deactivate Button */
+.upc-deactivate-btn {
+  background-color: #d32f2f;
+  /* Red color matching image */
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.upc-deactivate-btn:hover {
+  background-color: #b71c1c;
+}
+
+/* Responsive Handling */
+@media (max-width: 768px) {
+  .upc-card-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .upc-profile-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .upc-name-row,
+  .upc-inline-details,
+  .upc-tags-container {
+    justify-content: center;
+  }
+
+  .upc-details-list li {
+    justify-content: center;
+  }
+
+  .upc-action-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .upc-deactivate-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Unique Prefix: ci- (Contact Information) */
+
+.ci-section-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 15px;
+}
+
+/* Heading section */
+.ci-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #1e4e6d;
+}
+
+.ci-main-icon {
+  font-size: 20px;
+}
+
+.ci-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Flex Container Layout with Wrap */
+.ci-flex-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 0;
+}
+
+/* Base style for individual info bars (acts as input wrapper) */
+.ci-info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #f8f9fa;
+  padding: 10px 18px;
+  /* Padding thodi kam ki hai inputs ke liye */
+  border-radius: 16px;
+  border: 1px solid #e9ecef;
+  /* Subtle border form element look ke liye */
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Input container wrap behavior when focused */
+.ci-info-card:focus-within {
+  border-color: #1e88e5;
+  background-color: #ffffff;
+  /* Focus karne par backgroud white ho jayega */
+}
+
+/* Width Control */
+.ci-half-width {
+  width: 49%;
+}
+
+.ci-full-width {
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* Left side small icons */
+.ci-card-icon {
+  color: #1e88e5;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.ci-card-icon-top {
+  color: #1e88e5;
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Custom Form Elements Styles
+   ========================================================================== */
+.ci-form-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #444444;
+  font-family: inherit;
+  padding: 4px 0;
+}
+
+/* Custom styling for Select/Dropdown arrow styling reset */
+.ci-form-select {
+  cursor: pointer;
+  appearance: none;
+  /* Default arrow hatane ke liye agar custom padding deni ho */
+  -webkit-appearance: none;
+}
+
+/* Custom styling for Bio Textarea */
+.ci-form-textarea {
+  resize: vertical;
+  /* User height choti badi kar sakta hai horizontal layout tute bina */
+  line-height: 1.5;
+  min-height: 80px;
+}
+
+/* Responsive breakpoint for Mobile Screens */
+@media (max-width: 768px) {
+  .ci-half-width {
+    width: 100%;
+  }
+}
+
+/* Unique Prefix: spl- (Social & Portfolio Links) */
+
+.spl-section-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+}
+
+/* Heading section */
+.spl-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #111111;
+}
+
+.spl-main-icon {
+  color: #1e88e5;
+  /* Globe icon blue color */
+  font-size: 20px;
+}
+
+.spl-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Flex Container Layout for 4 Columns */
+.spl-flex-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* Links ko ek barabar line mein stretch karne ke liye */
+  gap: 16px 0;
+}
+
+/* Individual Link Capsule/Card */
+.spl-link-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Text left me aur external icon right me rahega */
+  background-color: #f8f9fa;
+  padding: 14px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  /* Anchor tag ki line hatane ke liye */
+  width: 23.5%;
+  /* Desktop par 4 cards perfectly fit honge gap ke sath */
+  box-sizing: border-box;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+/* Hover Effect */
+.spl-link-card:hover {
+  background-color: #f1f3f5;
+  border-color: #e2e8f0;
+}
+
+/* Left block content alignment */
+.spl-left-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Link Icon (Chain symbol) */
+.spl-card-icon {
+  color: #1e4e6d;
+  /* Muted blue/grey code from image */
+  font-size: 15px;
+}
+
+/* Link Text */
+.spl-link-text {
+  font-size: 15px;
+  color: #666666;
+  font-weight: 500;
+}
+
+/* Right Side External Arrow Icon */
+.spl-external-icon {
+  color: #1e88e5;
+  /* Light blue color matching image */
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablets (Aadhe screen par 2-2 cards dikhenge) */
+@media (max-width: 992px) {
+  .spl-link-card {
+    width: 49%;
+  }
+}
+
+/* Mobile Screens (Sari link line by line single column ho jayengi) */
+@media (max-width: 576px) {
+  .spl-link-card {
+    width: 100%;
+  }
+}
+
+/* Unique Prefix: pm- (Performance Metrics) */
+
+.pm-section-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+}
+
+/* Heading section */
+.pm-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #111111;
+}
+
+.pm-main-icon {
+  color: #1e88e5;
+  /* Icon blue color from image */
+  font-size: 20px;
+}
+
+.pm-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Flex Wrapper for 4 Cards */
+.pm-flex-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* Equal distribution */
+  gap: 16px 0;
+}
+
+/* Individual Metric Card */
+.pm-metric-card {
+  display: flex;
+  flex-direction: column;
+  /* Content ko upar se niche align karne ke liye */
+  align-items: flex-start;
+  background-color: #f8f9fa;
+  /* Light grey block background */
+  padding: 20px;
+  border-radius: 16px;
+  /* Soft capsule curves matching image */
+  width: 23.5%;
+  /* Desktop par 4 cards perfectly distribute honge */
+  box-sizing: border-box;
+}
+
+/* Top Small Blue Icon inside card */
+.pm-card-icon {
+  color: #1e88e5;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* Gray Label Text */
+.pm-metric-label {
+  font-size: 14px;
+  color: #666666;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* Large Bold Value/Number */
+.pm-metric-value {
+  font-size: 22px;
+  color: #111111;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (No flex:1 or grid used)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .pm-metric-card {
+    width: 49%;
+  }
+}
+
+@media (max-width: 576px) {
+  .pm-metric-card {
+    width: 100%;
+  }
+}
+
+.it-section-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 15px;
+}
+
+.it-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  color: #111111;
+}
+
+.it-main-icon {
+  color: #0077b5;
+  font-size: 20px;
+}
+
+.it-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.it-tags-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.it-badge-tag {
+  background-color: #eaf3fc;
+  color: #2979ff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 24px;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+  cursor: default;
+}
+
+.it-badge-tag:hover {
+  background-color: #deecf9;
+}
+
+.ql-main-flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-top: 15px;
+  gap: 24px 0;
+}
+
+.ql-column-block {
+  width: 49%;
+  box-sizing: border-box;
+}
+
+.ql-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #111111;
+}
+
+.ql-main-icon {
+  color: #1e88e5;
+  font-size: 18px;
+}
+
+.ql-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.ql-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ql-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.ql-icon-thumb {
+  background-color: #0077b5;
+  color: #ffffff;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.ql-icon-thumb-alt {
+  background-color: #006699;
+  color: #ffffff;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.ql-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ql-full-width-details {
+  width: 100%;
+}
+
+.ql-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+}
+
+.ql-card-subtitle {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 500;
+  margin: 0;
+}
+
+.ql-card-meta {
+  font-size: 13px;
+  color: #888888;
+  margin-top: 2px;
+}
+
+.ql-card-credential {
+  font-size: 12px;
+  color: #666666;
+  margin-top: 2px;
+}
+
+.ql-card-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #888888;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Responsive View Breakpoint Handler (No grid)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .ql-column-block {
+    width: 100%;
+  }
+}
+
+.pv-section-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 15px;
+}
+
+.pv-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: #111111;
+}
+
+.pv-main-icon {
+  color: #1e88e5;
+  font-size: 18px;
+}
+
+.pv-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.pv-sub-block {
+  margin-bottom: 24px;
+}
+
+.pv-sub-title {
+  font-size: 15px;
+  color: #666666;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.pv-flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pv-media-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #f1f3f5;
+}
+
+.pv-media-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pv-photo-item {
+  width: 120px;
+  height: 120px;
+}
+
+.pv-video-item {
+  width: 180px;
+  height: 110px;
+}
+
+.pv-play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pv-play-overlay i {
+  color: #ffffff;
+  font-size: 32px;
+  opacity: 0.9;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effects */
+.pv-video-item:hover .pv-play-overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.pv-video-item:hover .pv-play-overlay i {
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Responsive View Breakpoints
+   ========================================================================== */
+@media (max-width: 576px) {
+  .pv-photo-item {
+    width: 46%;
+    height: 140px;
+  }
+
+  .pv-video-item {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+.pv-play-overlay img {
+  height: 45px;
+  width: 45px;
+}
+
+.act-section-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+/* Heading section */
+.act-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: #111111;
+}
+
+.act-main-icon {
+  color: #1e88e5;
+  font-size: 20px;
+}
+
+.act-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.act-timeline-wrapper {
+  background-color: #f8f9fa;
+  padding: 12px 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Single Activity Row Item */
+.act-timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eef0f2;
+  box-sizing: border-box;
+}
+
+/* Removing border from the last row item */
+.act-timeline-item:last-child {
+  border-bottom: none;
+}
+
+.act-left-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Blue timeline dot */
+.act-status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #0077b5;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* Content wrapper text block */
+.act-content-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.act-title-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111111;
+  margin: 0;
+}
+
+.act-date-text {
+  font-size: 13px;
+  color: #a0a0a0;
+}
+
+/* Right Content Wrapper Badge */
+.act-right-block {
+  display: flex;
+  align-items: center;
+}
+
+.act-type-badge {
+  border: 1px solid #dcdcdc;
+  background-color: transparent;
+  color: #b0b0b0;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 6px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  cursor: default;
+}
+
+/* ==========================================================================
+   Responsive Mobile Adjustments
+   ========================================================================== */
+@media (max-width: 576px) {
+  .act-timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .act-right-block {
+    padding-left: 24px;
+  }
+}
+
+.tl-section-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 15px;
+}
+
+/* Heading section */
+.tl-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: #111111;
+}
+
+.tl-main-icon {
+  color: #1e88e5;
+  font-size: 18px;
+}
+
+.tl-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Sub block wrappers */
+.tl-sub-block {
+  margin-bottom: 24px;
+}
+
+.tl-block-heading {
+  font-size: 16px;
+  color: #111111;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.tl-stack-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tl-log-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tl-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tl-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+}
+
+.tl-card-meta {
+  font-size: 13px;
+  color: #777777;
+  margin: 0;
+}
+
+.tl-badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.tl-badge-pending {
+  background-color: #fffde7;
+  color: #fbc02d;
+  border: 1px solid #fff59d;
+}
+
+.tl-badge-progress {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  border: 1px solid #d2e3fc;
+}
+
+.tl-row-label {
+  font-size: 15px;
+  color: #444444;
+  font-weight: 500;
+}
+
+.tl-row-count {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.tl-bg-light {
+  background-color: #f1f3f5;
+}
+
+.tl-bg-warning {
+  background-color: #fffde7;
+}
+
+.tl-bg-success {
+  background-color: #e6f4ea;
+}
+
+@media (max-width: 480px) {
+  .tl-log-card {
+    padding: 14px 16px;
+  }
+
+  .tl-card-title,
+  .tl-row-label {
+    font-size: 14px;
+  }
+}
+
+.tp-section-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 15px;
+}
+
+.tp-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: #111111;
+}
+
+.tp-main-icon {
+  color: #1e88e5;
+  font-size: 18px;
+}
+
+.tp-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.tp-stack-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tp-perm-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #f8f9fa;
+  padding: 18px 24px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+
+.tp-perm-card-nested {
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.tp-parent-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+.tp-perm-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tp-perm-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.tp-perm-desc {
+  font-size: 13px;
+  color: #888888;
+}
+
+/* ==========================================================================
+   Custom Vector Checkboxes styling matching image
+   ========================================================================== */
+
+.tp-checkbox-wrapper {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.tp-custom-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.tp-checkbox-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  border: 2px solid #006699;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.tp-custom-checkbox:checked ~ .tp-checkbox-box {
+  background-color: #006699;
+}
+
+.tp-checkbox-box:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.tp-custom-checkbox:checked ~ .tp-checkbox-box:after {
+  display: block;
+}
+
+.tp-child-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 36px;
+}
+
+.tp-child-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.tp-child-title {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.tp-checkbox-wrapper-sm {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.tp-custom-checkbox-sm {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.tp-checkbox-box-sm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #ffffff;
+  border: 2px solid #006699;
+  border-radius: 3px;
+}
+
+.tp-custom-checkbox-sm:checked ~ .tp-checkbox-box-sm {
+  background-color: #006699;
+}
+
+.tp-checkbox-box-sm:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.tp-custom-checkbox-sm:checked ~ .tp-checkbox-box-sm:after {
+  display: block;
+}
+
+.ci-info-card.ci-half-width.loction {
+  width: 100%;
+}
+
+a.county-schools {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.fr-section-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 15px;
+}
+
+.fr-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  color: #111111;
+}
+
+.fr-main-icon {
+  color: #0077b5;
+  font-size: 20px;
+}
+
+.fr-section-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.fr-flex-layout {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.fr-roi-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 24px;
+  width: 33.333%;
+  box-sizing: border-box;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+}
+
+.fr-roi-card:last-child {
+  border-right: none;
+}
+
+.fr-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.fr-icon-circle {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.fr-card-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111111;
+}
+
+.fr-card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fr-metric-value {
+  font-size: 40px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1;
+}
+
+.fr-stat-trend {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.fr-trend-up {
+  color: #2e7d32;
+}
+
+.fr-trend-neutral {
+  color: #4caf50;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .fr-roi-card {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .fr-roi-card:last-child {
+    border-bottom: none;
+  }
+}
+
+.dash-service .dropdown-toggle::after {
+  display: none !important;
+}
+
+.dash-service .dropdown-toggle::-webkit-details-marker {
+  display: none !important;
+}
+
+.dropdown.dash-service .dropdown-toggle {
+  background: #ffffff;
+  border: 1px solid #cbd5e0;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #4a5568;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.gl-course-meta-card.gl-course-card-active
+  .gl-course-badge-circle.gl-badge-white-trans {
+  background: #fff;
+}
+
+.gl-course-meta-card .gl-course-badge-circle.gl-badge-blue-soft {
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+}
+
+.gl-ev-card.gl-ev-card-active .gl-ev-icon-circle.gl-ev-icon-white-op {
+  background: #fff;
+}
+
+.gl-um-card.gl-um-card-active .gl-um-icon-circle.gl-um-icon-white-op {
+  background: #fff;
+}
+
+.gl-ev-icon-circle.gl-ev-icon-blue-tint {
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+}
+
+.gl-um-card .gl-um-icon-circle.gl-um-icon-blue-tint {
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+}
+
+.gl-act-card.gl-act-card-active .gl-act-icon-circle.gl-act-icon-white-op {
+  background: #fff;
+}
+
+.gl-act-card .gl-act-icon-circle.gl-act-icon-blue-tint {
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+}
+
+.modal.fade .modal-dialog.modal-dialog-centered {
+  margin-top: 65px;
+}
+
+/* Unique Prefix: tm- (Time Widget Component) */
+
+.tm-time-widget-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 12px;
+  padding: 14px 24px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  user-select: none;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/* Hover effect */
+.tm-time-widget-btn:hover {
+  background-color: #f8f9fa;
+  border-color: #a0a0a0;
+}
+
+/* Left main title typography */
+.tm-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin-right: 16px;
+}
+
+/* Right side timestamps block layout */
+.tm-time-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Single time string design */
+.tm-time-val {
+  font-size: 16px;
+  color: #777777;
+  font-weight: 400;
+}
+
+/* Center hyphen dash separator element */
+.tm-divider {
+  font-size: 16px;
+  color: #444444;
+  font-weight: 500;
+}
+
+/* --- Pure Custom Spacing Layouts (No Bootstrap row/col dependencies) --- */
+
+.gl-custom-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2-Column Fields Row Alignment using modern CSS Grid */
+.gl-custom-field-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.gl-custom-field-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gl-custom-full-width-field {
+  width: 100%;
+}
+
+/* Admin and Funder Horizontal Layout Grid Splitter */
+.gl-custom-split-blocks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  align-items: start;
+}
+
+.gl-custom-block-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Repeater Form inner styling layout controls */
+.gl-popup-repeater-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Input text alignment along side the action remove button icon */
+.gl-input-action-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Base Component Form Properties */
+.gl-popup-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.gl-popup-form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  color: #444444;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Dropdown styling standard structure overrides */
+.gl-popup-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.gl-popup-form-select {
+  width: 100%;
+  padding: 10px 36px 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  color: #444444;
+  background-color: #ffffff;
+  appearance: none;
+  cursor: pointer;
+}
+
+.gl-popup-select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #0080b0;
+  pointer-events: none;
+}
+
+/* Upload zone interface style blocks */
+.gl-popup-upload-zone {
+  position: relative;
+  width: 100%;
+  border: 1px dashed #cccccc;
+  border-radius: 12px;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.gl-popup-file-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.gl-popup-upload-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  margin: 0;
+}
+
+/* Footer & Buttons Setup alignments overrides */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.spec-blue-btn {
+  background-color: #006699 !important;
+  border-color: #006699 !important;
+  color: #ffffff !important;
+}
+
+.blue-theme-bg {
+  background-color: #006699 !important;
+}
+
+/* Responsive Rule - Choti screens par forms automatic linear stacked down ho jaye */
+@media (max-width: 768px) {
+  .gl-custom-field-pair,
+  .gl-custom-split-blocks {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gl-popup-section-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gl-popup-add-row-btn {
+  border: none;
+  background: transparent;
+}
+
+button.gl-popup-remove-row-btn {
+  background: transparent;
+  border: none;
+}
+
+input.gl-popup-form-input.width {
+  width: 93%;
+}
+
+/* --- Custom Delete Confirmation Box Styles --- */
+
+/* Width adjustments for delete confirmation frame sizes */
+.gl-popup-delete-dialog {
+  max-width: 480px;
+  width: 100%;
+}
+
+.gl-popup-delete-box {
+  padding: 16px 24px 32px 24px !important;
+  text-align: center;
+  border-radius: 16px !important;
+}
+
+.gl-popup-delete-header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.gl-popup-delete-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+.gl-popup-danger-icon-circle {
+  width: 64px;
+  height: 64px;
+  background-color: #fce8e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.gl-popup-delete-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 12px 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-popup-delete-desc {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666666;
+  margin: 0 0 28px 0;
+}
+
+/* Horizontal Actions Flex row alignments without row grid classes */
+.gl-popup-delete-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+/* Plain layout typography link for clear cancellation state */
+.gl-popup-btn-cancel-link {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: color 0.15s ease;
+}
+
+.gl-popup-btn-cancel-link:hover {
+  color: #000000;
+}
+
+/* Danger solid red control action button styles */
+.gl-popup-btn-danger-confirm {
+  background-color: #d93025;
+  border: 1px solid #d93025;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease;
+}
+
+.gl-popup-btn-danger-confirm:hover {
+  background-color: #b8251b;
+  border-color: #b8251b;
+}
+
+/* Crucial caution warning text label rules at the bottom block */
+.gl-popup-delete-warning {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #d93025;
+  font-weight: 500;
+  margin: 0;
+  max-width: 400px;
+}
+
+a.dropdown-item.gl-action-item.activate span {
+  color: #16a34a;
+}
+
+/* --- Custom Form System Layouts (No Bootstrap Row/Col dependencies) --- */
+
+.gl-custom-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2-Column fields alignment layout box spacing map */
+.gl-custom-field-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.gl-custom-field-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gl-custom-full-width-field {
+  width: 100%;
+}
+
+/* --- Input UI standard skins mapping --- */
+.gl-popup-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.gl-popup-form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  color: #444444;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.gl-popup-form-input::placeholder {
+  color: #aaaaaa;
+}
+
+.gl-popup-form-input:focus {
+  border-color: #006699;
+}
+
+/* --- Footer layout alignments custom triggers --- */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+/* Specific solid blue layout matchers */
+.spec-blue-btn {
+  background-color: #006699 !important;
+  border-color: #006699 !important;
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.blue-theme-bg {
+  background-color: #006699 !important;
+}
+
+/* Responsive breakpoint logic */
+@media (max-width: 768px) {
+  .gl-custom-field-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gl-custom-popup-wrapper .modal-dialog {
+  max-width: 543px;
+}
+
+#deleteDistrictModal .modal-dialog {
+  max-width: 544px;
+}
+
+button.gl-popup-btn-danger-confirm.primary {
+  background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
+  border: 1px solid #004c6c;
+}
+
+.gl-popup-danger-icon-circle.green {
+  background: #e8f6ed;
+}
+
+/* --- Custom System Layout (Bina row/col classes ke) --- */
+.gl-custom-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gl-custom-field-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.gl-custom-field-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gl-custom-full-width-field {
+  width: 100%;
+}
+
+/* --- Input Fields Skins --- */
+.gl-popup-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.section-separator-title {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.gl-popup-form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  color: #444444;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.gl-popup-form-input::placeholder {
+  color: #aaaaaa;
+}
+
+/* --- Dropdown Selection Configs --- */
+.gl-popup-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.gl-popup-form-select {
+  width: 100%;
+  padding: 10px 36px 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  color: #444444;
+  background-color: #ffffff;
+  appearance: none;
+  cursor: pointer;
+}
+
+.gl-popup-select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #0080b0;
+  pointer-events: none;
+}
+
+/* --- Select Payment Type Rows (Left: Heading, Right: Dropdown) --- */
+.gl-payment-rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.gl-payment-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f5f7;
+  padding: 10px 16px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.gl-payment-left-heading {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+}
+
+/* Right side inner fixed dropdown bounding box width */
+.gl-payment-dropdown-size {
+  width: 120px;
+}
+
+.gl-payment-dropdown-size .gl-popup-form-select {
+  padding: 8px 28px 8px 12px;
+  font-size: 13px;
+  background-color: #ffffff;
+}
+
+/* --- Footer Triggers --- */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.spec-blue-btn {
+  background-color: #006699 !important;
+  border-color: #006699 !important;
+  color: #ffffff !important;
+}
+
+.blue-theme-bg {
+  background-color: #006699 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gl-custom-field-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .gl-payment-item-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .gl-payment-dropdown-size {
+    width: 100%;
+  }
+}
+
+/* --- Custom Service Assignment Layout (No Bootstrap dependencies) --- */
+
+.gl-popup-assign-service-dialog {
+  max-width: 460px;
+  width: 100%;
+}
+
+.gl-custom-service-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gl-custom-service-layout .section-heading {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 16px;
+}
+
+.gl-services-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  padding-left: 12px;
+}
+
+/* Checkbox Row Element Wrapper as Clickable Target */
+.gl-service-checkbox-row {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  width: fit-content;
+}
+
+/* Hidden Default Native Element */
+.gl-custom-checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Custom Outlined Square Design Box */
+.gl-checkbox-custom-box {
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  border: 1.5px solid #111111;
+  border-radius: 4px;
+  margin-right: 12px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.15s ease;
+}
+
+/* Checked Status Fill Styling (Solid Blue Scheme Match) */
+.gl-custom-checkbox-input:checked ~ .gl-checkbox-custom-box {
+  background-color: #006699;
+  border-color: #006699;
+}
+
+/* Checkmark Graphic Custom Vector Overlay */
+.gl-checkbox-custom-box::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Trigger Show Checkmark */
+.gl-custom-checkbox-input:checked ~ .gl-checkbox-custom-box::after {
+  display: block;
+}
+
+/* Text Element Labeling Styles */
+.gl-service-name-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+}
+
+/* --- Action Button Controllers Overrides --- */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 24px;
+}
+
+.spec-blue-btn {
+  background-color: #006699;
+  border-color: #006699;
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.blue-theme-bg {
+  background-color: #006699;
+}
+
+img.search-icon-usr-mng {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.user-mng-drop {
+  border: 1px solid #d9d9d9;
+}
+
+/* --- Custom System Form Core Layouts (Bina Row/Col grid ke) --- */
+.gl-custom-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2-Column Responsive Grid Structure */
+.gl-custom-field-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.gl-custom-field-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gl-custom-full-width-field {
+  width: 100%;
+}
+
+/* Header Alignment Elements controls */
+.gl-popup-header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: row-reverse;
+  width: 50%;
+}
+
+/* Solid Blue Bulk CSV Control Trigger button */
+.gl-popup-bulk-csv-btn {
+  background-color: #006699;
+  color: #ffffff;
+  border: 1px solid #006699;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.gl-popup-bulk-csv-btn:hover {
+  background-color: #005580;
+}
+
+/* Outlined Row - Add Another Email design styles */
+.gl-popup-add-another-btn {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1.5px solid #0080b0;
+  border-radius: 8px;
+  color: #0080b0;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease;
+}
+
+.gl-popup-add-another-btn:hover {
+  background-color: #f4fbfd;
+}
+
+/* --- Input Field Micro Skins --- */
+.gl-popup-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.gl-popup-form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  color: #444444;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* --- Select Controls wrappers overrides --- */
+.gl-popup-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.gl-popup-form-select {
+  width: 100%;
+  padding: 10px 36px 10px 14px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  color: #b0b0b0;
+  background-color: #ffffff;
+  appearance: none;
+  cursor: pointer;
+}
+
+.gl-popup-select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #0080b0;
+  pointer-events: none;
+}
+
+/* --- Action Bottom Footers Row Triggers --- */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 20px;
+}
+
+.spec-blue-btn {
+  background-color: #006699 !important;
+  border-color: #006699 !important;
+  color: #ffffff !important;
+}
+
+.blue-theme-bg {
+  background-color: #006699 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gl-custom-field-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .gl-popup-header-row {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .gl-popup-header-right-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* --- Custom Profile Layout Container (No Bootstrap Row/Col dependencies) --- */
+
+.gl-custom-form-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Image ke mutabiq inner thin grey boundary card box wrapper */
+.gl-profile-form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  background-color: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2-Column Responsive Custom Grid Splitter */
+.gl-custom-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* 3-Column Responsive Custom Grid Splitter */
+.gl-custom-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.gl-custom-field-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gl-custom-full-width-field {
+  width: 100%;
+}
+
+/* --- Form Fields & Typography Layout Skins --- */
+.gl-popup-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 8px;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-popup-form-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #333333;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.gl-popup-form-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Custom Textarea for Bio block lines styling */
+.gl-popup-form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #333333;
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.gl-popup-form-textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* --- Select Dropdown UI Engine --- */
+.gl-popup-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.gl-popup-form-select {
+  width: 100%;
+  padding: 11px 36px 11px 14px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #333333;
+  background-color: #ffffff;
+  appearance: none;
+  cursor: pointer;
+}
+
+.gl-popup-select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #006699;
+  pointer-events: none;
+}
+
+/* --- Footers alignment custom triggers --- */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 20px;
+}
+
+.spec-blue-btn {
+  background-color: #006699 !important;
+  border-color: #006699 !important;
+  color: #ffffff !important;
+}
+
+.blue-theme-bg {
+  background-color: #006699 !important;
+}
+
+/* --- Responsive Media Rules --- */
+@media (max-width: 768px) {
+  .gl-custom-grid-2,
+  .gl-custom-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .gl-profile-form-card {
+    padding: 16px;
+  }
+}
+
+/* --- Tags Engine Functional System Styles --- */
+
+.gl-custom-tags-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Custom Search Container Input Box rules */
+.gl-tags-search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.gl-tags-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.gl-popup-tags-search-input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  font-size: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  color: #444444;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.gl-popup-tags-search-input::placeholder {
+  color: #aaaaaa;
+}
+
+.gl-popup-tags-search-input:focus {
+  border-color: #006699;
+}
+
+/* Inner block system layout rules */
+.gl-tags-section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.gl-tags-section-heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Flex wrapping cloud grid logic for custom capsules items */
+.gl-tags-pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  width: 100%;
+}
+
+/* Main base style rule for single pill capsule */
+.gl-tag-pill-item {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  user-select: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Light light blue layout variation code for unselected general available state */
+.available-tag {
+  background-color: #eaf3f7;
+  color: #005a87;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.available-tag:hover {
+  background-color: #dbebf2;
+}
+
+/* Selected layout status pills variant skins color match */
+.selected-tag {
+  background-color: #eaf3f7;
+  color: #005a87;
+  padding-right: 12px;
+  /* Cross alignment spacer adjustments */
+}
+
+/* Red Micro close cross action triggers embedded button controls */
+.gl-remove-tag-pill-btn {
+  background: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* --- Action Triggers and theme specs --- */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.spec-blue-btn {
+  background-color: #006699 !important;
+  border-color: #006699 !important;
+  color: #ffffff !important;
+}
+
+.blue-theme-bg {
+  background-color: #006699 !important;
+}
+
+/* --- Permissions Layout Engine (No Row/Col Overlaps) --- */
+
+.gl-custom-permissions-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Master Permission Row Box Component Card Wrapper */
+.gl-permission-card-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px 20px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+/* Checked UI Highlight Skin Sync */
+.gl-permission-card-row.checked-active-state {
+  background-color: #eaf3f7;
+  border-color: #006699;
+}
+
+/* Checkbox Left Alignment Block spacer */
+.gl-permission-left-action {
+  position: relative;
+  margin-top: 2px;
+  margin-right: 16px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+/* Native Hidden Overlay Trigger Element */
+.gl-native-permission-check {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Custom Checkbox Design Box skin */
+.gl-custom-permission-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  border: 1.5px solid #111111;
+  border-radius: 4px;
+  transition: all 0.1s ease;
+}
+
+/* Active solid blue fill mapper toggle state */
+.gl-native-permission-check:checked ~ .gl-custom-permission-box {
+  background-color: #006699;
+  border-color: #006699;
+}
+
+/* Custom Vector Arrow Overlay mark */
+.gl-custom-permission-box::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.gl-native-permission-check:checked ~ .gl-custom-permission-box::after {
+  display: block;
+}
+
+/* Typography Text Stack alignment rules */
+.gl-permission-text-block {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 4px;
+}
+
+.gl-permission-main-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.gl-permission-sub-desc {
+  font-size: 13px;
+  font-weight: 400;
+  color: #888888;
+}
+
+/* --- Trigger Footers configuration --- */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 24px;
+}
+
+.spec-blue-btn {
+  background-color: #006699 !important;
+  border-color: #006699 !important;
+  color: #ffffff !important;
+}
+
+.blue-theme-bg {
+  background-color: #006699 !important;
+}
+
+/* --- Advanced Nested Layout Framework (Bina dependencies ke) --- */
+
+.gl-advanced-permissions-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Master Permission Row Cards Component */
+.gl-permission-card-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 18px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.gl-permission-card-row.checked-active-state {
+  background-color: #eaf3f7;
+  border-color: #006699;
+}
+
+/* Checkbox Left Alignment Block spacer */
+.gl-permission-left-action {
+  position: relative;
+  margin-top: 2px;
+  margin-right: 14px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
+
+.gl-native-permission-check {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.gl-custom-permission-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #ffffff;
+  border: 1.5px solid #111111;
+  border-radius: 4px;
+}
+
+.gl-native-permission-check:checked ~ .gl-custom-permission-box {
+  background-color: #006699;
+  border-color: #006699;
+}
+
+.gl-custom-permission-box::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.gl-native-permission-check:checked ~ .gl-custom-permission-box::after {
+  display: block;
+}
+
+/* Typography elements alignment inside standard permission block rows */
+.gl-permission-text-block {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 2px;
+}
+
+.gl-permission-main-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-permission-sub-desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: #8fa2b2;
+}
+
+/* --- Embedded Nested Search & List Mechanism --- */
+.gl-nested-search-checklist-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 6px 12px;
+  box-sizing: border-box;
+}
+
+.gl-nested-search-box-container {
+  position: relative;
+  width: 100%;
+}
+
+.gl-nested-glass-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.gl-nested-search-field-input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  font-size: 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  color: #333333;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.gl-nested-search-field-input::placeholder {
+  color: #cccccc;
+}
+
+/* Checklist Row Linear Loop Controls */
+.gl-nested-checklist-scroller {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.gl-nested-check-item-row {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  width: 100%;
+}
+
+.gl-nested-native-check {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Secondary Micro Checklist Box skin overrides */
+.gl-nested-custom-box {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  background-color: #ffffff;
+  border: 1.5px solid #111111;
+  border-radius: 4px;
+  margin-right: 12px;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.gl-nested-native-check:checked ~ .gl-nested-custom-box {
+  background-color: #0080b0;
+  border-color: #0080b0;
+}
+
+.gl-nested-custom-box::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.gl-nested-native-check:checked ~ .gl-nested-custom-box::after {
+  display: block;
+}
+
+.gl-nested-label-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* --- Action Triggers Footer Area Rules --- */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.spec-blue-btn {
+  background-color: #006699 !important;
+  border-color: #006699 !important;
+  color: #ffffff !important;
+}
+
+.blue-theme-bg {
+  background-color: #006699 !important;
+}
+
+/* Header Styling */
+.gl-service-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.gl-header-icon {
+  color: #0c5470;
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.gl-header-title {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+/* Table Global Structuring */
+.gl-matrix-data-table thead {
+  background-color: #0c5470;
+  color: #fff;
+}
+
+.gl-th-name {
+  width: 25%;
+  padding-left: 1.5rem;
+}
+
+.gl-cell-bold {
+  padding-left: 1.5rem;
+  font-weight: 500;
+}
+
+/* Admin Avatars */
+.gl-admin-avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  /* vertical-fit: cover; */
+  object-fit: cover;
+}
+
+.gl-link-admin-name {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Progress Component */
+.gl-progress-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.gl-progress-text {
+  font-weight: 500;
+  margin-right: 8px;
+  min-width: 35px;
+}
+
+.gl-custom-progress-bg {
+  height: 8px;
+  width: 100px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.gl-progress-bar-fill {
+  background-color: #10b981;
+  border-radius: 4px;
+}
+
+/* Width Helper Utilities for Progress */
+.w-92 {
+  width: 92%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Status Pills Custom Structure */
+.gl-status-pill {
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.pill-in-progress {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.pill-completed {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+/* Action Button View Styling */
+.gl-btn-view {
+  background-color: #0284c7;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.gl-btn-view:hover {
+  background-color: #0369a1;
+  color: #fff;
+}
+
+/* Header Styling */
+.gl-course-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+.gl-header-icon {
+  color: #0c5470;
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.gl-header-title {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+/* Table Dimensions & Header Colors */
+.gl-matrix-data-table thead {
+  background-color: #0c5470;
+  color: #fff;
+}
+
+.gl-th-course {
+  width: 25%;
+  padding-left: 1.5rem !important;
+}
+
+.gl-th-module {
+  width: 25%;
+}
+
+.gl-th-lesson {
+  width: 20%;
+}
+
+.gl-th-status {
+  width: 18%;
+}
+
+.gl-th-ratings {
+  width: 12%;
+}
+
+/* Core Typography & Padding helpers */
+.gl-cell-bold {
+  padding-left: 1.5rem !important;
+  font-weight: 500;
+  color: #212529;
+}
+
+.gl-empty-cell {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+/* Nested Dropdown Alignments */
+.gl-dropdown-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 140px;
+  cursor: pointer;
+}
+
+.gl-arrow-indicator {
+  font-size: 0.75rem;
+  color: #212529;
+}
+
+/* Indentation styling based on Level hierarchy */
+.gl-sub-row-level-1 td:nth-child(2) {
+  padding-left: 1.5rem;
+}
+
+/* Ratings Star Alignment */
+.gl-rating-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.gl-star-icon {
+  color: #ffb800;
+  font-size: 1rem;
+}
+
+/* All Color States Pills for Status */
+.gl-status-pill {
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.pill-completed {
+  background-color: #ecfdf5;
+  color: #2e7d32;
+  border: 1px solid #a7f3d0;
+}
+
+.pill-pending {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.pill-reviewed {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.pill-needs-improvement {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+/* Header Styling */
+.gl-course-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+
+.gl-header-icon {
+  color: #0c5470;
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.gl-header-title {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+/* Table Dimensions & Header Colors */
+.gl-matrix-data-table thead {
+  background-color: #0c5470;
+  color: #fff;
+}
+
+.gl-th-course {
+  width: 25%;
+  padding-left: 1.5rem !important;
+}
+
+.gl-th-module {
+  width: 25%;
+}
+
+.gl-th-lesson {
+  width: 20%;
+}
+
+.gl-th-status {
+  width: 18%;
+}
+
+.gl-th-ratings {
+  width: 12%;
+}
+
+/* Core Typography & Padding helpers */
+.gl-cell-bold {
+  padding-left: 1.5rem !important;
+  font-weight: 500;
+  color: #212529;
+}
+
+.gl-empty-cell {
+  color: #6c757d;
+  font-weight: 400;
+}
+
+/* Nested Dropdown Alignments */
+.gl-dropdown-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 140px;
+  cursor: pointer;
+}
+
+.gl-arrow-indicator {
+  font-size: 0.75rem;
+  color: #212529;
+}
+
+/* Indentation styling based on Level hierarchy */
+.gl-sub-row-level-1 td:nth-child(2) {
+  padding-left: 1.5rem;
+}
+
+/* Ratings Star Alignment */
+.gl-rating-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.gl-star-icon {
+  color: #ffb800;
+  font-size: 1rem;
+}
+
+/* All Color States Pills for Status */
+.gl-status-pill {
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.pill-completed {
+  background-color: #ecfdf5;
+  color: #2e7d32;
+  border: 1px solid #a7f3d0;
+}
+
+.pill-pending {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.pill-reviewed {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.pill-needs-improvement {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.action-tag-btn {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.action-tag-btn button {
+  background: transparent;
+  border: none;
+}
+
+/* Add New Global Tag */
+
+/* --- Global Tag Management Module Style Rules --- */
+
+.gl-popup-tag-dialog {
+  max-width: 540px;
+  width: 100%;
+}
+
+.gl-custom-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+.gl-custom-full-width-field {
+  width: 100%;
+  text-align: left;
+}
+
+/* --- Input Elements Skin Mechanics --- */
+.gl-popup-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 8px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-popup-form-input {
+  width: 100%;
+  padding: 11px 16px;
+  font-size: 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  color: #444444;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.gl-popup-form-input:focus {
+  border-color: #006699;
+}
+
+/* --- Select Form Trigger Styles --- */
+.gl-popup-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.gl-popup-form-select {
+  width: 100%;
+  padding: 11px 40px 11px 16px;
+  font-size: 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  color: #555555;
+  background-color: #ffffff;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Micro blue interactive arrow drop icon mapping */
+.gl-popup-select-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #006699;
+  pointer-events: none;
+}
+
+/* --- Base Layout System Wrappers overrides --- */
+.gl-popup-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-top: 20px;
+}
+
+.spec-blue-btn {
+  background-color: #006699 !important;
+  border-color: #006699 !important;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.blue-theme-bg {
+  background-color: #006699 !important;
+}
+
+/* --- Success Alert Status Module Styles Engine --- */
+
+.gl-popup-alert-dialog {
+  max-width: 480px;
+  width: 100%;
+}
+
+.text-center-engine {
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px !important;
+}
+
+.gl-alert-popup-top-actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -10px;
+}
+
+.gl-popup-alert-core-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 !important;
+}
+
+/* --- Circular Success Status Ring Component --- */
+.gl-alert-status-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.gl-alert-status-badge.success-green-skin {
+  background-color: #ecfdf5;
+}
+
+/* --- Typography Formatting System --- */
+.gl-alert-main-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 14px;
+}
+
+.gl-alert-message-desc {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  max-width: 400px;
+  margin: 0 auto 28px auto;
+}
+
+/* --- Centered Alert Actions Trigger Row --- */
+.gl-popup-alert-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.alert-inline-btn {
+  min-width: 120px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.spec-green-btn {
+  background-color: #10b981 !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spec-green-btn:hover {
+  background-color: #059669 !important;
+}
+
+.inline-check-svg {
+  vertical-align: middle;
+}
+
+/* --- Warning Alert Status Module Engine --- */
+
+.gl-popup-alert-dialog {
+  max-width: 480px;
+  width: 100%;
+}
+
+.text-center-engine {
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px !important;
+}
+
+.gl-alert-popup-top-actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -10px;
+}
+
+.gl-popup-alert-core-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 !important;
+}
+
+/* --- Circular Red Warning Ring Component --- */
+.gl-alert-status-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.gl-alert-status-badge.alert-red-skin {
+  background-color: #fef2f2;
+}
+
+/* --- Typography Formatting System --- */
+.gl-alert-main-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 14px;
+}
+
+.gl-alert-message-desc {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  max-width: 420px;
+  margin: 0 auto 24px auto;
+}
+
+/* --- Time Range Component Framework (Frame.png Custom Layout) --- */
+.gl-time-display-pill-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 12px 20px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin-bottom: 28px;
+}
+
+.gl-time-pill-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.gl-time-range-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gl-time-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #a0a0a0;
+}
+
+.gl-time-separator {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+}
+
+/* --- Centered Destructive Actions Row --- */
+.gl-popup-alert-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.alert-inline-btn {
+  min-width: 120px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.spec-red-btn {
+  background-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.spec-red-btn:hover {
+  background-color: #b91c1c !important;
+}
+
+.inline-alert-svg {
+  vertical-align: middle;
+}
+
+/* Add New Global Tag */
+span.hours-tbl-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+}
+
+/* --- Destructive Delete Action Component Engine --- */
+/* --- Action Approval Module Engine --- */
+
+.gl-popup-alert-dialog {
+  max-width: 500px;
+  width: 100%;
+}
+
+.text-center-engine {
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 36px !important;
+}
+
+.gl-alert-popup-top-actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -4px;
+}
+
+.gl-popup-alert-core-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 !important;
+}
+
+/* --- Circular Status Ring Component --- */
+.gl-alert-status-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.gl-alert-status-badge.success-green-skin {
+  background-color: #ecfdf5;
+}
+
+/* --- Typography Formatting System --- */
+.gl-alert-main-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-alert-message-desc {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  max-width: 380px;
+  margin: 0 auto 24px auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* --- Form Input Fields Specific Styles --- */
+.gl-custom-full-width-field {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.text-start-override {
+  text-align: left !important;
+}
+
+.gl-popup-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 8px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-popup-form-textarea {
+  width: 100%;
+  min-height: 96px;
+  padding: 14px 18px;
+  font-size: 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 16px;
+  color: #222222;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  resize: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-popup-form-textarea::placeholder {
+  color: #94a3b8;
+}
+
+.gl-popup-form-textarea:focus {
+  border-color: #0077b6;
+}
+
+/* --- Action Triggers Flex Row Alignment --- */
+.gl-popup-alert-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.horizontal-action-gap {
+  gap: 24px;
+}
+
+/* Flat grey text button look */
+.gl-popup-btn-cancel-flat {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 10px 16px;
+}
+
+.gl-popup-btn-cancel-flat:hover {
+  color: #64748b;
+}
+
+/* Dynamic Solid Action Primary Button Fill */
+.spec-blue-btn {
+  background-color: #0077b6 !important;
+  border-color: #0077b6 !important;
+  color: #ffffff !important;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.action-with-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.inline-check-svg {
+  vertical-align: middle;
+}
+
+/* --- Action Decline Module Engine --- */
+
+.gl-popup-alert-dialog {
+  max-width: 500px;
+  width: 100%;
+}
+
+.text-center-engine {
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 36px !important;
+}
+
+.gl-alert-popup-top-actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -4px;
+}
+
+.gl-popup-alert-core-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 !important;
+}
+
+/* --- Circular Destructive Alert Ring Component --- */
+.gl-alert-status-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.gl-alert-status-badge.decline-red-skin {
+  background-color: #fef2f2;
+}
+
+/* --- Typography System --- */
+.gl-alert-main-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-alert-message-desc {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  max-width: 390px;
+  margin: 0 auto 24px auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* --- Input Fields Styles --- */
+.gl-custom-full-width-field {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.text-start-override {
+  text-align: left !important;
+}
+
+.gl-popup-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 8px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-popup-form-textarea {
+  width: 100%;
+  min-height: 96px;
+  padding: 14px 18px;
+  font-size: 14px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 16px;
+  color: #222222;
+  outline: none;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  resize: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-popup-form-textarea::placeholder {
+  color: #94a3b8;
+}
+
+.gl-popup-form-textarea:focus {
+  border-color: #dc2626;
+}
+
+/* --- Action Triggers Footer Row --- */
+.gl-popup-alert-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.horizontal-action-gap {
+  gap: 24px;
+}
+
+.gl-popup-btn-cancel-flat {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 10px 16px;
+}
+
+.gl-popup-btn-cancel-flat:hover {
+  color: #64748b;
+}
+
+/* Solid Crimson Destructive Action Fill */
+.spec-red-btn {
+  background-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.spec-red-btn:hover {
+  background-color: #b91c1c !important;
+}
+
+.action-with-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.inline-cross-svg {
+  vertical-align: middle;
+}
+
+/* --- Authentication Action Component Engine --- */
+
+.gl-popup-alert-dialog {
+  max-width: 480px;
+  /* Precise aspect ratio scaling to match design geometry */
+  width: 100%;
+}
+
+.text-center-engine {
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 34px !important;
+}
+
+.gl-alert-popup-top-actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -4px;
+}
+
+.gl-popup-alert-core-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 !important;
+}
+
+/* --- Circular Red Warning Ring Component --- */
+.gl-alert-status-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.gl-alert-status-badge.alert-red-skin {
+  background-color: #fef2f2;
+  /* Soft translucent matching crimson tint */
+}
+
+/* --- Typography System --- */
+.gl-alert-main-title {
+  font-size: 32px;
+  /* High fidelity bold text emphasis */
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 12px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-alert-message-desc {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666666;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+.gl-alert-message-desc.final-row-spacing {
+  margin-bottom: 28px;
+  /* Balanced space before the action footer button row */
+}
+
+/* --- Centered Action Triggers Row --- */
+.gl-popup-alert-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.control-panel-gap {
+  gap: 28px;
+  /* Standard horizontal layout spacing rule */
+}
+
+.structural-btn {
+  min-width: 120px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Flat grey cancel typography look */
+.gl-popup-btn-cancel-flat {
+  background: transparent;
+  color: #666666;
+  transition: color 0.2s ease;
+}
+
+.gl-popup-btn-cancel-flat:hover {
+  color: #111111;
+}
+
+/* Crimson Solid Destructive Main Primary Button Fill */
+.spec-red-btn {
+  background-color: #dc2626 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+  transition: background-color 0.2s ease;
+}
+
+.spec-red-btn:hover {
+  background-color: #b91c1c !important;
+  /* Slightly darker shade on cursor hover states */
+}
+
+.btn-view-schedule {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+}
+
+.custom-action-btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-view-requests {
+  background-color: #ffffff;
+  color: #007bb6;
+  border: 1.5px solid #ffffff;
+}
+
+.btn-view-requests svg {
+  stroke: currentColor;
+  stroke-width: 2px;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s;
+}
+
+.gl-filter-action-wrapper {
+  width: 100%;
+}
+
+.gl-filter-action-wrapper .min-w-search-input {
+  margin-right: auto;
+}
+
+#editUserProfileModal .modal-dialog {
+  max-width: 700px;
+}
+
+.survey-wrap {
+  padding: 30px;
+}
+
+.gl-pagination-left-side .gl-dropdown-wrapper.mini-select-box {
+  width: auto;
+}
+
+.back-btn a {
+  color: #fff;
+}
+
+main.glnc-canvas-container.system-settings-wrapper {
+  padding: 30px;
+}
+
+.system-settings-wrapper .glnc-settings-card {
+  margin-top: 20px;
+}
+
+#quietHoursModal .modal-dialog {
+  max-width: 800px;
+}
+
+.gl-custom-popup-wrapper .gl-popup-alert-footer-row {
+  margin-top: 20px;
+}
+
+button.gl-popup-btn-save.alert-inline-btn.red-btn {
+  background: #df1414;
+}
+
+#manageTagsModal .modal-dialog {
+  max-width: 750px;
+}
+
+#RolePermissionsModal .modal-dialog {
+  margin-top: 4rem;
+}
+
+.btn-sow-action.revision {
+  background-color: var(--btn-revision);
+}
+
+.btn-sow-action {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+
+.btn-sow-action.decline {
+  background-color: var(--btn-decline);
+}
+
+.btn-sow-action.approve {
+  background-color: var(--btn-approve);
+}
+
+:root {
+  --btn-decline: #d92d20;
+  --btn-approve: #12b76a;
+}
+
+/* Prefixed styles to avoid any global conflicts */
+
+.po-profile-card {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px;
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.po-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.po-profile-header-icon {
+  width: 20px;
+  height: 20px;
+  color: #006699;
+  /* Adjust icon color to match your theme */
+}
+
+.po-profile-title {
+  color: #0d1b2a;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.po-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.po-profile-form-row {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.po-profile-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.po-profile-label {
+  color: #0d1b2a;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.po-profile-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background-color: #f8f9fa;
+  /* Light background for read-only fields */
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  color: #6c757d;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+  .po-profile-form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Prefixed Document Verification Card styles */
+
+.doc-verify-card {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px;
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Header styling */
+.doc-verify-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.doc-verify-header-icon {
+  width: 22px;
+  height: 22px;
+  color: #026aa7;
+}
+
+.doc-verify-title {
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Drag & Drop Area */
+.doc-verify-upload-zone {
+  position: relative;
+  border: 1px dashed #cbd5e1;
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 24px;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.doc-verify-upload-zone:hover {
+  border-color: #026aa7;
+  background-color: #f8fafc;
+}
+
+/* Real input file tracking area covers everything but hidden */
+.doc-verify-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.doc-verify-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.doc-verify-upload-icon {
+  width: 36px;
+  height: 36px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.doc-verify-upload-text {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.doc-verify-browse {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.doc-verify-supported-formats {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Uploaded Files List Row Styling */
+.doc-verify-files-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.doc-verify-file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8fafc;
+  border-radius: 16px;
+  padding: 16px 24px;
+  border: 1px solid transparent;
+}
+
+.doc-verify-file-info-block {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Custom DOC Blue Square Icon */
+.doc-verify-doc-icon-box {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  background-color: #006699;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.doc-verify-doc-svg {
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+}
+
+.doc-verify-icon-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* File Details Text */
+.doc-verify-file-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doc-verify-file-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.doc-verify-file-meta {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* Buttons section */
+.doc-verify-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc-verify-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.doc-verify-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Action button colors */
+.doc-verify-download {
+  color: #006699;
+}
+
+.doc-verify-download:hover {
+  background-color: #e0f2fe;
+}
+
+.doc-verify-delete {
+  color: #d92d20;
+  background-color: #fef2f2;
+}
+
+.doc-verify-delete:hover {
+  background-color: #fee2e2;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 640px) {
+  .doc-verify-file-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .doc-verify-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* Prefixed Security Settings Box styles */
+
+.sec-settings-card {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px;
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Header Section */
+.sec-settings-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.sec-settings-header-icon {
+  width: 22px;
+  height: 22px;
+  color: #026aa7;
+  /* Clean blue color from image */
+}
+
+.sec-settings-title {
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Form layouts */
+.sec-settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sec-settings-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.sec-settings-label {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Input Wrapper to place icon inside */
+.sec-settings-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.sec-settings-input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #94a3b8;
+  /* Muted gray for input icons */
+  pointer-events: none;
+}
+
+/* Input design matching the image */
+.sec-settings-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px 0 46px;
+  /* Extra left padding for lock icon */
+  background-color: #f8fafc;
+  /* Very light subtle gray background */
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  color: #334155;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+}
+
+.sec-settings-input:focus {
+  border-color: #026aa7;
+  background-color: #ffffff;
+}
+
+/* Update Password Button style */
+.sec-settings-action {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+.sec-settings-btn {
+  height: 46px;
+  padding: 0 24px;
+  background-color: #0076a8;
+  /* Darker teal/blue mix matching button */
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sec-settings-btn:hover {
+  background-color: #005c84;
+}
+
+.filter-group select.form-select.form-select-sm {
+  height: auto;
+  padding: 10px 32px 10px 12px;
+}
+
+#confirmLogoutModal .gl-alert-status-badge {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+#confirmLogoutModal .gl-alert-status-badge.alert-red-skin svg {
+  width: 40px;
+  height: 40px;
+  transform: rotateY(180deg);
+}
+.glnc-btn-cal-icon.date-width {
+    width: 90px;
+}
