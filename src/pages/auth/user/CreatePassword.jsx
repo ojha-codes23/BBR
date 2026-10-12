@@ -11,7 +11,7 @@ const CreatePassword = () => {
         <div className="login-page-wrapper">
 
             <div className="login-left-banner">
-                <img className="login-left-banner-img" src="/imgaes/user/login/login-left-img.svg" alt="Group Background Image"/>
+                <img className="login-left-banner-img" src="/images/user/login/login-left-img.svg" alt="Group Background Image"/>
 
                 <div className="login-left-banner-overlay">
                     <h1 className="login-overlay-title">Get<br/>Everything<br/>You Want</h1>
@@ -25,11 +25,11 @@ const CreatePassword = () => {
 
                     <div className="login-header-wrapper">
                         <Link to="/user/verify-otp" className="login-back-arrow-btn" title="Back to Login">
-                            <img src="/imgaes/user/login/left-arrow.svg" alt="Back"/>
+                            <img src="/images/user/login/left-arrow.svg" alt="Back"/>
                         </Link>
 
                         <div className="login-header-logo-container">
-                            <img src="/imgaes/user/login/logo.svg" alt="GrantLink NC Logo"
+                            <img src="/images/user/login/logo.svg" alt="GrantLink NC Logo"
                                 style={{maxWidth:" 180px", height: "auto", display: "block"}}/>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ const CreatePassword = () => {
                                     <input type="password" id="reg-password" className="login-input-control"
                                         placeholder="Enter your password" required />
                                     <div className="login-password-eye-icon gl-eye-trigger" data-target="reg-password">
-                                        <img src="/imgaes/user/login/eye-close.svg" alt="Toggle Password visual state"
+                                        <img src="/images/user/login/eye-close.svg" alt="Toggle Password visual state"
                                             className="gl-eye-img-switch"/>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@ const CreatePassword = () => {
                                         placeholder="Re-enter Password" required />
                                     <div className="login-password-eye-icon gl-eye-trigger"
                                         data-target="reg-confirm-password">
-                                        <img src="/imgaes/user/login/eye-close.svg" alt="Toggle Password visual state"
+                                        <img src="/images/user/login/eye-close.svg" alt="Toggle Password visual state"
                                             className="gl-eye-img-switch"/>
                                     </div>
                                 </div>

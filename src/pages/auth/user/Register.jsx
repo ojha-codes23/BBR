@@ -8,7 +8,7 @@ const Register = () => {
         <div className="login-page-wrapper">
 
             <div className="login-left-banner">
-                <img className="login-left-banner-img" src="/imgaes/user/login/login-left-img.svg" alt="Group Background Image"/>
+                <img className="login-left-banner-img" src="/images/user/login/login-left-img.svg" alt="Group Background Image"/>
 
                 <div className="login-left-banner-overlay">
                     <h1 className="login-overlay-title">Get<br/>Everything<br/>You Want</h1>
@@ -21,7 +21,7 @@ const Register = () => {
                 <div className="login-form-container">
 
                     <div className="login-header-logo">
-                        <img src="/imgaes/user/login/logo.svg" alt="GrantLink NC Logo"/>
+                        <img src="/images/user/login/logo.svg" alt="GrantLink NC Logo"/>
                     </div>
 
                     <div className="login-form-card">
@@ -78,7 +78,7 @@ const Register = () => {
                                         placeholder="Enter your password" required/>
 
                                     <div className="login-password-eye-icon" id="password-toggle-btn">
-                                        <img src="/imgaes/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
+                                        <img src="/images/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@ const Register = () => {
                                         placeholder="Re-enter Password" required/>
 
                                     <div className="login-password-eye-icon" id="password-toggle-btn">
-                                        <img src="/imgaes/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
+                                        <img src="/images/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
                                     </div>
                                 </div>
                             </div>
@@ -109,11 +109,11 @@ const Register = () => {
 
                             <Link to="/user/login" className="login-submit-btn">Sign Up</Link>
                             <br/>
-                            <p className="text-center">Already have an account? <Link to="/user/login"
+                            <p className="text-center">Already have an account? <Link to="/user/"
                                     className="login-signup-link">Login</Link>
                             </p>
                             <p className="text-center">Having trouble finding your organization? <br/>
-                                <Link to="/user/login" className="login-signup-link">Let us help you reconnect.</Link>
+                                <Link to="/user" className="login-signup-link">Let us help you reconnect.</Link>
                             </p>
                         </form>
                     </div>

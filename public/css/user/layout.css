@@ -139,7 +139,7 @@ ul.gl-sidebar-menu li.gl-menu-item span.gl-menu-text {
   transition: all 0.2s ease;
 }
 
-.gl-menu-link:hover,
+/* .gl-menu-link:hover,
 .gl-menu-item.active .gl-menu-link {
   background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
   color: #fff;
@@ -148,6 +148,27 @@ ul.gl-sidebar-menu li.gl-menu-item span.gl-menu-text {
 .gl-menu-link:hover .gl-menu-icon,
 .gl-menu-item.active .gl-menu-link .gl-menu-icon {
   filter: brightness(0) invert(1);
+} */
+
+.gl-menu-link:hover,
+.gl-menu-link.active {
+  background: linear-gradient(
+    95.74deg,
+    #004c6c -19.77%,
+    #0094d2 119.43%
+    
+  );
+
+  color: #fff;
+}
+
+.gl-menu-link:hover .gl-menu-icon,
+.gl-menu-link.active .gl-menu-icon {
+  filter: brightness(0) invert(1);
+}
+
+.gl-menu-link.active .gl-menu-text {
+  color: #fff !important;
 }
 
 .gl-menu-icon {
