@@ -210,7 +210,7 @@ a {
 .gl-custom-nav-pills {
   /* background-color: #0076a5; */
   background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
-  padding: 6px;
+  padding: 6px !important;
   border-radius: 30px;
   display: flex;
   flex-wrap: nowrap;
@@ -233,7 +233,7 @@ a {
   padding: 10px 14px;
   margin: 0;
   white-space: nowrap;
-  border-radius: 30px;
+  border-radius: 30px !important;
   width: 100%;
   transition: all 0.2s ease;
 }
@@ -4345,7 +4345,7 @@ select.md-native-select {
   color: #344054;
   cursor: pointer;
   outline: none;
-  background-image: url(../images/super-user-dashboard/select-drowpdown.svg);
+  background-image: url(../images/teacher/super-user-dashboard/select-drowpdown.svg);
   background-repeat: no-repeat;
   background-position: right 12px center;
 }
@@ -9689,4 +9689,10 @@ button.gl-popup-btn-save.alert-inline-btn.red-btn {
 }
 .glnc-btn-cal-icon.date-width {
     width: 90px;
+}
+
+
+/* added by sunil */
+body.modal-open {
+  overflow: hidden !important;
 }

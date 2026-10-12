@@ -95,10 +95,10 @@ const Register = () => {
                       </label>
                     </div>
 
-                    <a href="login.html" className="login-submit-btn">Sign Up</a>
+                    <Link to="/teacher" className="login-submit-btn">Sign Up</Link>
                     <br />
                       <p className="text-center">Already have an account? 
-                        <Link to="/" className="login-signup-link">Login</Link>
+                        <Link to="/teacher" className="login-signup-link">Login</Link>
                       </p>
                   </form>
                 </div>

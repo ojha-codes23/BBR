@@ -778,25 +778,25 @@ function updateUMCount() {
   }
 }
 
-// Event Page js
+// Event Page js  , commented by sunil and add in bottom
 
-// header drop down uaser profile
-const profileContainer = document.getElementById("profileContainer");
-const profileTrigger = document.getElementById("profileTrigger");
+// // header drop down uaser profile
+// const profileContainer = document.getElementById("profileContainer");
+// const profileTrigger = document.getElementById("profileTrigger");
 
-// Click karne par open/close toggle hoga
-profileTrigger.addEventListener("click", (e) => {
-  profileContainer.classList.toggle("active");
-  e.stopPropagation(); // Window click event ko trigger hone se rokne ke liye
-});
+// // Click karne par open/close toggle hoga
+// profileTrigger.addEventListener("click", (e) => {
+//   profileContainer.classList.toggle("active");
+//   e.stopPropagation(); // Window click event ko trigger hone se rokne ke liye
+// });
 
-// Agar dropdown ke bahar kahi bhi click ho, to menu close ho jaye
-window.addEventListener("click", () => {
-  if (profileContainer.classList.contains("active")) {
-    profileContainer.classList.remove("active");
-  }
-});
-// header drop down uaser profile
+// // Agar dropdown ke bahar kahi bhi click ho, to menu close ho jaye
+// window.addEventListener("click", () => {
+//   if (profileContainer.classList.contains("active")) {
+//     profileContainer.classList.remove("active");
+//   }
+// });
+// // header drop down uaser profile
 
 // user management page js
 
@@ -1131,30 +1131,80 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // request-modal
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
 
-  // Sequential Interlink Modal Operation execution handling logic
-  const executeDeclineChainBtn = document.getElementById('executeDeclineChainBtn');
+//   // Sequential Interlink Modal Operation execution handling logic
+//   const executeDeclineChainBtn = document.getElementById('executeDeclineChainBtn');
 
-  // Initializing Bootstrap modal instances safely
-  const declineRequestModalEl = document.getElementById('declineRequestModal');
-  const serviceDeclinedModalEl = document.getElementById('serviceDeclinedNotificationModal');
+//   // Initializing Bootstrap modal instances safely
+//   const declineRequestModalEl = document.getElementById('declineRequestModal');
+//   const serviceDeclinedModalEl = document.getElementById('serviceDeclinedNotificationModal');
 
-  executeDeclineChainBtn.addEventListener('click', () => {
-    // Get active instances using Bootstrap static helper
-    const modalInstanceDecline = bootstrap.Modal.getInstance(declineRequestModalEl);
-    const modalInstanceNotification = new bootstrap.Modal(serviceDeclinedModalEl);
+//   executeDeclineChainBtn.addEventListener('click', () => {
+//     // Get active instances using Bootstrap static helper
+//     const modalInstanceDecline = bootstrap.Modal.getInstance(declineRequestModalEl);
+//     const modalInstanceNotification = new bootstrap.Modal(serviceDeclinedModalEl);
 
-    // Hide the active decline option box form
-    modalInstanceDecline.hide();
+//     // Hide the active decline option box form
+//     modalInstanceDecline.hide();
 
-    // Fire chain load delay to verify native fade execution safety frames
-    declineRequestModalEl.addEventListener('hidden.bs.modal', function fireNext() {
-      modalInstanceNotification.show();
-      // Clear callback references instantly to avoid layout loop triggers
-      declineRequestModalEl.removeEventListener('hidden.bs.modal', fireNext);
-    });
-  });
+//     // Fire chain load delay to verify native fade execution safety frames
+//     declineRequestModalEl.addEventListener('hidden.bs.modal', function fireNext() {
+//       modalInstanceNotification.show();
+//       // Clear callback references instantly to avoid layout loop triggers
+//       declineRequestModalEl.removeEventListener('hidden.bs.modal', fireNext);
+//     });
+//   });
+// });
+
+// request-modal
+
+
+
+
+// comment by sunil , and pasted new
+
+// request-modal
+
+document.addEventListener('click', function (e) {
+  const btn = e.target.closest('#executeDeclineChainBtn');
+  if (!btn) return;
+
+  const declineEl      = document.getElementById('declineRequestModal');
+  const notificationEl = document.getElementById('serviceDeclinedNotificationModal');
+  if (!declineEl || !notificationEl) return;
+
+  const declineInstance      = bootstrap.Modal.getInstance(declineEl)
+                            || bootstrap.Modal.getOrCreateInstance(declineEl);
+  const notificationInstance = bootstrap.Modal.getOrCreateInstance(notificationEl);
+
+  declineInstance.hide();
+
+  const fireNext = () => {
+    notificationInstance.show();
+    declineEl.removeEventListener('hidden.bs.modal', fireNext);
+  };
+  declineEl.addEventListener('hidden.bs.modal', fireNext);
 });
 
 // request-modal
+
+// cooment above by sunil and add here 
+
+// header drop down uaser profile
+const profileContainer = document.getElementById("profileContainer");
+const profileTrigger = document.getElementById("profileTrigger");
+
+// Click karne par open/close toggle hoga
+profileTrigger.addEventListener("click", (e) => {
+  profileContainer.classList.toggle("active");
+  e.stopPropagation(); // Window click event ko trigger hone se rokne ke liye
+});
+
+// Agar dropdown ke bahar kahi bhi click ho, to menu close ho jaye
+window.addEventListener("click", () => {
+  if (profileContainer.classList.contains("active")) {
+    profileContainer.classList.remove("active");
+  }
+});
+// header drop down uaser profile
