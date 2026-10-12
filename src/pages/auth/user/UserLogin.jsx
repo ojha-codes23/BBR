@@ -8,7 +8,7 @@ const UserLogin = () => {
         <div className="login-page-wrapper">
 
             <div className="login-left-banner">
-                <img className="login-left-banner-img" src="/imgaes/user/login/login-left-img.svg" alt="Group Background Image"/>
+                <img className="login-left-banner-img" src="/images/user/login/login-left-img.svg" alt="Group Background Image"/>
 
                 <div className="login-left-banner-overlay">
                     <h1 className="login-overlay-title">Get<br/>Everything<br/>You Want</h1>
@@ -21,7 +21,7 @@ const UserLogin = () => {
                 <div className="login-form-container">
 
                     <div className="login-header-logo">
-                        <img src="/imgaes/user/login/logo.svg" alt="GrantLink NC Logo"/>
+                        <img src="/images/user/login/logo.svg" alt="GrantLink NC Logo"/>
                     </div>
 
                     <div className="login-form-card">
@@ -45,7 +45,7 @@ const UserLogin = () => {
                                         placeholder="Enter your password" required/>
 
                                     <div className="login-password-eye-icon" id="password-toggle-btn">
-                                        <img src="/imgaes/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
+                                        <img src="/images/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
                                     </div>
                                 </div>
                             </div>
@@ -59,12 +59,12 @@ const UserLogin = () => {
 
                                 &nbsp;
 
-                                <Link to="/user/forget-password" className="login-forgot-link">Forgot Password?</Link>
+                                <Link to="/student/forget-password" className="login-forgot-link">Forgot Password?</Link>
                             </div>
 
-                            <a href="organization-login.html" className="login-submit-btn">Login</a>
+                            <Link to="/student/organization-login" className="login-submit-btn">Login</Link>
                             <p className="text-center mt-2">Don’t have an account?
-                                <Link to="/user/sign-up" className="login-signup-link">Sign Up</Link>
+                                <Link to="/student/sign-up" className="login-signup-link">Sign Up</Link>
                             </p>
                         </form>
                     </div>

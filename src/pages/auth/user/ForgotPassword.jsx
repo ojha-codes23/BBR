@@ -8,7 +8,7 @@ const ForgotPassword = () => {
         <div className="login-page-wrapper">
 
             <div className="login-left-banner">
-                <img className="login-left-banner-img" src="/imgaes/user/login/login-left-img.svg" alt="Group Background Image"/>
+                <img className="login-left-banner-img" src="/images/user/login/login-left-img.svg" alt="Group Background Image"/>
 
                 <div className="login-left-banner-overlay">
                     <h1 className="login-overlay-title">Get<br/>Everything<br/>You Want</h1>
@@ -21,12 +21,12 @@ const ForgotPassword = () => {
                 <div className="login-form-container">
 
                     <div className="login-header-wrapper">
-                        <Link to="/user/login"  className="login-back-arrow-btn" title="Back to Login">
-                            <img src="/imgaes/user/login/left-arrow.svg" alt="Back"/>
+                        <Link to="/user/"  className="login-back-arrow-btn" title="Back to Login">
+                            <img src="/images/user/login/left-arrow.svg" alt="Back"/>
                         </Link>
 
                         <div className="login-header-logo-container">
-                            <img src="/imgaes/user/login/logo.svg" alt="GrantLink NC Logo"
+                            <img src="/images/user/login/logo.svg" alt="GrantLink NC Logo"
                                 style={{maxWidth: "180px", height: "auto", display: "block"}}/>
                         </div>
                     </div>
@@ -48,7 +48,7 @@ const ForgotPassword = () => {
                             <Link to="/user/verify-otp" className="login-submit-btn">Verify</Link>
 
                             <p className="text-center mt-2">Already have an account? 
-                                                          <Link to="/user/login" className="login-signup-link">Log in </Link>
+                                                          <Link to="/user/" className="login-signup-link">Log in </Link>
                             </p>
 
                         </form>

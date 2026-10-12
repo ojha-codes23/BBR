@@ -203,15 +203,17 @@ a {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+   /* padding: 6px; */
+  margin: 0;
 }
 .gl-custom-nav-pills::-webkit-scrollbar {
   display: none;
 }
-.gl-custom-nav-pills .nav-item {
+.gl-custom-nav-pills.nav-pills .nav-item {
   flex-grow: 1;
   text-align: center;
 }
-.gl-custom-nav-pills .nav-link {
+/* .gl-custom-nav-pills .nav-pills .nav-link {
   background: transparent;
   color: rgba(255, 255, 255, 0.9);
   font-size: 13.5px;
@@ -223,7 +225,26 @@ a {
   justify-content: center;
   margin: 0;
 }
-.gl-custom-nav-pills .nav-link.active {
+.gl-custom-nav-pills .nav-pills .nav-link.active {
+  background-color: #ffffff !important;
+  color: #007cb0 !important;
+  font-weight: 600 !important;
+} */
+
+.gl-custom-nav-pills.nav-pills .nav-link {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13.5px;
+  padding: 10px 14px;
+  white-space: nowrap;
+  border-radius: 30px;
+  width: 100%;
+  transition: all 0.2s ease;
+  justify-content: center;
+  margin: 0;
+}
+
+.gl-custom-nav-pills.nav-pills .nav-link.active {
   background-color: #ffffff !important;
   color: #007cb0 !important;
   font-weight: 600 !important;
@@ -20265,7 +20286,7 @@ a.custom-action-btn.btn-view-schedule {
 .sow-details-main-wrapper {
   background-color: #ffffff;
 
-  padding: 30px;
+  padding: 0px 0px;
 }
 
 /* Back Button and Title Panel */

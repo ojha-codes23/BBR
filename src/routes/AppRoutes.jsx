@@ -15,7 +15,7 @@ const AppRoutes = () => {
         <Route path="/register" element={<Register />} /> */}
 
         {/* User Routes */}
-        <Route path="/user/*" element={<UserRoutes />} />
+        <Route path="/student/*" element={<UserRoutes />} />
 
         {/* Teacher Routes */}
         <Route path="/teacher/*" element={<TeacherRoute />} />
