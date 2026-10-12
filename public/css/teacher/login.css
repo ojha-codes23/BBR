@@ -25,7 +25,7 @@
 body {
   background: #ffffff;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; commented by sunil */
 }
 
 a {

@@ -68,10 +68,10 @@
 
 /* Dropdown Links */
 .dropdown-item {
-  display: flex;
+  display: flex !important;
   align-items: center;
-  gap: 15px;
-  padding: 0px 25px;
+  gap: 15px !important;
+  padding: 0px 25px !important;
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
@@ -540,7 +540,7 @@ a.dropdown-item.item-logout:hover {
 }
 
 .card-body {
-  padding: 20px;
+  padding: 20px !important;
 }
 
 .course-title {
@@ -3592,7 +3592,7 @@ a {
   transform: translateY(-50%);
   width: 10px;
   height: 6px;
-  background-image: url(../images/super-user-dashboard/select-drowpdown.svg);
+  background-image: url(../images/teacher/super-user-dashboard/select-drowpdown.svg);
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none;
@@ -6188,6 +6188,9 @@ select.glnc-input-element {
   display: block;
 }
 
+/* below line add by sunil */
+.glnc-template-card .glnc-context-dropdown.show { display: block; }
+
 .glnc-dropdown-item {
   display: flex;
   align-items: center;
@@ -8225,16 +8228,16 @@ a {
   padding: 6px;
   min-width: 185px;
 }
-
+/* below important added by Sunil  */
 .glnc-custom-dropdown-menu .dropdown-item {
   font-size: 14px;
   font-weight: 500;
   color: #344054;
-  padding: 8px 12px;
+  padding: 8px 12px !important;
   border-radius: 6px;
-  display: flex;
+  display: flex !important;
   align-items: center;
-  gap: 10px;
+  gap: 10px !important;
 }
 
 .glnc-custom-dropdown-menu .dropdown-item:active {
@@ -10490,11 +10493,11 @@ select.popup-form-control {
         }*/
 
 /* Content Container with standard padding layout */
-.content-scaffold {
+/* .content-scaffold { */
   /* padding: 32px;
             width: 100%;
             margin: 0 auto; */
-}
+/* } */
 
 /* Hero Header Section */
 .dashboard-hero-row {
@@ -13314,19 +13317,20 @@ select.popup-form-control {
 }
 
 /* Tabs Navigation Custom Design Overwrite */
+/* here sunil write important as it was not taking css on payment screen  */
 .custom-tabs-nav {
   background-color: #005b85;
-  border-radius: 30px;
-  padding: 6px;
-  display: inline-flex;
+  border-radius: 30px !important;
+  padding: 6px !important;
+  display: inline-flex !important;
   border: none;
-  margin-bottom: 24px;
+  margin-bottom: 24px !important;
 }
-
+/* important by sunil  */
 .custom-tabs-nav .nav-link {
   color: #ffffff;
-  border-radius: 24px;
-  border: none;
+  border-radius: 24px !important;
+  border: none !important;
   padding: 10px 24px;
   font-size: 14px;
   font-weight: 500;
@@ -13582,10 +13586,10 @@ select.popup-form-control {
 .modal-custom-close-btn:hover {
   transform: scale(1.08);
 }
-
+ /* below added important by Sunil  */
 .custom-popup-dialog {
-  max-width: 580px;
-  margin-top: 80px;
+  max-width: 580px !important;
+  margin-top: 80px !important;
   /* Space created to balance floating icon smoothly */
 }
 
@@ -16759,7 +16763,7 @@ select.popup-form-control {
 }
 
 .custom-form-switch-input {
-  width: 44px !md;
+  width: 44px;
   height: 24px;
   cursor: pointer;
 }
@@ -21093,7 +21097,7 @@ input#prefPrivate:checked[type="radio"] {
 
 #scheduleSessionModal select.popup-form-control,
 #rescheduleSessionModal select.popup-form-control {
-  background-image: url(../images/super-user-dashboard/select-drowpdown.svg);
+  background-image: url(../images/teacher/super-user-dashboard/select-drowpdown.svg);
 }
 
 #paymentDataTabs li button i {

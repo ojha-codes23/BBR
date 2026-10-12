@@ -1,7 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 const TeacherLogin = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        const loginData = {
+            email: email,
+            password: password,
+        };
+
+        console.log("Login Data", loginData);
+        
+    }
+
     return (
         <section className="login-page-section">
             <div className="login-page-wrapper">
@@ -20,19 +37,20 @@ const TeacherLogin = () => {
                     <div className="login-form-container">
 
                         <div className="login-header-logo">
-                            <img src="images/teacher/login/logo.svg" alt="GrantLink NC Logo" />
+                            <img src="/images/teacher/login/logo.svg" alt="GrantLink NC Logo" />
                         </div>
 
                         <div className="login-form-card">
                             <h3 className="login-form-title">Welcome Back</h3>
                             <p className="login-form-subtitle">Enter your email and password to access your account</p>
 
-                            <form action="" method="POST">
+                            <form onSubmit={handleLogin}>
 
                                 <div className="login-form-group">
                                     <label className="login-input-label">Email</label>
                                     <div className="login-input-field-wrapper">
-                                        <input type="email" className="login-input-control" placeholder="Enter your email"
+                                        <input type="email" className="login-input-control" placeholder="Enter your email" 
+                                        value={email} onChange={(e) => setEmail(e.target.value)}
                                             required />
                                     </div>
                                 </div>
@@ -40,21 +58,23 @@ const TeacherLogin = () => {
                                 <div className="login-form-group">
                                     <label className="login-input-label">Password</label>
                                     <div className="login-input-field-wrapper">
-                                        <input type="password" id="District-password" className="login-input-control"
-                                            placeholder="Enter your password" required />
+                                        <input type={showPassword ? "text" : "password"} id="District-password" className="login-input-control"
+                                            placeholder="Enter your password" 
+                                            value={password} onChange={(e) => setPassword(e.target.value)}
+                                             required />
 
-                                        <div className="login-password-eye-icon" id="password-toggle-btn">
-                                            <img src="images/teacher/login/eye-close.svg" alt="Show Password" id="eye-icon-img" />
+                                        <div className="login-password-eye-icon" id="password-toggle-btn" onClick={() => setShowPassword(!showPassword)}>
+                                            <img src={showPassword ? "/images/teacher/login/eye-open.svg" : "/images/teacher/login/eye-close.svg"} alt={showPassword ? "Hide Password" : "Show Password"} id="eye-icon-img" />
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="login-options-row">
                                     &nbsp;
-                                    <a href="forget-password.html" className="login-forgot-link">Forgot Password?</a>
+                                    <Link to="/teacher/forget-password" className="login-forgot-link">Forgot Password?</Link>
                                 </div>
 
-                                <a href="organizations-login.html" className="login-submit-btn">Login</a>
+                                <button type="submit" to="/teacher/organization" className="login-submit-btn">Login</button>
                                 <br />
                                 <p className="text-center">Don’t have an account?
                                     <Link to="/teacher/sign-up" className="login-signup-link">Sign Up</Link>
