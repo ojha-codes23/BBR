@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const TeacherLogin = () => {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,7 +18,9 @@ const TeacherLogin = () => {
         };
 
         console.log("Login Data", loginData);
-        
+
+        navigate("/teacher/organization");
+
     }
 
     return (
@@ -74,7 +78,7 @@ const TeacherLogin = () => {
                                     <Link to="/teacher/forget-password" className="login-forgot-link">Forgot Password?</Link>
                                 </div>
 
-                                <button type="submit" to="/teacher/organization" className="login-submit-btn">Login</button>
+                                <button type="submit" className="login-submit-btn">Login</button>
                                 <br />
                                 <p className="text-center">Don’t have an account?
                                     <Link to="/teacher/sign-up" className="login-signup-link">Sign Up</Link>

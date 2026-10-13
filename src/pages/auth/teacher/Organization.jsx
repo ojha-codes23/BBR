@@ -1,7 +1,20 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState} from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Organization = () => {
+
+    const [selectedOrg, setSelectedOrg] = useState('El Camino High School');
+    const navigate = useNavigate();
+
+    const handleProceed = (e) => {
+        e.preventDefault();
+    
+        console.log('Selected Organization:', selectedOrg);
+    
+        // Later, continue after the API confirms success.
+        navigate('/teacher/dashboard');
+    };
+
     return (
         <section className="login-page-section">
             <div className="login-page-wrapper">
@@ -35,20 +48,27 @@ const Organization = () => {
                             <p className="login-form-subtitle">Choose Your Organization to <br />
                                 access your account</p>
 
-                            <form action="" method="POST">
+                            <form onSubmit={handleProceed}>
 
                                 <div className="org-list-card">
                                     <div className="org-scroll-container">
 
                                         <label className="org-item-row" for="org1">
                                             <p className="org-name-text">El Camino High School</p>
-                                            <input className="org-radio-input" type="radio" name="selected_org" id="org1"
-                                                checked />
+                                            <input className="org-radio-input" type="radio" name="selected_org" id="org1" 
+                                                    value="El Camino High School"
+                                                    checked={selectedOrg === 'El Camino High School'}
+                                                    onChange={(e) => setSelectedOrg(e.target.value)}
+                                                 />
                                         </label>
 
                                         <label className="org-item-row" for="org2">
                                             <p className="org-name-text">Wayne Community College</p>
-                                            <input className="org-radio-input" type="radio" name="selected_org" id="org2" />
+                                            <input className="org-radio-input" type="radio" name="selected_org" id="org2" 
+                                            value="Wayne Community College"
+                                            checked={selectedOrg === 'Wayne Community College'}
+                                            onChange={(e) => setSelectedOrg(e.target.value)}
+                                            />
                                         </label>
 
                                         <label className="org-item-row" for="org3">
@@ -69,7 +89,7 @@ const Organization = () => {
                                     </div>
                                 </div>
 
-                                <Link to="/teacher/dashboard" className="login-submit-btn">Proceed</Link>
+                                <button type='submit' to="/teacher/dashboard" className="login-submit-btn">Proceed</button>
 
                             </form>
                         </div>
