@@ -167,7 +167,7 @@ const UserLogin = () => {
                         <img
                           src={
                             showPassword
-                              ? "/images/user/login/eye.svg"
+                              ? "/images/user/login/eye-open.svg"
                               : "/images/user/login/eye-close.svg"
                           }
                           alt={showPassword ? "Hide Password" : "Show Password"}
