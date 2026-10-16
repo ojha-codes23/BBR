@@ -583,7 +583,7 @@ a {
    ========================================================================== */
 
 .login-form-group-wrp {
-  display: flex;
+  /* display: flex;    sunil it is creating issue in student register screen */
   justify-content: space-between;
   gap: 20px;
 }

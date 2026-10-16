@@ -26,32 +26,36 @@
 // });
 
 
-document.addEventListener("click", function (event) {
-  console.log("DOCUMENT CLICK");
 
-  const profileTrigger = event.target.closest("#profileTrigger");
-  const profileContainer = document.getElementById("profileContainer");
 
-  console.log("profileTrigger:", profileTrigger);
-  console.log("profileContainer:", profileContainer);
+// sign up below sunil comment 
 
-  if (!profileContainer) return;
+// document.addEventListener("click", function (event) {
+//   console.log("DOCUMENT CLICK");
 
-  if (profileTrigger) {
-    console.log("PROFILE BUTTON CLICKED");
+//   const profileTrigger = event.target.closest("#profileTrigger");
+//   const profileContainer = document.getElementById("profileContainer");
 
-    event.stopPropagation();
-    profileContainer.classList.toggle("active");
-    return;
-  }
+//   console.log("profileTrigger:", profileTrigger);
+//   console.log("profileContainer:", profileContainer);
 
-  if (event.target.closest(".profile-dropdown")) {
-    event.stopPropagation();
-    return;
-  }
+//   if (!profileContainer) return;
 
-  profileContainer.classList.remove("active");
-});
+//   if (profileTrigger) {
+//     console.log("PROFILE BUTTON CLICKED");
+
+//     event.stopPropagation();
+//     profileContainer.classList.toggle("active");
+//     return;
+//   }
+
+//   if (event.target.closest(".profile-dropdown")) {
+//     event.stopPropagation();
+//     return;
+//   }
+
+//   profileContainer.classList.remove("active");
+// });
 
 // Notification
 

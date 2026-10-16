@@ -48,7 +48,7 @@ const ForgetPassword = () => {
 
                                         {/* <button type="submit" className="login-submit-btn">Verify</button> */}
                                         <Link to="/teacher/otp-verification" className="login-submit-btn">Verify</Link>
-                                        <p className="text-center mt-3">Already have an account?<a href="login.html" className="login-signup-link"> Log in</a></p>
+                                        <p className="text-center mt-3">Already have an account?<Link to="/teacher" className="login-signup-link"> Log in</Link></p>
 
                                     </form>
                                 </div>

@@ -646,3 +646,76 @@ a {
 }
 
 /*========================================= Organizations======================================================== */
+
+
+/* added css by sunil */
+
+
+.organization-dropdown-wrapper {
+  position: relative;
+}
+
+.organization-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.organization-dropdown-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.organization-dropdown-item:hover {
+  background: #f2f4f7;
+}
+
+.organization-no-results {
+  padding: 10px 12px;
+  color: #777;
+  font-size: 14px;
+}
+
+
+
+
+.organization-dropdown-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.organization-dropdown-wrapper > .login-input-control {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.organization-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.selected-organizations {
+  margin-top: 8px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  color: #555;
+}
