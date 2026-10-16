@@ -125,6 +125,7 @@ const Register = () => {
           state: {
             email: emailToSend,
             role: roleToSend,
+            type: "register",
           },
         });
       }

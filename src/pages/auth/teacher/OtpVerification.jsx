@@ -9,7 +9,7 @@ const OtpVerification = () => {
   const navigate = useNavigate();
 
   // Route state se email aur role extract karein
-  const { email = "", role = "teacher", otp } = location.state || {};
+  const { email = "", role = "teacher", otp, type = "" } = location.state || {};
 
   // Auth Hook se verification aur resend methods
   const {
@@ -17,6 +17,8 @@ const OtpVerification = () => {
     isVerifyingForgotPasswordOtp,
     forgotPasswordAsync,
     isSendingForgotPasswordOtp,
+    verifyUserEmailAsync,
+    isVerifyingEmail,
   } = useAuth();
 
   const inputRefs = useRef([]);
@@ -145,7 +147,10 @@ const OtpVerification = () => {
     };
 
     try {
-      const response = await verifyForgotPasswordOtpAsync(payload);
+      const response =
+        type == "register"
+          ? await verifyUserEmailAsync(payload)
+          : await verifyForgotPasswordOtpAsync(payload);
 
       if (
         response?.success ||
@@ -153,13 +158,24 @@ const OtpVerification = () => {
         response?.code === 200
       ) {
         toast.success(response?.message || "OTP verified successfully!");
-        navigate("/teacher/create-password", {
-          state: {
-            email: email,
-            role: role,
-            reset_token: response?.data?.reset_token,
-          },
-        });
+
+        if (type !== "register") {
+          navigate("/teacher/create-password", {
+            state: {
+              email: email,
+              role: role,
+              reset_token: response?.data?.reset_token,
+            },
+          });
+        } else {
+          navigate("/teacher", {
+            state: {
+              email: email,
+              role: role,
+              reset_token: response?.data?.reset_token,
+            },
+          });
+        }
       }
     } catch (error) {
       console.error("OTP verification error:", error);

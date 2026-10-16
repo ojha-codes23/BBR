@@ -35,7 +35,7 @@ const useAuth = () => {
     if (user?.role === "teacher") {
       navigate("/teacher/dashboard", { replace: true });
     } else {
-      navigate("/student/organization", { replace: true });
+      navigate("/student/organization-login", { replace: true });
     }
   };
 
@@ -148,6 +148,40 @@ const useAuth = () => {
   } = useMutation({
     mutationFn: async (payload) => {
       const response = await guestApi.post("/api/reset-password", payload);
+      return response.data;
+    },
+  });
+
+  // Student panel: Get selected organizations
+  const {
+    mutate: getStudentSelectedOrganizations,
+    mutateAsync: getStudentSelectedOrganizationsAsync,
+    isPending: isLoadingStudentOrganizations,
+    error: studentOrganizationsError,
+  } = useMutation({
+    mutationFn: async (payload = {}) => {
+      const response = await api.post(
+        "/api/student/user-selected-organization",
+        payload
+      );
+
+      return response.data;
+    },
+  });
+
+  // Student panel: Map logged-in student to an organization
+  const {
+    mutate: mapStudentLoggedInOrganization,
+    mutateAsync: mapStudentLoggedInOrganizationAsync,
+    isPending: isMappingStudentOrganization,
+    error: mapStudentOrganizationError,
+  } = useMutation({
+    mutationFn: async (payload) => {
+      const response = await api.post(
+        "/api/student/user-logged-in-organization",
+        payload
+      );
+
       return response.data;
     },
   });
@@ -271,6 +305,17 @@ const useAuth = () => {
     resetPasswordAsync,
     isResettingPassword,
     resetPasswordError,
+
+    // Student panel: Organization APIs
+    getStudentSelectedOrganizations,
+    getStudentSelectedOrganizationsAsync,
+    isLoadingStudentOrganizations,
+    studentOrganizationsError,
+    // map user to the organization for login data
+    mapStudentLoggedInOrganization,
+    mapStudentLoggedInOrganizationAsync,
+    isMappingStudentOrganization,
+    mapStudentOrganizationError,
 
     // user selected organizations
     getUserSelectedOrganization,

@@ -185,7 +185,10 @@ const UserLogin = () => {
                   {/* Forgot Password Link */}
                   <div className="login-options-row">
                     &nbsp;
-                    <Link to="/forget-password" className="login-forgot-link">
+                    <Link
+                      to="/student/forget-password"
+                      className="login-forgot-link"
+                    >
                       Forgot Password?
                     </Link>
                   </div>
@@ -213,7 +216,7 @@ const UserLogin = () => {
 
                   <p className="text-center mt-2">
                     Don’t have an account?{" "}
-                    <Link to="/sign-up" className="login-signup-link">
+                    <Link to="/student/sign-up" className="login-signup-link">
                       Sign Up
                     </Link>
                   </p>
