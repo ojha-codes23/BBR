@@ -235,8 +235,7 @@ const useAuth = () => {
       },
     });
 
-  // Logout with role awareness
-  const logout = () => {
+  const logout = async (payload = {}) => {
     let currentRole = "user";
     try {
       const stored = localStorage.getItem(KEYS.USER_INFO);
@@ -247,14 +246,25 @@ const useAuth = () => {
       // fallback
     }
 
-    localStorage.removeItem(KEYS.USER_INFO);
-    sessionStorage.removeItem(KEYS.USER_INFO);
+    try {
+      if (currentRole === "teacher") {
+        await teacherLogout(payload);
+      } else {
+        await studentLogout(payload);
+      }
+    } catch (error) {
+      console.error("Logout API failed:", error);
+    } finally {
+      // Always clear storage and state even if the API throws an error
+      localStorage.removeItem(KEYS.USER_INFO);
+      sessionStorage.removeItem(KEYS.USER_INFO);
 
-    dispatch(logoutAction());
+      dispatch(logoutAction());
 
-    navigate(currentRole === "teacher" ? "/teacher" : "/student", {
-      replace: true,
-    });
+      navigate(currentRole === "teacher" ? "/teacher" : "/student", {
+        replace: true,
+      });
+    }
   };
 
   return {
