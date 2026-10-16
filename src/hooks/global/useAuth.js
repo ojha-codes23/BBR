@@ -79,7 +79,7 @@ const useAuth = () => {
     },
   });
 
-  // user email verification 
+  // user email verification
   const {
     mutate: verifyUserEmail,
     mutateAsync: verifyUserEmailAsync,
@@ -96,12 +96,12 @@ const useAuth = () => {
     },
   });
 
-  // resend otp 
+  // resend otp
   const {
     mutate: resendOtp,
     mutateAsync: resendOtpAsync,
     isPending: isResendingOtp,
-    error: resendOtpError
+    error: resendOtpError,
   } = useMutation({
     mutationFn: async (payload) => {
       const response = await guestApi.post("/api/resend-otp", payload);
@@ -139,8 +139,6 @@ const useAuth = () => {
     },
   });
 
-
-
   //reset password
   const {
     mutate: resetPassword,
@@ -153,8 +151,6 @@ const useAuth = () => {
       return response.data;
     },
   });
-
-
 
   // Student panel: Get selected organizations
   const {
@@ -190,7 +186,6 @@ const useAuth = () => {
     },
   });
 
-
   // user's selected organizations (from registration)
   const {
     mutate: getUserSelectedOrganization,
@@ -222,40 +217,26 @@ const useAuth = () => {
     },
   });
 
+  //
 
+  const { mutateAsync: teacherLogout, isPending: isTeacherLogout } =
+    useMutation({
+      mutationFn: async (payload) => {
+        const response = await api.post("/api/teacher/teacher-logout", payload);
+        return response.data;
+      },
+    });
 
+  const { mutateAsync: studentLogout, isPending: isStudentLogout } =
+    useMutation({
+      mutationFn: async (payload) => {
+        const response = await api.post("/api/student/student-logout", payload);
+        return response.data;
+      },
+    });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // Teacher Login Mutation
-  const {
-    mutate: loginTeacherMutate,
-    mutateAsync: teacherLogin,
-    isPending: isLoggingInTeacher,
-    error: loginErrorTeacher,
-  } = useMutation({
-    mutationFn: async (data) => {
-      const response = await guestApi.post("/teacher/login", data);
-      return response.data;
-    },
-    onSuccess: handleAuthSuccess,
-  });
-
-  // Logout with role awareness
-  const logout = () => {
+  // Logout with role awareness and API call
+  const logout = async (payload = {}) => {
     let currentRole = "user";
     try {
       const stored = localStorage.getItem(KEYS.USER_INFO);
@@ -266,14 +247,25 @@ const useAuth = () => {
       // fallback
     }
 
-    localStorage.removeItem(KEYS.USER_INFO);
-    sessionStorage.removeItem(KEYS.USER_INFO);
+    try {
+      if (currentRole === "teacher") {
+        await teacherLogout(payload);
+      } else {
+        await studentLogout(payload);
+      }
+    } catch (error) {
+      console.error("Logout API failed:", error);
+    } finally {
+      // Always clear storage and state even if the API throws an error
+      localStorage.removeItem(KEYS.USER_INFO);
+      sessionStorage.removeItem(KEYS.USER_INFO);
 
-    dispatch(logoutAction());
+      dispatch(logoutAction());
 
-    navigate(currentRole === "teacher" ? "/teacher" : "/student", {
-      replace: true,
-    });
+      navigate(currentRole === "teacher" ? "/teacher" : "/student", {
+        replace: true,
+      });
+    }
   };
 
   return {
@@ -325,7 +317,6 @@ const useAuth = () => {
     isResettingPassword,
     resetPasswordError,
 
-
     // Student panel: Organization APIs
     getStudentSelectedOrganizations,
     getStudentSelectedOrganizationsAsync,
@@ -336,7 +327,6 @@ const useAuth = () => {
     mapStudentLoggedInOrganizationAsync,
     isMappingStudentOrganization,
     mapStudentOrganizationError,
-
 
     // user selected organizations
     getUserSelectedOrganization,
@@ -350,39 +340,13 @@ const useAuth = () => {
     isMappingOrganization,
     mapOrganizationError,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Teacher Exports =========================
-    loginTeacherMutate,
-    teacherLogin,
-    isLoggingInTeacher,
-    loginErrorTeacher,
-
     // Common
     logout,
+    teacherLogout,
+    studentLogout,
+    isTeacherLogout,
+    isStudentLogout,
   };
 };
 
 export default useAuth;
-
