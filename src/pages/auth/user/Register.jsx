@@ -1,7 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Register = () => {
+
+  const [formData,setFormData] = useState({
+     fullName: '',
+     email: '',
+     phoneNumber: '', 
+     organizationAccessCode: '',
+     organizationName: '',
+     password: '',
+     confirmPassword: '',
+     remember_me: false
+  })
+  const [togglePassword, setTogglePassword] = useState(false)
+  const [toggleConfirmPassword, setToggleConfirmPassword] = useState(false)
+
+
+  const handleInputChange = (e) => {
+  const {name,value,type,checked} = e.target
+  setFormData((prevData)=>{
+    return {...prevData,[name]:type === 'checkbox' ? checked : value}
+  })}
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(formData)
+
+    setFormData({
+    fullName: '',
+     email: '',
+     phoneNumber: '',
+     organizationAccessCode: '',
+     organizationName: '',
+     password: '',
+     confirmPassword: '',
+     remember_me: false
+    })
+  }
+  
   return (
     <>
        <section className="login-page-section">
@@ -28,19 +66,19 @@ const Register = () => {
                         <h3 className="login-form-title">Create Your Account</h3>
                         <p className="login-form-subtitle">Enter your email and password to access your account</p>
 
-                        <form action="" method="POST">
+                        <form  className="login-form" onSubmit={handleSubmit}>
 
                             <div className="login-form-group">
                                 <label className="login-input-label">Full Name</label>
                                 <div className="login-input-field-wrapper">
-                                    <input type="text" className="login-input-control" placeholder="Enter your full name"
+                                    <input type="text" name='fullName' onChange={handleInputChange} className="login-input-control" placeholder="Enter your full name"
                                         required/>
                                 </div>
                             </div>
                             <div className="login-form-group">
                                 <label className="login-input-label">Email</label>
                                 <div className="login-input-field-wrapper">
-                                    <input type="email" className="login-input-control" placeholder="Enter your email"
+                                    <input type="email" name='email' className="login-input-control" onChange={handleInputChange} placeholder="Enter your email"
                                         required/>
                                 </div>
                             </div>
@@ -49,7 +87,7 @@ const Register = () => {
                                 <div className="login-form-group">
                                     <label className="login-input-label">Phone Number</label>
                                     <div className="login-input-field-wrapper">
-                                        <input type="tel" className="login-input-control"
+                                        <input type="tel" name='phoneNumber' onChange={handleInputChange} className="login-input-control"
                                             placeholder="Enter your phone number" required/>
                                     </div>
                                 </div>
@@ -57,14 +95,14 @@ const Register = () => {
                                     <div className="login-form-group w-100">
                                         <label className="login-input-label">Organization Access Code</label>
                                         <div className="login-input-field-wrapper">
-                                            <input type="text" className="login-input-control"
+                                            <input type="text" name='organizationAccessCode' onChange={handleInputChange} className="login-input-control"
                                                 placeholder="Enter Access Code" required/>
                                         </div>
                                     </div>
                                     <div className="login-form-group w-100">
                                         <label className="login-input-label">Organization Name</label>
                                         <div className="login-input-field-wrapper">
-                                            <input type="text" className="login-input-control"
+                                            <input type="text"  name='organizationName' onChange={handleInputChange} className="login-input-control"
                                                 placeholder="Enter Organization Name" required/>
                                         </div>
                                     </div>
@@ -74,11 +112,15 @@ const Register = () => {
                             <div className="login-form-group">
                                 <label className="login-input-label">Create Password</label>
                                 <div className="login-input-field-wrapper">
-                                    <input type="password" id="District-password" className="login-input-control"
+                                    <input type={togglePassword ? "text" : "password"} name='password' onChange={handleInputChange} id="District-password" className="login-input-control"
                                         placeholder="Enter your password" required/>
 
-                                    <div className="login-password-eye-icon" id="password-toggle-btn">
-                                        <img src="/images/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
+                                    <div onClick={() => setTogglePassword(!togglePassword)} className="login-password-eye-icon"  id="password-toggle-btn">
+                                        {togglePassword ? (
+                                            <img src="/images/user/login/eye-open.svg" alt="Hide Password" id="eye-icon-img"/>
+                                        ) : (
+                                            <img src="/images/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -86,18 +128,22 @@ const Register = () => {
                             <div className="login-form-group">
                                 <label className="login-input-label">Re-enter Password</label>
                                 <div className="login-input-field-wrapper">
-                                    <input type="password" id="District-password" className="login-input-control"
+                                    <input type={toggleConfirmPassword ? "text" : "password"} name='confirmPassword' onChange={handleInputChange} id="District-password" className="login-input-control"
                                         placeholder="Re-enter Password" required/>
 
-                                    <div className="login-password-eye-icon" id="password-toggle-btn">
-                                        <img src="/images/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
+                                    <div onClick={() => setToggleConfirmPassword(!toggleConfirmPassword)} className="login-password-eye-icon" id="password-toggle-btn">
+                                        {toggleConfirmPassword ? (
+                                            <img src="/images/user/login/eye-open.svg" alt="Hide Password" id="eye-icon-img"/>
+                                        ) : (
+                                            <img src="/images/user/login/eye-close.svg" alt="Show Password" id="eye-icon-img"/>
+                                        )}
                                     </div>
                                 </div>
                             </div>
 
                             <div className="login-options-row">
                                 <label className="login-toggle-wrapper">
-                                    <input type="checkbox" className="login-toggle-input" name="remember_me"
+                                    <input type="checkbox" checked={formData.remember_me} onChange={handleInputChange} className="login-toggle-input" name="remember_me"
                                         style={{display:"block"}}/>
                                     {/* <!-- <div className="login-toggle-slider"></div> --> */}
                                     <span className="login-toggle-text">
@@ -107,12 +153,26 @@ const Register = () => {
                                 {/* <!-- <a href="forget-password.html" className="login-forgot-link">Forgot Password?</a> --> */}
                             </div>
 
-                            <Link to="/user/login" className="login-submit-btn">Sign Up</Link>
+                            {/* <Link  className="login-submit-btn" type="submit" disabled={!formData.remember_me}>
+                                Sign Up
+                            </Link> */}
+
+                            <button
+                                type="submit"
+                                className="login-submit-btn"
+                                style={{
+                                    opacity: formData.remember_me ? 1 : 0.5,
+                                    cursor: formData.remember_me ? "pointer" : "not-allowed",
+                                }}
+                                disabled={!formData.remember_me}
+                                >
+                                Sign Up
+                                </button>
                             <br/>
                             <p className="text-center">Already have an account? <Link to="/user/"
                                     className="login-signup-link">Login</Link>
                             </p>
-                            <p className="text-center">Having trouble finding your organization? <br/>
+                            <p className="text-center" >Having trouble finding your organization? <br/>
                                 <Link to="/user" className="login-signup-link">Let us help you reconnect.</Link>
                             </p>
                         </form>

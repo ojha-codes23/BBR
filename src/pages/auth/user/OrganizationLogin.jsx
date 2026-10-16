@@ -20,7 +20,7 @@ const OrganizationLogin = () => {
             <div className="login-form-container">
 
               <div className="login-header-logo">
-                <img src="/images/user/login/logo.svg" alt="GrantLink NC Logo" />
+                <img src="/images/user/login/logo.svg" alt="GrantLink NC logo" />
               </div>
 
               <div className="login-form-card">
