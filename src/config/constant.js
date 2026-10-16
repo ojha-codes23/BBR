@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 
 export const BaseUrl = "https://bbrlms.tgastaging.com";
+// export const BaseUrl = "http://192.168.1.107:8000";
 export const baseURL = BaseUrl;
 
 let isLoggingOut = false;
