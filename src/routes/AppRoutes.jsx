@@ -1,29 +1,59 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getAuthSession } from "./ProtectedRoutes";
 
-// import Login from "../pages/auth/Login";
-// import Register from "../pages/auth/Register";
+// Auth Login Screens
+import StudentLogin from "../pages/auth/user/UserLogin";
+import TeacherLogin from "../pages/auth/teacher/TeacherLogin";
 
+// Role-based Sub-routers
 import UserRoutes from "./UserRoutes";
 import TeacherRoute from "./TeacherRoute";
 
+// Student Public Route: Agar already logged-in hai toh login form skip karega
+const PublicStudentLogin = () => {
+  const reduxUserInfo = useSelector((state) => state.user?.userInfo);
+  const { token, role } = getAuthSession(reduxUserInfo);
+
+  if (token) {
+    if (role === "teacher") return <Navigate to="/teacher/dashboard" replace />;
+    return <Navigate to="/student/dashboard" replace />;
+  }
+
+  return <StudentLogin />;
+};
+
+// Teacher Public Route: Agar already logged-in hai toh login form skip karega
+const PublicTeacherLogin = () => {
+  const reduxUserInfo = useSelector((state) => state.user?.userInfo);
+  const { token, role } = getAuthSession(reduxUserInfo);
+
+  if (token) {
+    if (role === "user") return <Navigate to="/student/dashboard" replace />;
+    return <Navigate to="/teacher/dashboard" replace />;
+  }
+
+  return <TeacherLogin />;
+};
+
 const AppRoutes = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Auth Routes */}
-        {/* <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} /> */}
+    <Routes>
+      {/* 1. Default Landing: '/' directly redirects to '/student' */}
+      <Route path="/" element={<Navigate to="/student" replace />} />
 
-        {/* User Routes */}
-        <Route path="/student/*" element={<UserRoutes />} />
+      {/* 2. Public Login Endpoints */}
+      <Route path="/student" element={<PublicStudentLogin />} />
+      <Route path="/teacher" element={<PublicTeacherLogin />} />
 
-        {/* Teacher Routes */}
-        <Route path="/teacher/*" element={<TeacherRoute />} />
+      {/* 3. Sub-routers handle all auth & dashboard pages */}
+      <Route path="/student/*" element={<UserRoutes />} />
+      <Route path="/teacher/*" element={<TeacherRoute />} />
 
-        {/* Default */}
-        {/* <Route path="*" element={<Login />} /> */}
-      </Routes>
-    </BrowserRouter>
+      {/* 4. Catch-all for undefined routes */}
+      <Route path="*" element={<Navigate to="/student" replace />} />
+    </Routes>
   );
 };
 
