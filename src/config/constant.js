@@ -14,7 +14,7 @@ export const KEYS = {
   ROLE: "ROLE",
 };
 
-export const GOOGLE_KEY = "";
+export const GOOGLE_KEY = "AIzaSyDcDl4RoLc2oLDDpkJqdhWOWHP0B4qBEqk";
 
 export const StripePublicKey = "";
 

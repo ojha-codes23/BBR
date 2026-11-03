@@ -7,9 +7,10 @@ import Dashboard from "../pages/user/Dashboard";
 import Course from "../pages/user/courses/Course";
 import Notification from "../pages/user/Notification";
 import Profile from "../pages/user/Profile";
+import Profile12 from "../pages/user/Profile12";
 import NewServiceRequest from "../pages/auth/user/NewServiceRequest";
 import NotificationSetting from "../pages/user/NotificationSetting";
-import CareerPlanningWorkshop from "../pages/user/courses/careerPlanningWorkshop";
+import CareerPlanningWorkshop from "../pages/user/courses/CareerPlanningWorkshop";
 import CareerPlanningWorkshop2 from "../pages/user/courses/CareerPlanningWorkshop2";
 import MyNotes from "../pages/user/courses/MyNotes";
 import MyServiceRequest from "../pages/user/services/MyServiceRequest";
@@ -68,6 +69,7 @@ const UserRoutes = () => {
           <Route path="my-courses" element={<Course />} />
           <Route path="notification" element={<Notification />} />
           <Route path="my-profile" element={<Profile />} />
+          <Route path="my-profile-duplicate" element={<Profile12 />} />
           <Route path="new-requested-service" element={<NewServiceRequest />} />
           <Route path="my-service" element={<MyService />} />
           <Route path="my-service2" element={<MyService2 />} />

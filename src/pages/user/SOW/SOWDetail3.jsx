@@ -1,6 +1,6 @@
 import React from 'react'
 import AcceptAgreementModal from '../../../components/user/sowmodal/AcceptAgreementModal'
-import DeclineAgreementModal from '../../../components/user/sowmodal/declineAgreementModal'
+import DeclineAgreementModal from '../../../components/user/sowmodal/DeclineAgreementModal'
 
 const SOWDetail3 = () => {
   return (

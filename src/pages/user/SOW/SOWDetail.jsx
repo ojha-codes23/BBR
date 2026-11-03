@@ -1,7 +1,67 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import CalendarSyncModal from '../../../components/user/eventmodal/CalendarSyncModal';
 
 const SOWDetail = () => {
+
+  const location = useLocation();
+  const serviceData=location?.state?.serviceData
+  console.log(serviceData)
+
+  const [reason,setReason]=useState("")
+  const [caledarlyLink,setcaledarlyLink]=useState("")
+  const [date,setDate]=useState("");
+  const [time,setTime]=useState("")
+
+
+  const payloa={
+    service_request_id:serviceData?.id,
+    provider_id:serviceData?.providers?.[0]?.id,
+    call_reason:reason,
+    meeting_link,
+    date,
+    time
+  }
+
+
+  useEffect(() => {
+  const script = document.createElement("script");
+
+  script.src = "https://assets.calendly.com/assets/external/widget.js";
+  script.async = true;
+
+  document.body.appendChild(script);
+
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
+
+const handleScheduleCall = () => {
+  const calendlyUrl = serviceData?.providers?.[0]?.calendly_link;
+
+  if (!calendlyUrl) {
+    alert("Calendly link not available");
+    return;
+  }
+
+  if (window.Calendly) {
+    window.Calendly.initPopupWidget({
+      url: calendlyUrl,
+    });
+  }
+};
+
+const handleSyncCalendar = () => {
+  const modal = document.getElementById("calendarSyncModal");
+
+  if (modal) {
+    const bootstrapModal = new window.bootstrap.Modal(modal);
+    bootstrapModal.show();
+  }
+};
+
+
   return (
     <>
           {/* <main> */}
@@ -84,7 +144,7 @@ const SOWDetail = () => {
                   Fill all the details for the call discussion
                 </p>
               </div>
-              <a href="#" className="sow-schedule-btn">
+              {/* <a href="#" className="sow-schedule-btn">
                 <svg
                   width="16"
                   height="16"
@@ -96,23 +156,51 @@ const SOWDetail = () => {
                   />
                 </svg>
                 Schedule Call
+              </a> */}
+
+              {/* <button
+                type="button"
+                className="sow-schedule-btn"
+                onClick={handleScheduleCall}
+              >
+                  <svg
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"
+                  />
+                </svg>
+                Schedule Call
+              </button> */}
+
+              <a
+                href={`https://calendly.com/${serviceData?.providers?.[0]?.name}`}
+                className="sow-schedule-btn"
+              >
+                Schedule Call
               </a>
             </div>
 
             <div className="sow-details-box">
               <div className="sow-field-group">
                 <div className="sow-field-label">Provider Name</div>
-                <p className="sow-field-value">Sarah Johnson</p>
+                <p className="sow-field-value">{serviceData?.providers?.[0]?.name}</p>
               </div>
 
               <div className="sow-field-group">
                 <div className="sow-field-label">Reason for the Call</div>
-                <p className="sow-field-value">
+                {/* <p className="sow-field-value">
                   I am seeking comprehensive career coaching to help me
                   transition from my current role in marketing to a career in UX
                   design. I need guidance on skill development, portfolio
                   building, and job search strategies.
-                </p>
+                </p> */}
+                <textarea placeholder='Enter your reason for the Call' className="sow-field-value" style={{width:'90%',padding:'10px',borderRadius:'20px'}} value={reason} onChange={(e)=>setReason(e.target.value)}>
+
+                </textarea>
               </div>
 
               <div className="sow-field-group">
@@ -137,7 +225,7 @@ const SOWDetail = () => {
                 <p className="sow-field-value">--</p>
               </div>
 
-              <button type="button" className="sow-sync-btn">
+              <button type="button" className="sow-sync-btn" onClick={handleSyncCalendar}>
                 <svg
                   width="16"
                   height="16"
@@ -177,6 +265,8 @@ const SOWDetail = () => {
             </footer>
           </div>
         {/* </main> */}
+
+        <CalendarSyncModal/>
     
     </>
   )

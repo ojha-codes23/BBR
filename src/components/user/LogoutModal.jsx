@@ -1,6 +1,33 @@
-import React from 'react'
+import React, {useEffect} from 'react';
+import toast from "react-hot-toast";
+import useAuth from '../../hooks/global/useAuth';
 
 const LogoutModal = () => {
+    const {
+        logout,
+        isStudentLogout
+    } = useAuth();
+
+    const isLoggingOut = isStudentLogout;
+
+    useEffect(() => {
+        return () => {
+          const backdrops = document.querySelectorAll(".modal-backdrop");
+          backdrops.forEach((backdrop) => backdrop.remove());
+          document.body.classList.remove("modal-open");
+          document.body.style.overflow = "auto";
+          document.body.style.paddingRight = "";
+        };
+      }, []);
+
+    const handleLogout = async (e) => {
+        e.preventDefault();
+        // 2. Call the logout function
+        // The hook automatically handles role detection, API call, clearing storage, and navigation
+        await logout();
+      };
+
+
   return (
     <>
      <div className="modal fade gl-custom-popup-wrapper" id="confirmLogoutModal" tabindex="-1" aria-labelledby="confirmLogoutModalLabel" aria-hidden="true">
@@ -31,9 +58,15 @@ const LogoutModal = () => {
 
             <div className="gl-popup-alert-footer-row control-panel-gap">
                 <button type="button" className="gl-popup-btn-cancel-flat structural-btn" data-bs-dismiss="modal">Cancel</button>
-                <a href="login.html" className="gl-popup-btn-save spec-red-btn structural-btn">
+                <button type='button' className="gl-popup-btn-save spec-red-btn structural-btn" 
+                onClick={handleLogout}
+                disabled={isLoggingOut}
+                >
+                        {isLoggingOut ? "Logging out" : "Yes, Logout"}
+                    </button>
+                {/* <a href="login.html" className="gl-popup-btn-save spec-red-btn structural-btn">
                         Yes, Logout
-                    </a>
+                    </a> */}
             </div>
 
         </div>

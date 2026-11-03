@@ -1,320 +1,433 @@
-import React, { useState } from 'react'
-import DeleteSowTemplate from '../../components/teacher/DeleteSowTemplate';
-import DeleteContractTemplate from '../../components/teacher/DeleteContractTemplate';
+import React, { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import DeleteSowTemplate from "../../components/teacher/DeleteSowTemplate";
+import useService from "../../hooks/teacher/useService";
 
 const SowDrafts = () => {
-    const [openDropdown, setOpenDropdown] = useState(null);
+  const { templatList, isPendingTempList, templateAction, isPendingTemplateAction } =
+    useService();
 
-    const toggleDropdown = (id) => {
-        setOpenDropdown((prev) => (prev === id ? null : id));
+  // Template Data & Pagination State
+  const [templates, setTemplates] = useState([]);
+  const [meta, setMeta] = useState({ total: 0, page: 1, limit: 6 });
+  const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(6);
+
+  // Action handling (active, inactive, duplicate, delete)
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [templateToDelete, setTemplateToDelete] = useState(null);
+
+  const handleOpenDelete = (item) => {
+    setTemplateToDelete(item);
+    setShowDeleteModal(true);
+    setOpenDropdown(null);
+  };
+
+  const handleCloseDelete = () => {
+    if (isPendingTemplateAction) return;
+    setShowDeleteModal(false);
+    setTemplateToDelete(null);
+  };
+
+  const handleConfirmDelete = async () => {
+    if (!templateToDelete?.id) return;
+    try {
+      const res = await templateAction({
+        templateId: templateToDelete.id,
+        action: "delete",
+      });
+      if (res?.success || res?.code === 200) {
+        toast.success(res?.message || "Draft deleted successfully!");
+        setShowDeleteModal(false);
+        setTemplateToDelete(null);
+        fetchDraftTemplates();
+      } else {
+        toast.error(res?.message || "Failed to delete draft.");
+      }
+    } catch (err) {
+      console.error("Failed to delete draft:", err);
+      toast.error(
+        err?.response?.data?.message ||
+          err?.message ||
+          "Failed to delete draft."
+      );
+    }
+  };
+
+  // Dropdown menu state
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (dropdownId) => {
+    setOpenDropdown((previous) => (previous === dropdownId ? null : dropdownId));
+  };
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleOutsideClick = () => {
+      setOpenDropdown(null);
     };
 
-    return (
-        <>
-        <main className="gl-content-body">
-            {/* <!-- PRIMARY MAIN HEADER --> */}
-            <header className="template-header-action-row">
-                <a href="sow-contract.html" className="btn-circle-back-navigation">
-                    <i className="fa-solid fa-arrow-left"></i>
-                </a>
-                <div className="header-title-meta-group">
-                    <h1>SOW Drafts</h1>
-                    <p>Manage reusable statement of work and contract templates</p>
-                </div>
-            </header>
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
 
-            {/* <!-- FILTER BAR INTERFACE --> */}
-            <div className="glnc-search-bar-wrapper">
-                <i className="bi bi-search"></i>
-                <input type="text" className="glnc-search-input" placeholder="Search" />
-            </div>
+  // Debounce search input
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(search);
+      setPage(1);
+    }, 400);
 
+    return () => clearTimeout(timer);
+  }, [search]);
 
-            {/* <!-- ================= SOW TEMPLATES PANEL (ALL 4 CARDS AS IS) ================= --> */}
-            <div id="sow-panel" className="row g-4 tab-content-panel active-panel">
+  // Fetch templates with filterStatus = "draft"
+  const fetchDraftTemplates = useCallback(async () => {
+    try {
+      const payload = {
+        templateType: "sow",
+        filterStatus: "draft",
+        search: debouncedSearch,
+        page,
+        limit,
+      };
 
-                {/* <!-- CARD 1 --> */}
-                <div className="col-md-6">
-                    <div className="glnc-template-card">
-                        <button className="glnc-card-triple-dot-btn" onClick={(e) => {
-                            e.stopPropagation(); 
-                            setOpenDropdown(
-                                openDropdown === 1 ? null : 1
-                            ); console.log("first", openDropdown)
-                        }}><i
-                            className="bi bi-three-dots-vertical"></i></button>
+      const res = await templatList(payload);
+      if (res?.success || res?.code === 200 || Array.isArray(res?.data)) {
+        setTemplates(res?.data || []);
+        if (res?.meta) {
+          setMeta(res.meta);
+        } else {
+          setMeta({
+            total: res?.data?.length || 0,
+            page,
+            limit,
+          });
+        }
+      } else {
+        setTemplates([]);
+      }
+    } catch (error) {
+      console.error("Failed to fetch draft templates:", error);
+      setTemplates([]);
+    }
+  }, [debouncedSearch, page, limit, templatList]);
 
-                        <div className={`glnc-context-dropdown ${openDropdown === 1 ? "show" : ""
-                            }`}>
-                            <button className="glnc-dropdown-item"><i className="bi bi-pencil"></i> Edit</button>
-                            <button className="glnc-dropdown-item visibility-btn-trigger" data-template-type="SOW">
-                                <i className="bi bi-copy"></i> Duplicate</button>
-                            <button className="glnc-dropdown-item text-danger"><i
-                                className="bi bi-ban"></i>Inactive</button>
-                            <button className="glnc-dropdown-item text-success"><i
-                                className="bi bi-check-circle"></i>Activate</button>
-                            <button className="glnc-dropdown-item delete-trigger" data-bs-toggle="modal"
-                                data-bs-target="#deleteDistrictModal"><i className="bi bi-trash"></i> Delete</button>
-                        </div>
+  useEffect(() => {
+    fetchDraftTemplates();
+  }, [fetchDraftTemplates]);
 
-                        <div className="glnc-card-title-row">
-                            <h3 className="glnc-card-title">STEM Workshop Standard SOW12</h3>
-                        </div>
-                        <p className="glnc-card-subtitle">Mentorship for SAT strategy and practice.</p>
+  const handleTemplateAction = async (targetId, action) => {
+    try {
+      const res = await templateAction({ templateId: targetId, action });
+      if (res?.success || res?.code === 200) {
+        toast.success(res?.message || `Draft ${action}d successfully!`);
+        fetchDraftTemplates();
+      } else {
+        toast.error(res?.message || `Failed to ${action} draft.`);
+      }
+    } catch (err) {
+      console.error(`Failed to execute draft action (${action}):`, err);
+      toast.error(
+        err?.response?.data?.message ||
+          err?.message ||
+          `Failed to ${action} draft.`
+      );
+    } finally {
+      setOpenDropdown(null);
+    }
+  };
 
-                        <div className="glnc-meta-matrix">
-                            <div className="glnc-meta-col"><img src="images/teacher/super-user-dashboard/calendar-icon-blue.svg" alt="" /> <span>17-01-2026</span></div>
-                            <div className="glnc-vertical-divider"></div>
-                            <div className="glnc-meta-col"><i className="bi bi-clock"></i> <span>Estimate 40h</span></div>
-                            <div className="glnc-meta-col"><img src="images/teacher/super-user-dashboard/version-icon.svg" alt="" /> <span>Version 0.1</span></div>
-                        </div>
+  // Derived Pagination
+  const total = meta?.total ?? templates.length ?? 0;
+  const currentLimit = meta?.limit ?? limit ?? 6;
+  const currentPage = meta?.page ?? page ?? 1;
+  const totalPages = Math.max(1, Math.ceil(total / currentLimit));
+  const startRecord = total === 0 ? 0 : (currentPage - 1) * currentLimit + 1;
+  const endRecord = Math.min(currentPage * currentLimit, total);
 
-                        <div className="glnc-tag-pool">
-                            <span className="glnc-badge-tag">SAT</span>
-                            <span className="glnc-badge-tag">TestPrep</span>
-                        </div>
-                    </div>
-                </div>
+  // Pagination buttons builder
+  const renderPaginationButtons = () => {
+    const pages = [];
+    if (totalPages <= 5) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      if (currentPage <= 3) {
+        pages.push(1, 2, 3, 4, "...", totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(1, "...", totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+      } else {
+        pages.push(1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages);
+      }
+    }
 
-                {/* <!-- CARD 2 --> */}
-                <div className="col-md-6">
-                    <div className="glnc-template-card">
-                        <button className="glnc-card-triple-dot-btn context-menu-click-trigger"><i
-                            className="bi bi-three-dots-vertical"></i></button>
+    return pages.map((p, idx) => {
+      if (p === "...") {
+        return (
+          <li key={`ellipsis-${idx}`} className="page-item disabled">
+            <span className="page-link pager-ellipsis">...</span>
+          </li>
+        );
+      }
+      return (
+        <li
+          key={`page-${p}`}
+          className={`page-item ${p === currentPage ? "active" : ""}`}
+        >
+          <button
+            type="button"
+            className="page-link pager-num-trigger"
+            onClick={() => setPage(p)}
+          >
+            {p}
+          </button>
+        </li>
+      );
+    });
+  };
 
-                        <div className="glnc-context-dropdown">
-                            <button className="glnc-dropdown-item"><i className="bi bi-pencil"></i> Edit</button>
-                            <button className="glnc-dropdown-item visibility-btn-trigger" data-template-type="SOW">
-                                <i className="bi bi-copy"></i> Duplicate</button>
-                            <button className="glnc-dropdown-item text-danger"><i
-                                className="bi bi-ban"></i>Inactive</button>
-                            <button className="glnc-dropdown-item text-success"><i
-                                className="bi bi-check-circle"></i>Activate</button>
-                            <button className="glnc-dropdown-item delete-trigger" data-bs-toggle="modal"
-                                data-bs-target="#deleteDistrictModal"><i className="bi bi-trash"></i> Delete</button>
-                        </div>
+  return (
+    <>
+      <main className="gl-content-body">
+        {/* PRIMARY MAIN HEADER */}
+        <header className="template-header-action-row mb-4">
+          <Link
+            to="/teacher/sow-contract"
+            className="btn-circle-back-navigation"
+          >
+            <i className="fa-solid fa-arrow-left"></i>
+          </Link>
+          <div className="header-title-meta-group">
+            <h1>SOW Drafts</h1>
+            <p>Manage reusable statement of work and contract templates</p>
+          </div>
+        </header>
 
-                        <div className="glnc-card-title-row">
-                            <h3 className="glnc-card-title">STEM Workshop Standard SOW</h3>
-                        </div>
-                        <p className="glnc-card-subtitle">Mentorship for SAT strategy and practice.</p>
-
-                        <div className="glnc-meta-matrix">
-                            <div className="glnc-meta-col"><img src="images/teacher/super-user-dashboard/calendar-icon-blue.svg" alt="" /> <span>17-01-2026</span></div>
-                            <div className="glnc-vertical-divider"></div>
-                            <div className="glnc-meta-col"><i className="bi bi-clock"></i> <span>Estimate 40h</span></div>
-                            <div className="glnc-meta-col"><img src="images/teacher/super-user-dashboard/version-icon.svg" alt="" /> <span>Version 0.2</span></div>
-                        </div>
-
-                        <div className="glnc-tag-pool">
-                            <span className="glnc-badge-tag">SAT</span>
-                            <span className="glnc-badge-tag">TestPrep</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* <!-- CARD 3 --> */}
-                <div className="col-md-6">
-                    <div className="glnc-template-card">
-                        <button className="glnc-card-triple-dot-btn context-menu-click-trigger"><i
-                            className="bi bi-three-dots-vertical"></i></button>
-
-                        <div className="glnc-context-dropdown">
-                            <button className="glnc-dropdown-item"><i className="bi bi-pencil"></i> Edit</button>
-                            <button className="glnc-dropdown-item visibility-btn-trigger" data-template-type="SOW">
-                                <i className="bi bi-copy"></i> Duplicate</button>
-                            <button className="glnc-dropdown-item text-danger"><i
-                                className="bi bi-ban"></i>Inactive</button>
-                            <button className="glnc-dropdown-item text-success"><i
-                                className="bi bi-check-circle"></i>Activate</button>
-                            <button className="glnc-dropdown-item delete-trigger" data-bs-toggle="modal"
-                                data-bs-target="#deleteDistrictModal"><i className="bi bi-trash"></i> Delete</button>
-                        </div>
-
-                        <div className="glnc-card-title-row">
-                            <h3 className="glnc-card-title">Tutoring Program SOW</h3>
-                        </div>
-                        <p className="glnc-card-subtitle">Mentorship for SAT strategy and practice.</p>
-
-                        <div className="glnc-meta-matrix">
-                            <div className="glnc-meta-col"><img src="images/teacher/super-user-dashboard/calendar-icon-blue.svg" alt="" /> <span>17-01-2026</span></div>
-                            <div className="glnc-vertical-divider"></div>
-                            <div className="glnc-meta-col"><i className="bi bi-clock"></i> <span>Estimate 40h</span></div>
-                            <div className="glnc-meta-col"><img src="images/teacher/super-user-dashboard/version-icon.svg" alt="" /> <span>Version 0.3</span></div>
-                        </div>
-
-                        <div className="glnc-tag-pool">
-                            <span className="glnc-badge-tag">SAT</span>
-                            <span className="glnc-badge-tag">TestPrep</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* <!-- CARD 4 --> */}
-                <div className="col-md-6">
-                    <div className="glnc-template-card">
-                        <button className="glnc-card-triple-dot-btn context-menu-click-trigger"><i
-                            className="bi bi-three-dots-vertical"></i></button>
-
-                        <div className="glnc-context-dropdown">
-                            <button className="glnc-dropdown-item"><i className="bi bi-pencil"></i> Edit</button>
-                            <button className="glnc-dropdown-item visibility-btn-trigger" data-template-type="SOW">
-                                <i className="bi bi-copy"></i> Duplicate</button>
-                            <button className="glnc-dropdown-item text-danger"><i
-                                className="bi bi-ban"></i>Inactive</button>
-                            <button className="glnc-dropdown-item text-success"><i
-                                className="bi bi-check-circle"></i>Activate</button>
-                            <button className="glnc-dropdown-item delete-trigger" data-bs-toggle="modal"
-                                data-bs-target="#deleteDistrictModal"><i className="bi bi-trash"></i> Delete</button>
-                        </div>
-
-                        <div className="glnc-card-title-row">
-                            <h3 className="glnc-card-title">Career Readiness SOW</h3>
-                        </div>
-                        <p className="glnc-card-subtitle">Mentorship for SAT strategy and practice.</p>
-
-                        <div className="glnc-meta-matrix">
-                            <div className="glnc-meta-col"><img src="images/teacher/super-user-dashboard/calendar-icon-blue.svg" alt="" /> <span>17-01-2026</span></div>
-                            <div className="glnc-vertical-divider"></div>
-                            <div className="glnc-meta-col"><i className="bi bi-clock"></i> <span>Estimate 40h</span></div>
-                            <div className="glnc-meta-col"><img src="images/teacher/super-user-dashboard/version-icon.svg" alt="" /> <span>Version 0.4</span></div>
-                        </div>
-
-                        <div className="glnc-tag-pool">
-                            <span className="glnc-badge-tag">SAT</span>
-                            <span className="glnc-badge-tag">TestPrep</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-md-12">
-                    <div className="gl-matrix-footer-pagination">
-                        <div className="gl-pagination-left-side">
-                            <span className="gl-pagination-lbl">Show</span>
-                            <div className="gl-dropdown-wrapper mini-select-box">
-                                <select className="gl-pipeline-select select-mini">
-                                    <option selected>10</option>
-                                    <option>25</option>
-                                    <option>50</option>
-                                </select>
-                            </div>
-                            <span className="gl-pagination-counter-info">Showing 1-4 from 50 results</span>
-                        </div>
-
-                        <div className="gl-pagination-right-side">
-                            <nav aria-label="Data Grid Navigation Pack">
-                                <ul className="pagination gl-custom-pager-list">
-                                    <li className="page-item disabled">
-                                        <a className="page-link pager-trigger-prev" href="#" tabindex="-1"
-                                            aria-disabled="true">Prev</a>
-                                    </li>
-                                    <li className="page-item active"><a className="page-link pager-num-trigger"
-                                        href="#">1</a></li>
-                                    <li className="page-item"><a className="page-link pager-num-trigger" href="#">2</a></li>
-                                    <li className="page-item"><a className="page-link pager-num-trigger" href="#">3</a></li>
-                                    <li className="page-item disabled"><span className="page-link pager-ellipsis">...</span>
-                                    </li>
-                                    <li className="page-item"><a className="page-link pager-num-trigger" href="#">10</a>
-                                    </li>
-                                    <li className="page-item">
-                                        <a className="page-link pager-trigger-next" href="#">Next</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            {/* <!-- ================= CONTRACT TEMPLATES PANEL ================= --> */}
-            {/* <div id="contract-panel" className="row g-4 tab-content-panel">
-
-       
-        <div className="col-md-6">
-            <div className="glnc-template-card">
-                <button className="glnc-card-triple-dot-btn context-menu-click-trigger"><i
-                        className="bi bi-three-dots-vertical"></i></button>
-
-                <div className="glnc-context-dropdown">
-                    <button className="glnc-dropdown-item"><i className="bi bi-pencil"></i> Edit</button>
-                    <button className="glnc-dropdown-item visibility-btn-trigger" data-template-type="SOW">
-                        <i className="bi bi-copy"></i> Duplicate</button>
-                    <button className="glnc-dropdown-item text-danger"><i
-                            className="bi bi-ban"></i>Inactive</button>
-                    <button className="glnc-dropdown-item text-success"><i
-                            className="bi bi-check-circle"></i>Activate</button>
-                    <button className="glnc-dropdown-item delete-trigger" data-bs-toggle="modal"
-                        data-bs-target="#deleteContracttModal"><i className="bi bi-trash"></i> Delete</button>
-                </div>
-
-                <div className="glnc-card-title-row">
-                    <h3 className="glnc-card-title">Arts Integration Contract</h3>
-                </div>
-                <p className="glnc-card-subtitle">Mentorship for Arts Integration Contract and &hellip;</p>
-
-                <div className="glnc-meta-matrix">
-                    <div className="glnc-meta-col"><img src="images/teacher/super-user-dashboard/calendar-icon-blue.svg" alt="" /> <span>17-01-2026</span></div>
-                    <div className="glnc-vertical-divider"></div>
-                    <div className="glnc-meta-col"><i className="bi bi-clock"></i> <span>Estimate 40h</span></div>
-                    <div className="glnc-meta-col"><i className="bi bi-arrow-counterclockwise"></i> <span>Version
-                            0.1</span>
-                    </div>
-                </div>
-
-                <div className="glnc-tag-pool">
-                    <span className="glnc-badge-tag">Art</span>
-                    <span className="glnc-badge-tag">Integration</span>
-                </div>
-            </div>
+        {/* SEARCH BAR INTERFACE */}
+        <div className="glnc-search-bar-wrapper mb-4">
+          <i className="bi bi-search"></i>
+          <input
+            type="text"
+            className="glnc-search-input"
+            placeholder="Search drafts..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </div>
 
-        <div className="col-md-12">
-            <div className="gl-matrix-footer-pagination">
-                <div className="gl-pagination-left-side">
-                    <span className="gl-pagination-lbl">Show</span>
-                    <div className="gl-dropdown-wrapper mini-select-box">
-                        <select className="gl-pipeline-select select-mini">
-                            <option selected>10</option>
-                            <option>25</option>
-                            <option>50</option>
-                        </select>
-                        <i className="fas fa-chevron-down dropdown-arrow-icon"></i>
+        {/* TEMPLATES LIST */}
+        <div id="sow-panel" className="row g-4 tab-content-panel active-panel">
+          {isPendingTempList ? (
+            <div className="col-12 text-center py-5">
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+              <p className="mt-2 text-muted small">Loading drafts...</p>
+            </div>
+          ) : templates.length === 0 ? (
+            <div className="col-12 text-center py-5">
+              <div className="py-4">
+                <i
+                  className="bi bi-file-earmark-text text-muted"
+                  style={{ fontSize: "3rem" }}
+                ></i>
+                <h5 className="mt-3 text-muted">No SOW Drafts Found</h5>
+                <p className="text-secondary small">
+                  {search
+                    ? "Try adjusting your search query."
+                    : "No draft templates are currently available."}
+                </p>
+              </div>
+            </div>
+          ) : (
+            templates.map((item) => (
+              <div className="col-md-6" key={item.id}>
+                <div className="glnc-template-card">
+                  <button
+                    type="button"
+                    className="glnc-card-triple-dot-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleDropdown(item.id);
+                    }}
+                  >
+                    <i className="bi bi-three-dots-vertical"></i>
+                  </button>
+
+                  <div
+                    className={`glnc-context-dropdown ${
+                      openDropdown === item.id ? "show" : ""
+                    }`}
+                  >
+                    <Link
+                      to={`/teacher/create-template?templateId=${item.id}&type=sow`}
+                      className="glnc-dropdown-item text-decoration-none"
+                    >
+                      <i className="bi bi-pencil"></i> Edit
+                    </Link>
+                    <button
+                      type="button"
+                      className="glnc-dropdown-item visibility-btn-trigger"
+                      data-template-type="SOW"
+                      disabled={isPendingTemplateAction}
+                      onClick={() => handleTemplateAction(item.id, "duplicate")}
+                    >
+                      <i className="bi bi-copy"></i> Duplicate
+                    </button>
+                    <button
+                      type="button"
+                      className="glnc-dropdown-item text-success"
+                      disabled={isPendingTemplateAction}
+                      onClick={() => handleTemplateAction(item.id, "active")}
+                    >
+                      <i className="bi bi-check-circle"></i> Activate
+                    </button>
+                    <button
+                      type="button"
+                      className="glnc-dropdown-item delete-trigger"
+                      onClick={() => handleOpenDelete(item)}
+                    >
+                      <i className="bi bi-trash"></i> Delete
+                    </button>
+                  </div>
+
+                  <div className="glnc-card-title-row">
+                    <h3 className="glnc-card-title">{item.templateName}</h3>
+                    <span className="glnc-status-badge status-draft">
+                      {item.status || "Draft"}
+                    </span>
+                  </div>
+                  <p className="glnc-card-subtitle" title={item.description}>
+                    {item.description || "No description provided."}
+                  </p>
+
+                  <div className="glnc-meta-matrix">
+                    <div className="glnc-meta-col">
+                      <img
+                        src="/images/teacher/super-user-dashboard/calendar-icon-blue.svg"
+                        alt=""
+                      />
+                      <span>{item.createdDate || "N/A"}</span>
                     </div>
-                    <span className="gl-pagination-counter-info">Showing 1-4 from 50 results</span>
+
+                    {item.estimate && (
+                      <>
+                        <div className="glnc-vertical-divider"></div>
+                        <div className="glnc-meta-col">
+                          <i className="bi bi-clock"></i>{" "}
+                          <span>Estimate {item.estimate}</span>
+                        </div>
+                      </>
+                    )}
+
+                    {item.version && (
+                      <div className="glnc-meta-col">
+                        <img
+                          src="/images/teacher/super-user-dashboard/version-icon.svg"
+                          alt=""
+                        />
+                        <span>Version {item.version}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {Array.isArray(item.tags) && item.tags.length > 0 && (
+                    <div className="glnc-tag-pool">
+                      {item.tags.map((tag, idx) => (
+                        <span key={idx} className="glnc-badge-tag">
+                          {typeof tag === "object" ? tag.name || tag.label : tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))
+          )}
+
+          {/* PAGINATION */}
+          {templates.length > 0 && (
+            <div className="col-md-12">
+              <div className="gl-matrix-footer-pagination">
+                <div className="gl-pagination-left-side">
+                  <span className="gl-pagination-lbl">Show</span>
+                  <div className="gl-dropdown-wrapper mini-select-box">
+                    <select
+                      className="gl-pipeline-select select-mini"
+                      value={limit}
+                      onChange={(e) => {
+                        setLimit(Number(e.target.value));
+                        setPage(1);
+                      }}
+                    >
+                      <option value="6">6</option>
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                    </select>
+                    <i className="fas fa-chevron-down dropdown-arrow-icon"></i>
+                  </div>
+                  <span className="gl-pagination-counter-info">
+                    Showing {startRecord}-{endRecord} from {total} results
+                  </span>
                 </div>
 
                 <div className="gl-pagination-right-side">
-                    <nav aria-label="Data Grid Navigation Pack">
-                        <ul className="pagination gl-custom-pager-list">
-                            <li className="page-item disabled">
-                                <a className="page-link pager-trigger-prev" href="#" tabindex="-1"
-                                    aria-disabled="true">Prev</a>
-                            </li>
-                            <li className="page-item active"><a className="page-link pager-num-trigger"
-                                    href="#">1</a></li>
-                            <li className="page-item"><a className="page-link pager-num-trigger" href="#">2</a></li>
-                            <li className="page-item"><a className="page-link pager-num-trigger" href="#">3</a></li>
-                            <li className="page-item disabled"><span className="page-link pager-ellipsis">...</span>
-                            </li>
-                            <li className="page-item"><a className="page-link pager-num-trigger" href="#">10</a>
-                            </li>
-                            <li className="page-item">
-                                <a className="page-link pager-trigger-next" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
+                  <nav aria-label="Data Grid Navigation Pack">
+                    <ul className="pagination gl-custom-pager-list">
+                      <li
+                        className={`page-item ${
+                          currentPage <= 1 ? "disabled" : ""
+                        }`}
+                      >
+                        <button
+                          type="button"
+                          className="page-link pager-trigger-prev"
+                          disabled={currentPage <= 1}
+                          onClick={() => setPage((p) => Math.max(1, p - 1))}
+                        >
+                          Prev
+                        </button>
+                      </li>
+                      {renderPaginationButtons()}
+                      <li
+                        className={`page-item ${
+                          currentPage >= totalPages ? "disabled" : ""
+                        }`}
+                      >
+                        <button
+                          type="button"
+                          className="page-link pager-trigger-next"
+                          disabled={currentPage >= totalPages}
+                          onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                        >
+                          Next
+                        </button>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
+              </div>
             </div>
+          )}
         </div>
-    </div> */}
+      </main>
 
-        </main>
+      <DeleteSowTemplate
+        show={showDeleteModal}
+        onClose={handleCloseDelete}
+        onConfirm={handleConfirmDelete}
+        isPending={isPendingTemplateAction}
+      />
+    </>
+  );
+};
 
-        {/* <DeleteContractTemplate /> */}
-        <DeleteSowTemplate />
-
-        </>
-    )
-}
-
-export default SowDrafts
+export default SowDrafts;
