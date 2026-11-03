@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import { KEYS } from "../config/constant";
 
 /**
- * Extracts auth credentials from Redux store or Web Storage (Local / Session)
+ * Redux store ya Local/Session storage se auth session extract karta hai
  */
 export const getAuthSession = (reduxUser) => {
-  // 1. Try Redux state first
+  // 1. Check Redux state
   if (reduxUser?.access_token || reduxUser?.token) {
     return {
       token: reduxUser.access_token || reduxUser.token,
@@ -37,26 +37,22 @@ export const getAuthSession = (reduxUser) => {
   return { token: null, role: null };
 };
 
-/**
- * Route Guard Component
- * @param {Array<string>} allowedRoles - e.g., ['user'] or ['teacher']
- * @param {string} redirectPath - Where to redirect if unauthenticated
- */
 const ProtectedRoutes = ({ allowedRoles = [], redirectPath }) => {
   const location = useLocation();
   const reduxUserInfo = useSelector((state) => state.user?.userInfo);
-
   const { token, role } = getAuthSession(reduxUserInfo);
 
-  const defaultRedirect = allowedRoles.includes("teacher") ? "/teacher" : "/student";
+  const defaultRedirect = allowedRoles.includes("teacher")
+    ? "/teacher"
+    : "/student";
   const targetRedirect = redirectPath || defaultRedirect;
 
-  // 1. Not logged in -> redirect to login with return path saved in location state
+  // 1. Agar logged in nahi hai -> Login page bhejo (with return state)
   if (!token) {
     return <Navigate to={targetRedirect} state={{ from: location }} replace />;
   }
 
-  // 2. Logged in, but unauthorized for this specific role
+  // 2. Logged in hai par role unauthorized hai -> User ko uske sahi dashboard bhejo
   if (allowedRoles.length > 0 && !allowedRoles.includes(role)) {
     if (role === "teacher") {
       return <Navigate to="/teacher/dashboard" replace />;
@@ -67,7 +63,7 @@ const ProtectedRoutes = ({ allowedRoles = [], redirectPath }) => {
     return <Navigate to="/student" replace />;
   }
 
-  // 3. Authorized -> render nested route tree
+  // 3. Authorized -> Nested routes render karo
   return <Outlet />;
 };
 
