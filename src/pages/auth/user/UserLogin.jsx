@@ -65,7 +65,7 @@ const UserLogin = () => {
             <img
               className="login-left-banner-img"
               src="/images/user/login/login-left-img.svg"
-              alt="Group Background"
+              alt="Group Background img"
             />
 
             <div className="login-left-banner-overlay">

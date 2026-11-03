@@ -290,7 +290,7 @@ const PersonalTab = ({ data = {}, isEditing = false, onFormDataChange, }) => {
                   onChange={handleChange}
                   readOnly={!isEditing}
                 />
-                <span className="gl-field-trailing-icon" style = {{ pointerEvents: "none" }}>
+                <span className="gl-field-trailing-icon" style={{ pointerEvents: "none" }}>
                   <svg
                     width="18"
                     height="18"

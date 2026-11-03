@@ -12303,7 +12303,7 @@ a.custom-action-btn.btn-view-schedule {
   padding: 6px 28px 6px 12px;
   background-color: #ffffff;
 }
-.gl-native-select-element {
+/* .gl-native-select-element {
   position: absolute;
   top: 0;
   left: 0;
@@ -12311,7 +12311,7 @@ a.custom-action-btn.btn-view-schedule {
   height: 100%;
   opacity: 0;
   cursor: pointer;
-}
+} */
 .gl-mini-arrow-chevron {
   position: absolute;
   right: 12px;
@@ -15169,7 +15169,8 @@ a.custom-action-btn.btn-view-schedule {
   width: 100%;
   padding: 14px 40px 14px 16px;
   font-size: 14px;
-  color: #94a3b8; /* Matching the muted screen default text color */
+  /* color: #94a3b8; Matching the muted screen default text color */
+  color: #1e293b !important; /* sunil change */
   border: 1.5px solid #e2e8f0;
   border-radius: 12px;
   outline: none;
@@ -20447,6 +20448,7 @@ a.custom-action-btn.btn-view-schedule {
   color: #475569;
   line-height: 1.6;
   margin: 0;
+  width: 100%;
 }
 .sow-link-text {
   color: #0076b6;
@@ -25262,3 +25264,66 @@ a.dropdown-item.item-logout span {
 #quietHoursModal .modal-body.gl-popup-core-body{
   margin-top: 0;
 }
+
+/* Modal band hone par body scroll aur click hamesha working rakhne ke liye */
+body:not(.modal-open) {
+  overflow-y: auto !important;
+  pointer-events: auto !important;
+}
+
+html {
+  overflow-y: auto;
+}
+
+/* Koi bhi inactive modal screen ko block na kare */
+.modal:not(.show) {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* sunil Css==================  */
+.my-crs-dropdown-wrapper {
+  position: relative;
+}
+
+.my-crs-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  width: 165px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px;
+  z-index: 99;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.my-crs-dropdown-menu button {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 9px 12px;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.my-crs-dropdown-menu button:hover,
+.my-crs-dropdown-menu button.active {
+  background: #0085b5;
+  color: #fff;
+}
+/* sunil Css==================  */
