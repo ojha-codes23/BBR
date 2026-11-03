@@ -12,7 +12,7 @@ const MyProfile = () => {
             <div className="page-header-row">
                 <div>
                     <h1 className="page-title">My Profile</h1>
-                    <p className="page-subtitle">Manage your professional profile and preferences</p>
+                    <p className="page-subtitle">Manage your professional profile and preferences222</p>
                 </div>
                 <button className="btn-edit-profile">
                     <i className="fa-regular fa-pen-to-square"></i> Edit Profile

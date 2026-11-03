@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import PersonalTab from "./Profile/PersonalTab";
-import ProfessionalTab from "./Profile/ProfessionalTab";
-import BankDetailsTab from "./Profile/BankDetailsTab";
-import ExpertiseTab from "./Profile/ExpertiseTab";
-import InterestsTagsTab from "./Profile/InterestsTagsTab";
-import DocumentsTab from "./Profile/DocumentsTab";
-import AvailabilityTab from "./Profile/AvailabilityTab";
+import PersonalTab from "./profile/PersonalTab";
+import ProfessionalTab from "./profile/ProfessionalTab";
+import BankDetailsTab from "./profile/BankDetailsTab";
+import ExpertiseTab from "./profile/ExpertiseTab";
+import InterestsTagsTab from "./profile/InterestsTagsTab";
+import DocumentsTab from "./profile/DocumentsTab";
+import AvailabilityTab from "./profile/AvailabilityTab";
 
 const MyProfile = () => {
     const [activeTab, setActiveTab] = useState("personal");
