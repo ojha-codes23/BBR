@@ -1,3 +1,89 @@
+
+
+import React from "react";
+import { NavLink, useLocation } from "react-router-dom";
+
+const TeacherSidebar = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
+
+  const menuItems = [
+    { to: "/teacher/dashboard", icon: "1.svg", label: "Dashboard" },
+    { to: "/teacher/requests", icon: "7.svg", label: "View Requests" },
+    { to: "/teacher/active-services", icon: "21.svg", label: "Active Services" },
+    { to: "/teacher/sow-contract", icon: "13.svg", label: "SOW & Contract" },
+    { to: "/teacher/hours-deliverables", icon: "12.svg", label: "Hours & Deliverables" },
+    { to: "/teacher/calendar", icon: "22.svg", label: "My Calendar" },
+    { to: "/teacher/course-management", icon: "6.svg", label: "Courses" },
+    { to: "/teacher/events-sessions", icon: "23.svg", label: "Events & Sessions" },
+    { to: "/teacher/community", icon: "11.svg", label: "Community Space" },
+    { to: "/teacher/payments", icon: "24.svg", label: "Payments" },
+    { to: "/teacher/support", icon: "20.svg", label: "Support & FAQs" },
+  ];
+
+  return (
+    <aside className="gl-sidebar">
+      {/* Logo Block */}
+      <div className="gl-brand-block">
+        <img
+          src="/images/teacher/logo.svg"
+          alt="GrantLink NC"
+          className="gl-logo-full"
+        />
+        <img
+          src="/images/teacher/coll-logo.svg"
+          alt="GL"
+          className="gl-logo-collapsed"
+        />
+      </div>
+
+      {/* Navigation Menu */}
+      <div className="gl-navigation-wrapper">
+        <span className="gl-nav-section-title">Navigation</span>
+
+        <ul className="gl-sidebar-menu">
+          {menuItems.map((item) => {
+            const isRequestsItem = item.to === "/teacher/requests";
+            const isRequestsActive =
+              pathname.startsWith("/teacher/requests") ||
+              pathname.startsWith("/teacher/request-details") ||
+              (pathname.startsWith("/teacher/user-profile") &&
+                (location.state?.from === "requests" ||
+                  Boolean(location.state?.requestId) ||
+                  !location.state?.from));
+
+            return (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                style={{ textDecoration: "none" }}
+              >
+                {({ isActive }) => {
+                  const active = isRequestsItem ? isRequestsActive : isActive;
+                  return (
+                    <li className={`gl-menu-item ${active ? "active" : ""}`}>
+                      <span className="gl-menu-link">
+                        <img
+                          src={`/images/teacher/sidebar/${item.icon}`}
+                          className="gl-menu-icon"
+                          alt=""
+                        />
+                        <span className="gl-menu-text">{item.label}</span>
+                      </span>
+                    </li>
+                  );
+                }}
+              </NavLink>
+            );
+          })}
+        </ul>
+      </div>
+    </aside>
+  );
+};
+
+export default TeacherSidebar;
+
 // import React from "react";
 // import { NavLink } from "react-router-dom";
 
@@ -245,67 +331,3 @@
 
 // export default TeacherSidebar;
 
-
-
-import React from "react";
-import { NavLink } from "react-router-dom";
-
-const TeacherSidebar = () => {
-  const menuItems = [
-    { to: "/teacher/dashboard", icon: "1.svg", label: "Dashboard" },
-    { to: "/teacher/requests", icon: "7.svg", label: "View Requests" },
-    { to: "/teacher/active-services", icon: "21.svg", label: "Active Services" },
-    { to: "/teacher/sow-contract", icon: "13.svg", label: "SOW & Contract" },
-    { to: "/teacher/hours-deliverables", icon: "12.svg", label: "Hours & Deliverables" },
-    { to: "/teacher/calendar", icon: "22.svg", label: "My Calendar" },
-    { to: "/teacher/course-management", icon: "6.svg", label: "Courses" },
-    { to: "/teacher/events-sessions", icon: "23.svg", label: "Events & Sessions" },
-    { to: "/teacher/community", icon: "11.svg", label: "Community Space" },
-    { to: "/teacher/payments", icon: "24.svg", label: "Payments" },
-    { to: "/teacher/support", icon: "20.svg", label: "Support & FAQs" },
-  ];
-
-  return (
-    <aside className="gl-sidebar">
-      {/* Logo Block */}
-      <div className="gl-brand-block">
-        <img
-          src="/images/teacher/logo.svg"
-          alt="GrantLink NC"
-          className="gl-logo-full"
-        />
-        <img
-          src="/images/teacher/coll-logo.svg"
-          alt="GL"
-          className="gl-logo-collapsed"
-        />
-      </div>
-
-      {/* Navigation Menu */}
-      <div className="gl-navigation-wrapper">
-        <span className="gl-nav-section-title">Navigation</span>
-
-        <ul className="gl-sidebar-menu">
-          {menuItems.map((item) => (
-            <NavLink key={item.to} to={item.to} style={{ textDecoration: 'none' }}>
-              {({ isActive }) => (
-                <li className={`gl-menu-item ${isActive ? "active" : ""}`}>
-                  <span className="gl-menu-link">
-                    <img
-                      src={`/images/teacher/sidebar/${item.icon}`}
-                      className="gl-menu-icon"
-                      alt=""
-                    />
-                    <span className="gl-menu-text">{item.label}</span>
-                  </span>
-                </li>
-              )}
-            </NavLink>
-          ))}
-        </ul>
-      </div>
-    </aside>
-  );
-};
-
-export default TeacherSidebar;

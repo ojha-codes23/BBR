@@ -3528,27 +3528,39 @@ a {
   font-size: 14px;
 }
 
-.action-btn {
+.action-btn,
+.request-item .action-btn {
   background: linear-gradient(95.74deg, #004c6c -19.77%, #0094d2 119.43%);
-  color: #ffffff;
+  color: #ffffff !important;
   border: none;
   border-radius: 6px;
-  padding: 10px 18px;
+  padding: 10px 18px !important;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  display: flex;
+  display: inline-flex !important;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  width: auto !important;
+  height: auto !important;
+  min-width: max-content;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  text-decoration: none !important;
   transition: background-color 0.2s;
 }
 
-.action-btn:hover {
+.action-btn:hover,
+.request-item .action-btn:hover {
   background-color: #004675;
+  color: #ffffff !important;
 }
 
-.action-btn i {
+.action-btn i,
+.request-item .action-btn i {
   font-size: 14px;
+  line-height: 1;
 }
 
 /* Replicating the exact dropdown wrapper & select design */
