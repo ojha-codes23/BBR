@@ -61,16 +61,23 @@ const ControlledAcceptModal = ({
           className="modal-dialog modal-dialog-centered"
           style={{ maxWidth: "540px" }}
         >
-          <button
-            type="button"
-            className="custom-close-outside-circle"
-            onClick={onClose}
-            aria-label="Close"
-          >
-            <i className="fa-solid fa-xmark"></i>
-          </button>
+          <div className="modal-content" style={{ position: "relative" }}>
+            <button
+              type="button"
+              className="custom-close-outside-circle"
+              onClick={onClose}
+              aria-label="Close"
+              style={{
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+                zIndex: 1060,
+                cursor: "pointer",
+              }}
+            >
+              <i className="fa-solid fa-xmark"></i>
+            </button>
 
-          <div className="modal-content">
             <div className="modal-body-wrapper">
               <div className="status-badge-circle success-green">
                 <i className="fa-regular fa-circle-check"></i>
@@ -187,16 +194,23 @@ const ControlledDeclineModal = ({
           className="modal-dialog modal-dialog-centered"
           style={{ maxWidth: "540px" }}
         >
-          <button
-            type="button"
-            className="custom-close-outside-circle"
-            onClick={onClose}
-            aria-label="Close"
-          >
-            <i className="fa-solid fa-xmark"></i>
-          </button>
+          <div className="modal-content" style={{ position: "relative" }}>
+            <button
+              type="button"
+              className="custom-close-outside-circle"
+              onClick={onClose}
+              aria-label="Close"
+              style={{
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+                zIndex: 1060,
+                cursor: "pointer",
+              }}
+            >
+              <i className="fa-solid fa-xmark"></i>
+            </button>
 
-          <div className="modal-content">
             <div className="modal-body-wrapper">
               <div className="status-badge-circle danger-red">
                 <i className="fa-regular fa-circle-xmark"></i>
@@ -213,9 +227,8 @@ const ControlledDeclineModal = ({
                   {reasonOptions.map((r) => (
                     <div
                       key={r}
-                      className={`reason-selectable-pill ${
-                        selectedReason === r ? "active" : ""
-                      }`}
+                      className={`reason-selectable-pill ${selectedReason === r ? "active" : ""
+                        }`}
                       onClick={() => setSelectedReason(r)}
                       style={{ cursor: "pointer" }}
                     >
@@ -321,50 +334,153 @@ const RequestDetail = () => {
     fetchRequestDetails();
   }, [fetchRequestDetails]);
 
-  // Extract details with fallback
+  // Extract details matching API response structure:
+  // {
+  //   requestId, status, student: { id, name, avatarUrl, status },
+  //   serviceDetails: { serviceName, subjectName, submissionDate, serviceType, priority, description, attachments, choicePreference },
+  //   serviceTracker: [ { step, stage, occurredAt, isCompleted, isCurrent } ],
+  //   sowStepStatuses: { callSchedulingCompleted, callCompleted, sowFormFillCompleted, paymentCompleted },
+  //   comingSoon: [...]
+  // }
   const d = detailData || {};
+  const student = d.student || {};
+  const serviceDetails = d.serviceDetails || {};
+
   const userName =
+    student.name ||
     d.user_name ||
     d.name ||
     d.user?.name ||
     d.student_name ||
-    "Emma Wilson";
+    "Student";
+
   const userAvatar =
+    student.avatarUrl ||
     d.user_avatar ||
     d.avatar ||
     d.user?.avatar ||
     d.user?.profile_image ||
     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80";
-  const status = d.status || "Pending";
-  const serviceName =
-    d.service_name ||
-    d.service?.name ||
-    d.service_title ||
-    d.title ||
-    "Math Tutoring";
-  const submittedDate =
-    d.submitted_at || d.created_at || d.date || "12-10-2025";
-  const estimatedHours =
-    d.estimated_hours || d.hours || (d.estimated ? `${d.estimated} Hours` : "10 Hours");
-  const serviceType = d.service_type || serviceName || "Math Tutoring";
-  const priority = d.priority || "Normal";
-  const description =
-    d.description ||
-    d.details ||
-    "Need help with advanced calculus and linear algebra concepts for upcoming exams.";
-  const attachments = Array.isArray(d.attachments) ? d.attachments : [];
-  const preferenceTitle = d.preference_title || "Choice Preference";
-  const preferenceBadge =
-    d.preference_badge || d.preference || d.choice_preference || "1st Choice";
-  const preferenceDesc =
-    d.preference_description ||
-    d.preference_desc ||
-    "You are the primary choice for this service request.";
+
   const userId =
+    student.id ||
     d.user_id ||
     d.userId ||
     d.user?.id ||
     location.state?.userId;
+
+  const status = d.status || "Pending";
+
+  const serviceName =
+    serviceDetails.serviceName ||
+    d.service_name ||
+    d.service?.name ||
+    d.service_title ||
+    d.title ||
+    "N/A";
+
+  const subjectName = serviceDetails.subjectName || d.subject_name || "";
+
+  const submittedDate =
+    serviceDetails.submissionDate ||
+    d.submitted_at ||
+    d.created_at ||
+    d.date ||
+    "N/A";
+
+  const estimatedHours =
+    serviceDetails.estimatedHours ||
+    serviceDetails.hours ||
+    d.estimated_hours ||
+    d.hours ||
+    (d.estimated ? `${d.estimated} Hours` : "N/A");
+
+  const serviceType =
+    serviceDetails.serviceType ||
+    d.service_type ||
+    serviceName ||
+    "N/A";
+
+  const priority =
+    serviceDetails.priority ||
+    d.priority ||
+    "normal";
+
+  const description =
+    serviceDetails.description ||
+    d.description ||
+    d.details ||
+    "No description provided.";
+
+  const rawAttachments = Array.isArray(serviceDetails.attachments)
+    ? serviceDetails.attachments
+    : Array.isArray(d.attachments)
+    ? d.attachments
+    : [];
+
+  const attachments = rawAttachments.filter(
+    (att) => att && (att.fileName || att.name || att.fileUrl || att.url)
+  );
+
+  const isAttachmentsComingSoon =
+    Array.isArray(d.comingSoon) &&
+    d.comingSoon.includes("serviceDetails.attachments");
+
+  const preferenceTitle = d.preference_title || "Choice Preference";
+  const preferenceBadge =
+    serviceDetails.choicePreference ||
+    d.preference_badge ||
+    d.preference ||
+    d.choice_preference ||
+    "1st Choice";
+  const preferenceDesc =
+    d.preference_description ||
+    d.preference_desc ||
+    (preferenceBadge === "1st Choice"
+      ? "You are the primary choice for this service request."
+      : `Choice preference: ${preferenceBadge}`);
+
+  // Helper to format tracker occurredAt dates
+  const formatTrackerDate = (dateStr) => {
+    if (!dateStr) return null;
+    try {
+      const dt = new Date(dateStr);
+      if (isNaN(dt.getTime())) return dateStr;
+      const mm = String(dt.getMonth() + 1).padStart(2, "0");
+      const dd = String(dt.getDate()).padStart(2, "0");
+      const yyyy = dt.getFullYear();
+      return `${mm}-${dd}-${yyyy}`;
+    } catch {
+      return dateStr;
+    }
+  };
+
+  // Full 11-step tracker pipeline definition
+  const defaultWorkflowSteps = [
+    { key: "pending", label: "Pending" },
+    { key: "request_accepted", label: "Request Accepted" },
+    { key: "call_discussion", label: "Call Discussion" },
+    { key: "sow_created", label: "SOW Created" },
+    { key: "sow_revised", label: "Awaiting Revision / SOW Revised" },
+    { key: "sow_approved", label: "SOW Approved" },
+    { key: "agreement_signed", label: "Agreement Signed" },
+    { key: "payment_completed", label: "Payment Completed" },
+    { key: "in_progress", label: "In Progress" },
+    { key: "completed", label: "Completed" },
+    { key: "review_feedback", label: "Review & Feedback" },
+  ];
+
+  const trackerItemsByStage = {};
+  if (Array.isArray(d.serviceTracker)) {
+    d.serviceTracker.forEach((item) => {
+      if (item?.stage) {
+        trackerItemsByStage[item.stage.toLowerCase()] = item;
+      }
+      if (item?.step) {
+        trackerItemsByStage[item.step.toLowerCase()] = item;
+      }
+    });
+  }
 
   return (
     <>
@@ -384,7 +500,7 @@ const RequestDetail = () => {
           </div>
 
           <Link
-            to="/teacher/sow-call-discussion"
+            to={`/teacher/sow-call-discussion?requestId=${requestId}`}
             className="btn-action btn-email-user ms-auto"
           >
             View SOW
@@ -411,7 +527,7 @@ const RequestDetail = () => {
                   <div className="user-meta-info">
                     <div className="name-badge-row">
                       <span className="profile-name">{userName}</span>
-                      <span className="badge-pending">{status}</span>
+                      <span className="badge-pending text-capitalize">{status}</span>
                     </div>
                     {userId ? (
                       <Link
@@ -432,6 +548,7 @@ const RequestDetail = () => {
                     )}
                     <div className="service-tag">
                       <i className="fa-solid fa-book-open"></i> {serviceName}
+                      {subjectName && ` • ${subjectName}`}
                     </div>
                   </div>
                 </div>
@@ -463,7 +580,7 @@ const RequestDetail = () => {
                       className="spec-value"
                       style={{ paddingLeft: "22px", marginTop: "2px" }}
                     >
-                      <span className="priority-badge">{priority}</span>
+                      <span className="priority-badge text-capitalize">{priority}</span>
                     </div>
                   </div>
                 </div>
@@ -477,21 +594,35 @@ const RequestDetail = () => {
                   <div className="section-subtitle">Attachments</div>
                   <div className="attachment-badge-container">
                     {attachments.length > 0 ? (
-                      attachments.map((att, idx) => (
-                        <div className="attachment-pill" key={att.id || idx}>
-                          <i className="fa-solid fa-paperclip"></i>{" "}
-                          {att.name || att.file_name || att.title || `file_${idx + 1}`}
-                        </div>
-                      ))
+                      attachments.map((att, idx) => {
+                        const name =
+                          att.fileName ||
+                          att.name ||
+                          att.title ||
+                          `Attachment ${idx + 1}`;
+                        const url = att.fileUrl || att.url;
+                        return url ? (
+                          <a
+                            key={att.id || idx}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="attachment-pill text-decoration-none"
+                          >
+                            <i className="fa-solid fa-paperclip"></i> {name}
+                          </a>
+                        ) : (
+                          <div className="attachment-pill" key={att.id || idx}>
+                            <i className="fa-solid fa-paperclip"></i> {name}
+                          </div>
+                        );
+                      })
                     ) : (
-                      <>
-                        <div className="attachment-pill">
-                          <i className="fa-solid fa-paperclip"></i> syllabus.pdf
-                        </div>
-                        <div className="attachment-pill">
-                          <i className="fa-solid fa-paperclip"></i> requirements.docx
-                        </div>
-                      </>
+                      <span className="text-muted small">
+                        {isAttachmentsComingSoon
+                          ? "Attachments coming soon."
+                          : "No attachments provided."}
+                      </span>
                     )}
                   </div>
                 </div>
@@ -538,9 +669,12 @@ const RequestDetail = () => {
                 >
                   <i className="bi bi-check2-circle"></i> Approve
                 </button>
-                <button type="button" className="btn-sow-action approve">
+                <Link
+                  to={`/teacher/sow-call-discussion?requestId=${requestId}`}
+                  className="btn-sow-action approve text-decoration-none"
+                >
                   <i className="bi bi-pencil-square"></i> Draft SOW
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -552,111 +686,68 @@ const RequestDetail = () => {
                 </div>
 
                 <div className="timeline-container">
-                  <div className="timeline-item">
-                    <div className="timeline-icon completed">
-                      <i className="fa-solid fa-circle-check"></i>
-                    </div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">Pending</span>
-                      <span className="timeline-date">{submittedDate}</span>
-                    </div>
-                  </div>
+                  {defaultWorkflowSteps.map((step) => {
+                    const stepData =
+                      trackerItemsByStage[step.key] ||
+                      trackerItemsByStage[step.label.toLowerCase()];
 
-                  <div className="timeline-item">
-                    <div
-                      className={`timeline-icon ${
-                        status === "approved" || status === "accepted"
-                          ? "completed"
-                          : "disabled"
-                      }`}
-                    >
-                      <i className="fa-solid fa-circle-check"></i>
-                    </div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">
-                        Request Accepted
-                      </span>
-                      <span className="timeline-date">
-                        {status === "approved" ? "Completed" : "--"}
-                      </span>
-                    </div>
-                  </div>
+                    let isCompleted = Boolean(stepData?.isCompleted);
+                    let isCurrent = Boolean(stepData?.isCurrent);
+                    let stepDate = formatTrackerDate(stepData?.occurredAt);
 
-                  <div className="timeline-item">
-                    <div className="timeline-icon completed">
-                      <i className="fa-solid fa-circle-check"></i>
-                    </div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">
-                        Call Discussion
-                      </span>
-                      <span className="timeline-date">12-11-2025</span>
-                    </div>
-                  </div>
+                    // Dynamic fallbacks if tracker array only logs passed events
+                    if (!stepData) {
+                      if (step.key === "pending") {
+                        isCompleted = true;
+                        stepDate = submittedDate !== "N/A" ? submittedDate : null;
+                      } else if (step.key === "request_accepted") {
+                        const st = (status || "").toLowerCase();
+                        isCompleted = st === "accepted" || st === "approved";
+                        if (isCompleted) stepDate = "Completed";
+                      } else if (step.key === "call_discussion") {
+                        isCompleted = Boolean(d.sowStepStatuses?.callCompleted);
+                        isCurrent = Boolean(
+                          d.sowStepStatuses?.callSchedulingCompleted &&
+                            !d.sowStepStatuses?.callCompleted
+                        );
+                      } else if (step.key === "sow_created") {
+                        isCompleted = Boolean(d.sowStepStatuses?.sowFormFillCompleted);
+                      } else if (step.key === "payment_completed") {
+                        isCompleted = Boolean(d.sowStepStatuses?.paymentCompleted);
+                      }
+                    }
 
-                  <div className="timeline-item disabled">
-                    <div className="timeline-icon current"></div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">SOW Created</span>
-                    </div>
-                  </div>
-
-                  <div className="timeline-item disabled">
-                    <div className="timeline-icon current"></div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">
-                        Awaiting Revision / SOW Revised
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="timeline-item disabled">
-                    <div className="timeline-icon current"></div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">SOW Approved</span>
-                    </div>
-                  </div>
-
-                  <div className="timeline-item disabled">
-                    <div className="timeline-icon current"></div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">
-                        Agreement Signed
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="timeline-item disabled">
-                    <div className="timeline-icon current"></div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">
-                        Payment Completed
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="timeline-item disabled">
-                    <div className="timeline-icon current"></div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">In Progress</span>
-                    </div>
-                  </div>
-
-                  <div className="timeline-item disabled">
-                    <div className="timeline-icon current"></div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">Completed</span>
-                    </div>
-                  </div>
-
-                  <div className="timeline-item disabled">
-                    <div className="timeline-icon current"></div>
-                    <div className="timeline-details">
-                      <span className="timeline-status-name">
-                        Review & Feedback
-                      </span>
-                    </div>
-                  </div>
+                    return (
+                      <div
+                        className={`timeline-item ${
+                          isCompleted ? "" : isCurrent ? "active" : "disabled"
+                        }`}
+                        key={step.key}
+                      >
+                        <div
+                          className={`timeline-icon ${
+                            isCompleted
+                              ? "completed"
+                              : isCurrent
+                              ? "current"
+                              : "disabled"
+                          }`}
+                        >
+                          {isCompleted && (
+                            <i className="fa-solid fa-circle-check"></i>
+                          )}
+                        </div>
+                        <div className="timeline-details">
+                          <span className="timeline-status-name">
+                            {step.label}
+                          </span>
+                          {stepDate && (
+                            <span className="timeline-date">{stepDate}</span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
