@@ -283,6 +283,28 @@ const useService = () => {
       },
     });
 
+
+  //
+  const { mutateAsync: sowCallDiscussionDetails, isPending: isPendingSowCallDiscussionDetails } =
+    useMutation({
+      mutationKey: ["/api/teacher/sow-call-discussion-details"],
+      mutationFn: async (payload) => {
+        try {
+          const response = await api.post(
+            "/api/teacher/sow-call-discussion-details",
+            payload
+          );
+          return response.data;
+        } catch (error) {
+          console.error("Failed to get SOW call discussion details:", error);
+          if (error?.response?.data?.message === "Unauthenticated.") {
+            LogoutError();
+          }
+          throw error;
+        }
+      },
+    });
+
   return {
     getRequestDetails,
     isPendingRequestDetails,
@@ -308,6 +330,10 @@ const useService = () => {
     isCreateTemplatePending,
     templateAction,
     isPendingTemplateAction,
+
+
+    sowCallDiscussionDetails,
+    isPendingSowCallDiscussionDetails
   };
 };
 
